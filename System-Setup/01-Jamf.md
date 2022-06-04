@@ -31,7 +31,7 @@ Here is an example email template:
 
 > Hello, I am a [graduate student/postdoc/etc] in the Mechanical Engineering Department (NUID #########) working with Prof. Safa Jamali.
 >
-> Prof. Jamali recently ordered a [Macbook Pro] for my research that arrived with Jamf Connect installed. The group has had issues managing the software we use for our research on Jamf administered devices in the past, and after discussing the situation with Prof. Jamali I would like to have this unmanaged by Jamf.
+> Prof. Jamali recently ordered a [Macbook Pro] for my research that arrived with Jamf Connect installed. The group has had issues managing the software we use for our research on Jamf administered devices in the past, and after discussing the situation with Prof. Jamali I would like to have this device unmanaged by Jamf.
 >
 > The computer name is ###############
 >
@@ -40,4 +40,4 @@ Here is an example email template:
 
 ## Removing Jamf requires re-installing macOS
 
-Once IT confirms that your computer is unmanaged, you can remove Jamf. Unfortunately you do not have permission to do this. Instead you must erase the computer and reinstall macOS. If you have already used your computer, be sure to back it up with TimeMachine or copy any important files to an external hard drive or cloud storage, then follow [Apple's instructions on How to reinstall macOS](https://support.apple.com/en-us/HT204904).
+Once IT confirms that your computer is unmanaged, you can remove Jamf. Unfortunately you do not have administrator priviledges to do this directly. Instead you must erase the computer and reinstall macOS. If you have already used your computer, be sure to back it up with TimeMachine or copy any important files to an external hard drive or cloud storage, then follow [Apple's instructions on How to reinstall macOS](https://support.apple.com/en-us/HT204904).
