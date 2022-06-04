@@ -1,25 +1,23 @@
 # Programming Resources
 
-This is a collection of programming resources that can help you get started with the tools you need to do research in the [PRoPS Group] simulating colloids with [HOOMD-blue].
+This is a collection of programming resources that can help you get started with the tools you need to do research in the PRO-CF Colloids Team.
 
-Our simulations use a variety of tools and programming languages. All of us were new to at least some of these things when we started working in the PRoPS group, and we're still exploring new things that might make our research easier/better! This directory contains some general resources (either online or as PDFs) that have been useful for learning these skills.
+Our simulations use a variety of tools and programming languages. All of us were new to at least some of these things when we started working in the PRO-CF Research Group, and we're still exploring new things that might make our research easier/better! This directory contains some general resources (either online or as PDFs) that have been useful for learning these skills.
 
-[Last Update: April 2022]
+[Last Update: June 2022]
 
 This guide was compiled by Rob Campbell.
-
-[PRoPS Group]: https://web.northeastern.edu/complexfluids/
-[HOOMD-blue]: http://glotzerlab.engin.umich.edu/hoomd-blue/
 <br>
 
 ## Contents
 1. [Best Practices for Scientific Computing](/Programming-Resources#best-practices-for-scientific-computing)
 1. [Best Practices for Collaborating on Code](/Programming-Resources#best-practices-for-collaborating-on-code)
-2. [Foundational CS Skills](/Programming-Resources#foundational-cs-skills)
+2. [Foundational CS Skills](/Programming-Resources#foundational-cs-skills) (i.e. Command Line, VIM, Git, Markdown, and other general skills)
 3. [Python](/Programming-Resources#python)
 4. [R](/Programming-Resources#r)
 5. [C/C++](/Programming-Resources#cc)
-6. [HPC](/Programming-Resources#hpc)
+6. [Parallale Computing](/Programming-Resources#parallel-computing)
+7. [HPC](/Programming-Resources#hpc)
 <br>
 
 ## Best Practices for Scientific Computing
@@ -29,6 +27,7 @@ This guide was compiled by Rob Campbell.
 
 * [Best Practices for Scientific Computing]<br>
 2014 paper outlining 8 best practices for scientific computing.
+<br>
 
 ## Best Practices for Collaborating on Code
 
@@ -83,6 +82,12 @@ Slides from a 2019 Princeton workshop with an overview of reproducible research 
 * [Setting Up a Github Repository for Your Lab](https://ourcodingclub.github.io/tutorials/git-for-labs/#version)<br>
 A guide for how to manage a research lab's Github organizational account. Aimed at ecology and evolutionary biology research, but includes many broadly applicable best practices.
 
+* [Scientific Collaboration and Project Management in GitHub](https://rabernat.medium.com/scientific-collaboration-and-project-management-in-github-d74f2255ae5f)<br>
+Blog post about Github for scientific research project management
+
+* [Cookiecutter Science Project](https://github.com/jbusecke/cookiecutter-science-project)<br>
+An example template for reproducible science projects (uses Conda)
+
 ### Markdown
 
 * [Markdown Basic Syntax](https://www.markdownguide.org/basic-syntax/)
@@ -119,6 +124,8 @@ A guide for how to manage a research lab's Github organizational account. Aimed 
 
 * [R for Reproducible Scientific Analysis] \(Software Carpentry)
 
+* [10 tips for making your R graphics look their best]
+
 [R for Data Science course on LinkedIn Learning]: https://www.linkedin.com/learning/learning-r-2/r-for-data-science?u=74653650
 [R Essential Training: Wrangling and Visualizing Data]: https://www.linkedin.com/learning/r-essential-training-wrangling-and-visualizing-data?contextUrn=urn%3Ali%3AlearningCollection%3A6820781619499036673&u=74653650
 [R Essential Training Part 2: Modeling Data]: https://www.linkedin.com/learning/r-essential-training-part-2-modeling-data?contextUrn=urn%3Ali%3AlearningCollection%3A6820781619499036673&u=74653650
@@ -126,6 +133,7 @@ A guide for how to manage a research lab's Github organizational account. Aimed 
 [RStudio Cheat Sheets]: https://github.com/rstudio/cheatsheets
 [RStudio Cheat Sheet: ggplot2]: https://github.com/rstudio/cheatsheets/blob/main/data-visualization-2.1.pdf
 [R for Reproducible Scientific Analysis]: https://swcarpentry.github.io/r-novice-gapminder/
+[10 tips for making your R graphics look their best]:(https://blog.revolutionanalytics.com/2009/01/10-tips-for-making-your-r-graphics-look-their-best.html)
 <br>
 
 
@@ -135,6 +143,12 @@ A guide for how to manage a research lab's Github organizational account. Aimed 
 
 * [Headers and Includes Overview](https://www.cplusplus.com/articles/Gw6AC542/) (why use `.cc` and `.h` files)
 <br>
+
+## Parallel Computing
+
+### MPI
+
+* [OpenMPI FAQ: General](https://www.open-mpi.org/faq/?category=general)
 
 ## HPC
 
