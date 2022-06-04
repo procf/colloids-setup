@@ -2,7 +2,7 @@
 
 Welcome to the PRO-CF Colloids simulation team! :tada:
 
-This is a set-up guide for running colloids simulations in our group using the [HOOMD-blue] simulation toolkit.
+These files will guide you through everything you need to know to start running dissipative particle dynamics (DPD) colloids simulations in our group with [HOOMD-blue].
 
 [HOOMD-blue]: http://glotzerlab.engin.umich.edu/hoomd-blue/
 
