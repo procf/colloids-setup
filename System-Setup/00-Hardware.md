@@ -1,12 +1,10 @@
 # Hardware Requirements and System Recommendations
 
-This is a guide to choosing a computer for research simulating colloids with [HOOMD-blue] in the PRO-CF Research Group.
+This is a guide to choosing a computer for research simulating colloids with HOOMD-blue in the PRO-CF Research Group.
 
 [Last Update: June 2022]
 
 This guide was compiled by Rob Campbell.
-
-[HOOMD-blue]: http://glotzerlab.engin.umich.edu/hoomd-blue/
 <br>
 
 ## Contents
