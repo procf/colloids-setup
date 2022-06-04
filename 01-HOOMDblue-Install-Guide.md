@@ -1,4 +1,4 @@
-# HOOMD-blue Installation Guide
+# HOOMD-blue Installation and Setup Guide
 
 *to be added*
 
@@ -18,7 +18,7 @@ The standard implementation of HOOMD-blue was adapted for our colloids simulatio
 3. [Creating a Python Virtual Environment](/01-HOOMDblue-Install-Guide.md#creating-a-python-virtual-environment)
 4. [Acquiring HOOMD-blue](/01-HOOMDblue-Install-Guide.md#acquiring-hoomd-blue)
 5. [Installing HOOMD-blue](/01-HOOMDblue-Install-Guide.md#installing-hoomd-blue)
-6. [Creating a Simulations Directory](/01-HOOMDblue-Install-Guide.md#creating-a-simulations-directory)
+6. [Organizing Your Simulations](/01-HOOMDblue-Install-Guide.md#organizing-your-simulations)
 7. [Next Steps](/01-HOOMDblue-Install-Guide.md#next-steps)
 <br>
 
