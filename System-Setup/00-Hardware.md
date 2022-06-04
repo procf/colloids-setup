@@ -1,13 +1,12 @@
 # Hardware Requirements and System Recommendations
 
-This is a guide to choosing a computer for research simulating colloids with [HOOMD-blue] in the [PRoPS Group].
+This is a guide to choosing a computer for research simulating colloids with [HOOMD-blue] in the PRO-CF Research Group.
 
-[Last Update: April 2022]
+[Last Update: June 2022]
 
 This guide was compiled by Rob Campbell.
 
 [HOOMD-blue]: http://glotzerlab.engin.umich.edu/hoomd-blue/
-[PRoPS Group]: https://web.northeastern.edu/complexfluids/
 <br>
 
 ## Contents
@@ -22,7 +21,7 @@ This guide was compiled by Rob Campbell.
 
 ## Operating System
 
-HOOMD-blue currently requires MacOS or Linux. MacOS is recommended because it is what current group members use, and what you can get the most help troubleshooting. That said, if you are familiar with Linux and prefer it over MacOS you can definitely choose to use a Linux machine.
+HOOMD-blue currently requires macOS or Linux. MacOS is recommended because it is what current group members use, and what you can get the most help troubleshooting. That said, if you are familiar with Linux and prefer it over macOS you can definitely choose to use a Linux machine.
 <br>
 <br>
 ## Laptop vs. Desktop
@@ -32,29 +31,29 @@ A laptop is sufficient for this work. Most simulations are run on Northeastern's
 <br>
 ## Memory
 
-Memory is the **most important** feature for our work. In our experience 8GB is not enough to do this work without the computer getting hot/slow quite often, so opt for at least 16GB. It's unlikely you'll need more than 16GB unless you plan to use other software that requries it.
+Memory is the **most important** feature for our work. In our experience 8GB is not enough to run a local simulation without the computer getting hot/slow quite often, so opt for at least 16GB. It's unlikely you'll need more than 16GB unless you plan to use other software that requries it.
 <br>
 <br>
 ## Storage
 
-For storage, we recommend 500GB. Most data will be stored externally on the cluster or other devices, so you shouldn't need more locally unless a particular project requires it.
+For storage, we recommend 500GB. Most data will be stored externally on the cluster or other devices, so you shouldn't need more local storage unless a particular project requires it.
 <br>
 <br>
 ## GPU
 
-Our implementation of HOOMD-blue is currently CPU only, so you will not need a high performance GPU unless you intend to redevelop the code. HOOMD-blue has existing GPU options, but we found them difficult to set up with our required modifications and chose not to use them at this time. You will also have access to other GPU options through Northeastern's high performance computing cluster ("Discovery"). 
+Although HOOMD-blue does have GPU options, our implementation of HOOMD-blue is currently CPU only and you will **not** need a high performance GPU unless you intend to develop new code for it. You will also have access to other GPU options through Northeastern's high performance computing cluster ("Discovery"). 
 <br>
 <br>
 ## Processor
 
 Any reasonably current processor should be good enough for this work. Our group members currently use the 2018 Intel i7, 2020 Intel i7, and 2020 Intel i5 without issue.
 
-Most Mac computers will soon switch over from Intel to Apple silicon (starting with the M1 chip). We expect Apple silicon to be a great choice in the future. For 2021, pandemic-related chip-shortages made it easier to get a hold of Intel Macs, so that's what we recommended that year.
+Most Apple computers have now switched over from Intel to Apple silicon (starting with the M1 chip). We expect Apple silicon to be a great choice in the future. 
 <br>
 <br>
 ## Current Hardware Used by Group Members
 
-[Last Update: Fall 2021]
+[Last Update: June 2021]
 
 13-inch MacBook Pro 2018
 * Processor: 2.7 GHz Quad-Core Intel Core i7
