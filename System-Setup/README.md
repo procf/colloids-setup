@@ -2,7 +2,7 @@
 
 This folder contains advice for members of the PRO-CF Colloids Team on: 
 1. [Hardware] selection
-2. [Managing Northeastern-purchased computers]
+2. [Managing Northeastern-purchased computers] /(dealing with JAMF)
 3. [MacOS system setup] proir to starting colloids simulations
 
 [Last Update: June 2022]
