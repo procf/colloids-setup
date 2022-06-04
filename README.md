@@ -2,7 +2,7 @@
 
 Welcome to the PRO-CF Colloids simulation team! :tada:
 
-This is a how-to guide for getting setup to do colloids simulations in our group using the [HOOMD-blue] simulation toolkit.
+This is a set-up guide for running colloids simulations in our group using the [HOOMD-blue] simulation toolkit.
 
 [HOOMD-blue]: http://glotzerlab.engin.umich.edu/hoomd-blue/
 
