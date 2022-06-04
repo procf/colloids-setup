@@ -1,18 +1,41 @@
-# general-template
-This is a general template for a project repository
+# PRO-CF Colloids Simulation Setup Guide
 
-## Repository admin
+Welcome to the PRO-CF Colloids simulation team! :tada:
 
-Most repositories will be Private at first (**always** check with Safa before making a repository public)
+This is a how-to guide for getting setup to do colloids simulations in our group using the [HOOMD-blue] simulation toolkit.
 
-A repository should **always** include:
-- A .gitignore file to prevent unnecessary files from being backed up <br>
-  *the .gitignore included here prevents common unnecessary files from hoomd-blue <3.2, C++, Python, R, Julia, macOS, Office365, and LaTeX/TeX from being backed up to the repository; if you need additional templates you can find them at [https://github.com/github/gitignore](https://github.com/github/gitignore)*
-- A README.md file with a description of the repository and its contents
+[HOOMD-blue]: http://glotzerlab.engin.umich.edu/hoomd-blue/
 
-When making a Public repository you will often want to add a LICENSE file. Discuss with Safa about what type of license to use (for example, many open source projects use the simple MIT License, while HOOMD-blue is released under a BSD 3-Clause License).<br>
-You can add a license at any time. See github's [instructions on how to add a LICENSE to an existing repository](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository).
+[Last Update: June 2022]
+<br>
+<br>
+## Before you Begin
 
-## What to include in your repository
+The [System Setup folder](/System-Setup) contains information for choosing a laptop or other workstation and steps for setting up a new MacOS computer before installing HOOMD-blue.
 
-Github repositories should only include code files, documentation, and small data files (recommended <50MB, max 2GB). If your code uses large data files and is being made public it is recommended you include a small sample data set.
+The [Programming Resources folder](/Programming-Resources) contains a variety of resources that can help you with the command line, VIM, Python, R, C++, Git/Github, and other skills that are useful for our work.
+
+Once you have received and set up your computer, the remaining files should help you install HOOMD-blue and VMD and give you the information you need to get started with colloids simulations!
+<br>
+<br>
+## Installing Software and Running Simulations
+
+These guides are numbered to follow the steps for getting set up with HOOMD-blue, VMD, and other related tools for running and analyzing simulation data:
+
+1. The HOOMD-blue Installation Guide (*to be updated for v3.0+*)
+
+2. An introduction to running HOOMD-blue simulations: Simulating waterDPD (*to be updated for v3.0+*)
+
+3. [The VMD Installation Guide](/03-VMD-Install-Guide.md)
+
+4. An introdcution to visualizing `.gsd` files in VMD: [Using VMD](/04-Using-VMD.md)
+
+5. The guide to analyzing `.log` files in R: [Log Analysis with R](/05-Log-Analysis-with-R.md)
+
+6. An overview of the steps involved in colloid gelation and shearing (*to be updated for v3.0+*)
+
+7. A full guide to post-processing simulation data (*to be linked to Nabi's post-processing R Notebook*)
+
+8. [The Guide to Accessing "Discovery"](/08-Accessing-Discovery.md) (Northeastern's HPC cluster)
+
+9. An [introduction to running HPC simulations](/09-Slurm-and-Disco.md)
