@@ -16,7 +16,7 @@ This guide was compiled by Rob Campbell.
 3. [Python](/Programming-Resources#python)
 4. [R](/Programming-Resources#r)
 5. [C/C++](/Programming-Resources#cc)
-6. [Parallale Computing](/Programming-Resources#parallel-computing)
+6. [Parallel Computing](/Programming-Resources#parallel-computing)
 7. [HPC](/Programming-Resources#hpc)
 <br>
 
