@@ -22,7 +22,7 @@ Once you have received and set up your computer, the remaining files should help
 
 These guides are numbered to follow the steps for getting set up with HOOMD-blue, VMD, and other related tools for running and analyzing simulation data:
 
-1. The HOOMD-blue Installation Guide (*to be updated for v3.0+*)
+1. The [HOOMD-blue Installation and Setup Guide](/01-HOOMDblue-Install-Guide.md) (*to be updated for v3.0+*)
 
 2. An introduction to running HOOMD-blue simulations: Simulating waterDPD (*to be updated for v3.0+*)
 
