@@ -64,7 +64,7 @@ Now that you are familiar with the Terminal, the first thing you need to do is i
 
 Open a Terminal window and enter
 ```bash
-% xcode-select --install 
+xcode-select --install 
 ```
 <br>
 
@@ -72,7 +72,7 @@ Open a Terminal window and enter
 
 You will also need to install a package manager, such as [Homebrew](https://brew.sh/). You can install Homebrew with
 ```bash
-% /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 This script (from the Homebrew [website](https://brew.sh/)) explains what it will do and then pauses before installing.
 
@@ -80,15 +80,15 @@ Some simple Homebrew commands are:
 
 Update Homebrew
 ```bash
-% brew update
+brew update
 ```
 Install software/packages
 ```bash
-% brew install package-name
+brew install package-name
 ```
 And update installed software
 ```bash
-% brew upgrade package-name
+brew upgrade package-name
 ```
 <br>
 
@@ -98,7 +98,7 @@ You will want to get comfortable with a command line text editor for quickly cre
 
 For Vim, open an existing file (or create a new one) with
 ```bash
-% vim filename
+vim filename
 ```
 
 *Note about using Vim:*<br>
@@ -117,7 +117,7 @@ For more on using Vim, see the lectures in ["The Missing Semester of Your CS Edu
 
 HOOMD-blue requires [cmake](https://cmake.org/), which you can go ahead and install or update now with Homebrew
 ```bash
-% brew install cmake
+brew install cmake
 ```
 <br>
 
@@ -131,21 +131,21 @@ Another popular option is to use the package and environment manager [conda](htt
 
 If you decide not to use pyenv or conda, then you can still install Python 3 with
 ```bash
-% brew install python
+brew install python
 ```
 This will also install pip, the Python package manager, which you can use to install NumPy and other required Python packages once we set up our virtual environments during the HOOMD-blue installation steps.
 
 Whichever installation method you choose, you will be able to check your current version of Python with 
 ```bash
-% python --version
+python --version
 ```
 You will can run the current (default) version of Python with 
 ```bash
-% python
+python
 ```
 And you can specify running Python 3 with
 ```bash
-% python3
+python3
 ```
 <br>
 
