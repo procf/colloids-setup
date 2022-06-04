@@ -2,7 +2,7 @@
 
 This is a guide to setting up a new MacOS computer for command line programming, specifically what to do before installing and using HOOMD-blue for colloids simulations in the PRO-CF Research Group. If you are new to MacOS, or new to programming on MacOS, then this guide can help you get started.
 
-[Last Update: April 2022]
+[Last Update: June 2022]
 
 This guide was complied by Rob Campbell.
 <br>
@@ -29,7 +29,7 @@ or via Launchpad in the Other folder
 
 >Launchpad/Other/Terminal
 
-Once you have opened the Terminal application you can create a shortcut to it that stays in the Dock at the bottom of your screen. 
+Once you have opened the Terminal application you can pin a shortcut for opening it to the Dock at the bottom of your screen. 
 
 After you open Terminal, right click the Terminal icon in the Dock at the bottom of your screen, scroll up to "Options," and select "Keep in Dock."
 
@@ -39,7 +39,7 @@ By default, Terminal opens in your home directory (where "your_username" is the 
 ```
 This is where you will want to install most packages and create most files and folders/directories/repositories.
 
-In older versions of MacOS the default Terminal window uses the bash shell (the same as Linux and most HPC clusters); however, more recent versions of MacOS use the zsh shell (seemingly due to licensing). Both bash and zsh exist on MacOS, but Apple strongly recommends switching to zsh. Many online resources for command line programming on MacOS still reference bash, so keep in mind which shell you are using when troubleshooting.
+In older versions of MacOS the default Terminal window used the bash shell (the same as Linux and most HPC clusters); however, more recent versions of MacOS use the zsh shell (seemingly due to licensing). Both bash and zsh exist on MacOS, but Apple strongly recommends switching to zsh. Many online resources for command line programming on MacOS still reference bash, so keep in mind which shell you are using when troubleshooting.
 
 Using zsh is very similar to using bash. The main difference you will notice at first is the symbol at the end of the prompt
 
@@ -71,7 +71,7 @@ You will also need to install a package manager, such as [Homebrew](https://brew
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
-This script (from the Homebrew [website](https://brew.sh/)) explains what it will do and then pauses before installing.
+This calls a script (from the Homebrew [website](https://brew.sh/)) that explains what it will do and then pauses before installing Homebrew.
 
 Some simple Homebrew commands are:
 
@@ -91,7 +91,7 @@ brew upgrade package-name
 
 ## Text Editors
 
-You will want to get comfortable with a command line text editor for quickly creating and editing files. MacOS includes [Nano](https://www.nano-editor.org/) and [Vim](https://www.vim.org/). You can update these or install other text editors with Homebrew.
+You will want to get comfortable with a command line text editor for quickly creating and editing files. MacOS includes [Nano](https://www.nano-editor.org/) and [Vi](http://ex-vi.sourceforge.net/)/[Vim](https://www.vim.org/). You can update these or install other text editors with Homebrew.
 
 For Vim, open an existing file (or create a new one) with
 ```bash
@@ -102,7 +102,7 @@ vim filename
 Vim is powerful, but difficult to get used to because of its unintuitive default interface and its many functions and shortcuts. The basics of Vim are: 
 * Opening a file with `vim` does not allow you to immediately edit it. You must first enter "Instert" mode, by pressing `i`
 * To stop editing a file, press `esc` to return to the default mode
-* Back in the default "Normal" mode, you can search for something in your file using "/" (for example, so search for instances of the word "something" type "/something")
+* Back in the default "Normal" mode, you can search for something in your file using "/" (for example, to search for instances of the word "something" type "/something")
 * The command `:q` will quit a file that has not been edited
 * The command `:q!` will quit a file that has been edited WITHOUT saving changes
 * The command `:wq` will save (write) and quit a file that has been edited
@@ -122,7 +122,7 @@ brew install cmake
 
 MacOS comes with Python 2 pre-installed, but you **DO NOT** want to use this Python. Not only do we want to use Python 3, rather than Python 2, but the pre-installed version of Python 2 is used by your computer internally, and so it's best not to mess with it. 
 
-One way to manage multiple versions of Python is by using virtual environments. If you plan on working with several different versions of Python across multiple projects, then you may want to install [pyenv](https://github.com/pyenv/pyenv) and/or [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/index.html) for easier version and virtual environment management. This is not required to use HOOMD-blue. We will use virtual environemnts when working with HOOMD-blue, but you do not need pyenv or virtualenvwrapper for that, you can instead use the built-in venv option. There is more on venv in the [HOOMD-blue Installation Guide](../01-HOOMDblue-Install-Guide.md). If you are using pyenv, see the [pyenv website](https://github.com/pyenv/pyenv) for more details on how it works before installing it with Homebrew.
+One way to manage multiple versions of Python is by using virtual environments. If you plan on working with several different versions of Python across multiple projects on your laptop, then you may want to install [pyenv](https://github.com/pyenv/pyenv) and/or [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/index.html) for easier version and virtual environment management. This is not required to use HOOMD-blue. We will use virtual environemnts when working with HOOMD-blue, but you do not need pyenv or virtualenvwrapper for that, you will most often just use the built-in venv option. There is more information on venv in the [HOOMD-blue Installation Guide](../01-HOOMDblue-Install-Guide.md). If you are using pyenv, see the [pyenv website](https://github.com/pyenv/pyenv) for more details on how it works before installing it with Homebrew.
 
 Another popular option is to use the package and environment manager [conda](https://docs.conda.io/en/latest/) via Miniconda (the basic installation) or Anaconda (a larger installation with 7500+ packages included). Conda is also not required for using HOOMD-blue. If you are using conda, see the [conda website for installation steps](https://docs.conda.io/en/latest/).
 
@@ -136,7 +136,11 @@ Whichever installation method you choose, you will be able to check your current
 ```bash
 python --version
 ```
-You will can run the current (default) version of Python with 
+and the location it is installed with
+```
+which python
+```
+You can run the current (default) version of Python with 
 ```bash
 python
 ```
@@ -152,12 +156,12 @@ While you can write and edit scripts with a text editor, you will likely want to
 
 It is recommended that you download [Eclipse](https://www.eclipse.org/downloads/) for C++ programming.
 
-You can also use Eclipse for developing Python code, but you may be better off with a dedicated Python IDE. For working on MacOS, people frequently recommend [PyCharm](https://www.jetbrains.com/pycharm/), although members of our lab currently prefer [Spyder](https://www.spyder-ide.org/). (For help setting up Spyder, chat to Soohee or Milad)
+You can also use Eclipse for developing Python code, but you may be better off with a dedicated Python IDE. For working on MacOS, people frequently recommend [PyCharm](https://www.jetbrains.com/pycharm/), although members of our lab mostly use [Spyder](https://www.spyder-ide.org/). (For help setting up Spyder, chat to Soohee or Milad)
 <br>
 <br>
 ## Git and Github
 
-Git is a version management tool, especially useful for collaborating with others on shared code. If you're interested in using Github and need help setting up command-line Git, you can check out the separate [guide to setting up Git](/Programming-Resources/Git-Setup.md) in the Programming Resources directory.
+Git is a version management tool, especially useful for collaborating with others on shared code. If you're interested in using Github and need help setting up command-line Git, you can check out the separate [Github Guide](https://github.com/procf/getting-started/blob/main/github-guide.md) in the PRO-CF getting-started repository.
 <br>
 <br>
 ## Jupyter Lab
@@ -166,6 +170,6 @@ Another useful tool for sharing code is [Project Jupyter](https://jupyter.org/) 
 
 You can learn more about Jupyter and try it online at their [website](https://jupyter.org/). You can then follow their instructions for installing Jupter Lab on your computer using the command line, as well as setting up the Kernels for the languages you are interested in.
 
-Jupyter Notebooks are what the physics-based Machine Learning half of our group uses to develop and share their code, so if you're interested in eventually learning more about what they do it's a good idea to start getting familiar with them.
+Jupyter Notebooks are used extensively by the PRO-CF Machine Learning Team for developing and sharing their code, so if you're interested in learning more about what they do at some point you should definitely start getting familiar with Jupyter Notebooks!
 
 
