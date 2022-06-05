@@ -32,9 +32,9 @@ These guides are numbered to follow the steps for getting set up with HOOMD-blue
 
 5. The guide to analyzing `.log` files in R: [Log Analysis with R](/05-Log-Analysis-with-R.md)
 
-6. About our modifications to HOOMD-blue (*to be updated for v3.0+*)
+6. About our [modifications to HOOMD-blue](/06-Modifying-HOOMDblue.md) (*to be updated for v3.0+*)
 
-7. About the steps involved in simulating colloid gelation and shearing (*to be updated for v3.0+*) 
+7. About the steps involved in simulating colloid [gelation and shearing](/07-Gelation-and-Shearing.md) (*to be updated for v3.0+*) 
 
 8. More tools for post-processing simulation data (*to be linked to Nabi's post-processing R Notebook*)
 
