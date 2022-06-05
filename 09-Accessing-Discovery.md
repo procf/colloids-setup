@@ -56,7 +56,7 @@ And you can schedule an "office hours" style meeting for 1-on-1 help from a Rese
 <br>
 ## Getting Access to the `work` Directory
 
-As a member of the PRoPS Group you should have access to the `props` directory on `work`. This is where you will store most of your data.
+As a member of the PRO-CF Group you should have access to the `props` directory (our old acronym) on `work`. This is where you will store most of your data.
 
 After connecting to Discovery, you can check this with
 ```bash
