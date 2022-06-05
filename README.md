@@ -38,6 +38,6 @@ These guides are numbered to follow the steps for getting set up with HOOMD-blue
 
 8. More tools for post-processing simulation data (*to be linked to Nabi's post-processing R Notebook*)
 
-9. [The Guide to Accessing "Discovery"](/08-Accessing-Discovery.md) (Northeastern's HPC cluster)
+9. [The Guide to Accessing "Discovery"](/09-Accessing-Discovery.md) (Northeastern's HPC cluster)
 
-10. An [introduction to running HPC simulations](/09-Slurm-and-Disco.md)
+10. An [introduction to running HPC simulations](/10-Slurm-and-Disco.md)
