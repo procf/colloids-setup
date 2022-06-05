@@ -157,10 +157,12 @@ Selecting "Display Settings" will open the **Display Settings** window for addit
 * Change the "Ray Tracing Options" - turn on "Shadows," "Amb. Occl." (Ambient Occlusion), and "DoF" (Depth of Field)
 <br>
 
+[Example] <br>
 Try adding depth to your image with "Cue Mode":
 * Set "Cue Mode" to "Linear"
 * Set "Cue Start" to 0.75
-* Set "Cue End" to  a value between 1.00 and 2.00<br>
+* Set "Cue End" to  a value between 1.00 and 2.00
+
 See more suggestions for optimizing visualizations in the [Some Recommended Visualization Styles](/04-Using-VMD.md#some-recommended-visualization-styles) section below.
 <br>
 
