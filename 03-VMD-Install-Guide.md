@@ -188,7 +188,6 @@ And ImageMagick (required to create animated GIFs)
 brew install imagemagick
 ```
 The VMD website also suggests that you may need to update the POV-Ray 3.6 configuration file, but that is not usually necessary for us.
- 
 <br>
 <br>
 ## Next Steps
