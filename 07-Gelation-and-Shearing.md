@@ -54,6 +54,7 @@ This covers the basic outline of colloidal gel simulations! The rest is up to yo
 
 If you haven't already, you should review the following papers for more background on DPD simulations of colloidal gel rheology
 * Background on DPD
+	* "[Microstructure and rheology of soft to rigid shear-thickening colloidal suspensions]" (2015) 
 	* "[Viscosity measurement techniques in Dissipative Particle Dynamics]" (2015)
 	* "[Dissipative particle dynamics: Bridging the gap between atomistic and mesoscopic simulation]" (1997)
 
@@ -62,6 +63,7 @@ If you haven't already, you should review the following papers for more backgrou
 	* "[Time-rate-transformation framework for targeted assembly of short-range attractive colloidal suspensions]" (2020)
 	* "[Life and death of colloidal bonds control the rate-dependent rheology of gels]" (2021)
 
+[Microstructure and rheology of soft to rigid shear-thickening colloidal suspensions]:https://sor.scitation.org/doi/10.1122/1.4931655 
 [Viscosity measurement techniques in Dissipative Particle Dynamics]:https://doi.org/10.1016/j.cpc.2015.05.027
 [Dissipative particle dynamics: Bridging the gap between atomistic and mesoscopic simulation]:https://doi.org/10.1063/1.474784
 [Microstructural Rearrangements and their Rheological Implications in a Model Thixotropic Elastoviscoplastic Fluid]:https://doi.org/10.1103/PhysRevLett.118.048003

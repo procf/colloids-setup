@@ -39,6 +39,7 @@ You should now have [installed HOOMD-blue](/01-HOOMDblue-Install-Guide.md), run 
 *Background Reading:* If you haven't already, you should read the following papers:
 
 * Background on DPD
+	* "[Microstructure and rheology of soft to rigid shear-thickening colloidal suspensions]" (2015) 
 	* "[Viscosity measurement techniques in Dissipative Particle Dynamics]" (2015)
 	* "[Dissipative particle dynamics: Bridging the gap between atomistic and mesoscopic simulation]" (1997)
 
@@ -47,6 +48,7 @@ You should now have [installed HOOMD-blue](/01-HOOMDblue-Install-Guide.md), run 
 	* "[Time-rate-transformation framework for targeted assembly of short-range attractive colloidal suspensions]" (2020)
 	* "[Life and death of colloidal bonds control the rate-dependent rheology of gels]" (2021)
 
+[Microstructure and rheology of soft to rigid shear-thickening colloidal suspensions]:https://sor.scitation.org/doi/10.1122/1.4931655
 [Viscosity measurement techniques in Dissipative Particle Dynamics]:https://doi.org/10.1016/j.cpc.2015.05.027
 [Dissipative particle dynamics: Bridging the gap between atomistic and mesoscopic simulation]:https://doi.org/10.1063/1.474784
 [Microstructural Rearrangements and their Rheological Implications in a Model Thixotropic Elastoviscoplastic Fluid]:https://doi.org/10.1103/PhysRevLett.118.048003

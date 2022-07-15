@@ -60,7 +60,7 @@ waterDPD.py
 ## Next Steps
 
 *Background Reading:*
-* To learn more about how we use DPD simulations for colloidal gels, see: "[Viscosity measurement techniques in Dissipative Particle Dynamics](https://doi.org/10.1016/j.cpc.2015.05.027)" (2015) <br>
+* To learn more about how we use DPD simulations for colloidal gels, see: "[Microstructure and rheology of soft to rigid shear-thickening colloidal suspensions](https://sor.scitation.org/doi/10.1122/1.4931655)" (2015) and "[Viscosity measurement techniques in Dissipative Particle Dynamics](https://doi.org/10.1016/j.cpc.2015.05.027)" (2015) <br>
 * For more general background on DPD simulations, see: "[Dissipative particle dynamics: Bridging the gap between atomistic and mesoscopic simulation](https://doi.org/10.1063/1.474784)" (1997)
 
 *Exploring HOOMD-blue's Capabilities:*
