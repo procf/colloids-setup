@@ -18,7 +18,8 @@ This guide is for optimized for MacOS.
 7. [Installing the GSD Plugin](/03-VMD-Install-Guide.md#installing-the-gsd-plugin)
 8. [Adding the GSD Plugin to the Original VMD Application](/03-VMD-Install-Guide.md#adding-the-gsd-plugin-to-the-original-vmd-application)
 9. [Opening GSD Files with VMD](/03-VMD-Install-Guide.md#opening-gsd-files-with-vmd)
-10. [Next Steps](/03-VMD-Install-Guide.md#next-steps)
+10. [Installing the VMD Movie Plugin Requirements](03-VMD-Install-Guide.md#installing-the-vmd-movie-plugin-requirements)
+11. [Next Steps](/03-VMD-Install-Guide.md#next-steps)
 <br>
 
 ## Prerequisites
@@ -168,6 +169,26 @@ Go to VMD Main
 The GSD file should now open! 
 
 You can close the Molecule File Browser and select the OpenGL Display window to view the default visualization setting (which displays "bonds" between your particles).
+<br>
+<br>
+## Installing the VMD Movie Plugin Requirements
+
+You should also install the VMD Movie Plugin software requirements so that you have the full set of movie options when saving visualizations.
+
+The list of requirements for different operating systems is available on the VMD website [here](http://www.ks.uiuc.edu/Research/vmd/plugins/vmdmovie/). 
+
+For macOS you can use the Homebrew package manager to install the required software:
+
+The NetPBM toolkit
+```bash
+brew install netpbm
+```
+And ImageMagick (required to create animated GIFs)
+```bash
+brew install imagemagick
+```
+The VMD website also suggests that you may need to update the POV-Ray 3.6 configuration file, but that is not usually necessary for us.
+ 
 <br>
 <br>
 ## Next Steps
