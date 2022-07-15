@@ -22,7 +22,9 @@ Our VMD workflow was developed by Mohammad (Nabi) Nabizadeh. This guide was comp
 9. [Rendering an Image](/04-Using-VMD.md#rendering-and-image)
 10. [More Visualization Display Settings](/04-Using-VMD.md#more-visualization-display-settings)
 11. [Other Tools](/04-Using-VMD.md#other-tools)
-12. [Some Recommended Visualization Styles](/04-Using-VMD.md#some-recommended-visualization-styles)
+12. [Recommendations for High Quality Visualizations](/04-Using-VMD.md#recommendations-for-high-quality-visualizations)
+12. i
+[Some Recommended Visualization Styles](/04-Using-VMD.md#some-recommended-visualization-styles)
 13. [Next Steps](/04-Using-VMD.md#next-steps)
 <br>
 
@@ -152,18 +154,21 @@ There are a number of other useful changes you can make from **VMD Main** in the
 * Change the location of the axes, or turn them off, in the "Axes" menu
 * Switch the "Rendermode" to "GLSL" for higher resolution images (try it with the "Sphere Scale" set back to "1.0" in the **Graphical Representations** window)
 
-Selecting "Display Settings" will open the **Display Settings** window for additional options to control lighting effects:
+Back in the **Graphical Representations** window you can make some changes to better visualize flow:
+* Set the "Coloring Method" to "Velocity" to check for shear banding
+* Go to the "Periodic" tab add 1 or 2 copies of the simulation box in the "+X" and "-X" direction to have the flow span the entire viewing window 
+
+Selecting "Display Settings" will open the **Display Settings** window for additional options to control lighting effects and add depth to the image:
 * Change "Cue Mode" to "Linear" and then lower the "Cue End" value to decrease contrast on the edge of the image and highlight the center (similar to "Vignette" on Instagram)
 * Change the "Ray Tracing Options" - turn on "Shadows," "Amb. Occl." (Ambient Occlusion), and "DoF" (Depth of Field)
 <br>
-
 [Example] <br>
 Try adding depth to your image with "Cue Mode":
 * Set "Cue Mode" to "Linear"
 * Set "Cue Start" to 0.75
 * Set "Cue End" to  a value between 1.00 and 2.00
 
-See more suggestions for optimizing visualizations in the [Some Recommended Visualization Styles](/04-Using-VMD.md#some-recommended-visualization-styles) section below.
+See more suggestions for optimizing visualizations in the [Recommendations for High Quality Visualizations](/04-Using-VMD.md#recommendations-for-high-quality-visualizations) section below.
 <br>
 
 ## Other Tools
@@ -175,12 +180,22 @@ One useful feature in the **VMD Main** "Extensions" menu is the "Tk Console" whi
 In general the VMD community is quite large, so there are a lot of resources available if you need help.
 <br>
 <br>
-## Some Recommended Visualization Styles
+## Recommendations for High Quality Visualizations
 
-Some recommended visualizations for colloid particles are:
-* Set the "Coloring Method" to "Velocity" to visualize shear flow
-* Use the "Periodic" tab in the **Graphical Representations** window to add 1 or 2 copies of the simulation box in the "+X" and "-X" direction to visualize flow 
-* Adust visualization settings in the "Z" axis and modify the lighting position to more accurately reprensent the volume fraction of a sample (i.e. add depth to the image). Set the coloring method to "Position/Z" and adjust the opacity and/or brightness of the particles along this axis.
+For the best quality visualization of a colloidal gel, we recommend the following settings:
+1. General display set up from the **VMD Main** window: 
+	* Display/Axes/Off
+	* Display/Orthographic
+	* Display/Rendermode/GLSL 
+2. Change the background color from the **Color Controls** window (**VMD Main** Graphics/Colors)
+	* In "Categories" select "Display", in "Names" select "Background", and in "Colors" select "8-white" 
+3. Lighting and shadows in the **Display Settings** window (**VMD Main** Display/Display Settings)
+	* Set "Cue Mode" to "Linear" and reduce "Cue End" until the background fades under shadow
+	* Turn on "Shadows", "Amb. Occl" and "DoF"
+4. Particle settings in the **Graphical Representations** window (**VMD Main** Graphics/Representations...)
+	* Change your particles' "Material" to "AOChalky"
+5: Rendering images: 
+	* use Tachyon for large, high quality images: go to **VMD Main** File/Render to open the **File Render Controls** window, and in "Render the current scene using" select "Tachyon (internal, in-memory rendering)"
 <br>
 
 ## Next Steps
