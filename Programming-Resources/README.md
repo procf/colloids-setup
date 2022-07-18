@@ -16,8 +16,9 @@ This guide was compiled by Rob Campbell.
 3. [Python](/Programming-Resources#python)
 4. [R](/Programming-Resources#r)
 5. [C/C++](/Programming-Resources#cc)
-6. [Parallel Computing](/Programming-Resources#parallel-computing)
-7. [HPC](/Programming-Resources#hpc)
+6. [Fortran](/Programming-Resources#fortran)
+7. [Parallel Computing](/Programming-Resources#parallel-computing)
+8. [HPC](/Programming-Resources#hpc)
 <br>
 
 ## Best Practices for Scientific Computing
@@ -104,6 +105,8 @@ An example template for reproducible science projects (uses Conda)
 
 * [Spyder IDE](https://www.spyder-ide.org/)
 
+* [Formatting strings to automatically call variables](https://realpython.com/lessons/formatting/)
+
 <br>
 
 ## R
@@ -142,6 +145,22 @@ An example template for reproducible science projects (uses Conda)
 * [C++ Language Tutorials/Overview](https://www.cplusplus.com/doc/tutorial/)
 
 * [Headers and Includes Overview](https://www.cplusplus.com/articles/Gw6AC542/) (why use `.cc` and `.h` files)
+<br>
+
+## Fortran
+
+* [Quickstart and other Fortran tutorials](https://fortran-lang.org/learn/#book-index)
+
+* Understanding "precision" and "kind"
+	* [Best practices for declaring precision of variables](https://fortran-lang.discourse.group/t/best-way-to-declare-a-double-precision-in-fortran/69)
+	* [1d0 = 1.0d0](https://fortran-lang.discourse.group/t/1d0-versus-1-0d0/2065)
+
+* [Rounding in Fortran](https://www.ibm.com/support/pages/rounding-midpoint-values-using-mass-functions-dnint-and-vdnint) 
+
+* Interfacing Fortran and Python (f2py)
+	* [f2py and alternatives](http://pythonchb.github.io/PythonTopics/interfacing_with_c/fortran_python.html)
+	* [f2py has limited KIND parameters](https://numpy.org/devdocs/f2py/advanced.html#dealing-with-kind-specifiers)
+	* [example using Python/C++/Fortran together](https://canvas.kth.se/courses/24933/pages/tutorial-cross-language-development-and-python-+-x)  
 <br>
 
 ## Parallel Computing
