@@ -23,8 +23,7 @@ Our VMD workflow was developed by Mohammad (Nabi) Nabizadeh. This guide was comp
 10. [More Visualization Display Settings](/04-Using-VMD.md#more-visualization-display-settings)
 11. [Other Tools](/04-Using-VMD.md#other-tools)
 12. [Recommendations for High Quality Visualizations](/04-Using-VMD.md#recommendations-for-high-quality-visualizations)
-12. i
-[Some Recommended Visualization Styles](/04-Using-VMD.md#some-recommended-visualization-styles)
+12. [Some Recommended Visualization Styles](/04-Using-VMD.md#some-recommended-visualization-styles)
 13. [Next Steps](/04-Using-VMD.md#next-steps)
 <br>
 
