@@ -47,7 +47,7 @@ Go to **VMD Main**
 * Choose "New Molecule"
 * In the **Molecule File Browser** window, click the "Browse..." button next to "Filename:" and navigate to the location of your GSD file<br>
 (for the waterDPD example that should be `repositories/HOOMDblue/sims/water/Equilibrium.gsd`)
-* The "Determine file type" settng should autofill with "HOOMD-blue GSD File"
+* The "Determine file type" setting should autofill with "HOOMD-blue GSD File"
 * Click the "Load" button
 
 You can close the **Molecule File Browser** and view your file in the **OpenGL Display** window.
@@ -62,7 +62,7 @@ The default vizualisation settings assume that you are viewing a protein or othe
 <br>
 ## Changing Lines to Spheres
 
-To change the visualization settings to better match our simulation, go to **VMD Main** and open the "Graphics" menu and select "Representations..."
+To change the visualization settings to better match our simulation, go to **VMD Main** and open the "Graphics" menu and select "Representations...", opening the **Graphical Representations** window.
 
 At the bottom of the **Graphical Representations** window is a tab called "Draw style" where you will see the option "Drawing Method" is set to "Lines"
 
@@ -114,7 +114,7 @@ Use the "Material" dropdown menu to change the quality of the rendering. For exa
 
 The default background color is black, but many of our simulations show up better on white. To change the background color go to **VMD Main** and open the "Graphics" menu and choose "Colors..."
 
-In the **Color Controls** window go to the "Categories" list and select "Display," then go to the "Names" list and select "Background," and the "Colors" list and select "8 white"
+In the newly opened **Color Controls** window go to the "Categories" list and select "Display," then go to the "Names" list and select "Background," and the "Colors" list and select "8 white"
 
 If you like, you can change the default color for a given setting by clicking the "Default" button at the bottom of the screen after making your selection.
 <br>
