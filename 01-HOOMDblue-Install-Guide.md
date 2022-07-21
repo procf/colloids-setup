@@ -80,22 +80,49 @@ You can view what is in the home directory with the command
 ls
 ```
 
-To keep the `home` directory clean, but still make it easy to access your simulations from the command line, it's best practice to create a "source" (AKA `src`) directory or a `repositories` directory here to store all your programming files:
-```bash
-mkdir repositories
-```
-You can then move to the directory with
+In the [Guide to Git and Github](https://github.com/procf/getting-started/blob/main/github-guide.md) we recommended keeping the `home` directory clean by creating a `src` or `repositories` directory to store your command line programming files. This is where we recommend installing HOOMD-blue. 
+
+Move to the `repositories` directory with
 ```bash
 cd repositories
 ```
-
-
-and make another directory for this installation of HOOMD-blue
+and make a new directory to for each HOOMD-blue version
 ```bash
 mkdir hoomd3.1-basic
+mkdir hoomd3.1-mod
 ```
+We will install the two versions of HOOMD-blue in their respective directories. How you organize your simulation files from here is up to you. For backing up files to Github it is often best to keep simulation scripts and data files separate; however, some people prefer to keep things all in one directory. Here are two file management examples:
 
+ONE FOLDER
+- hoomd3.1-mod
+	- *(software-installation)*
+	- *(virtual-python-environment)*
+	- sims
+		- *(simulation-project-name)*
+			- *(simulation-scripts)*
+			- *(simulation-data-files)*
+			- *(analysis-scripts)*
+			- *(analysis-results)*
 
+SEPARATED FOLDERS
+- software
+	- hoomd3.1-mod
+		- *(software-installation)*
+- *(simulation-project-name)*
+	- *(project-name)*-scripts [backed-up-to-github]
+		- *(simulation-scripts)*
+		- *(analysis-scripts)*
+	- sim-data
+		- *(simulation-run)*
+			- *(simulation-data-files)*
+			- analysis
+				- *(analysis-results)*
+		- archive
+			- *(archived-runs)*
+	- archive
+		- *(old-data/runs)*
+
+**You can organize your files ANY way you like, just make sure you have some way of keeping track of what you're doing so you can find results later! Your future self will thank you!**
 
 ## Creating a Python Virtual Environment
 
