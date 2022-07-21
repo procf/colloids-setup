@@ -92,8 +92,8 @@ mkdir hoomd3.1-basic
 mkdir hoomd3.1-mod
 ```
 We will install the two versions of HOOMD-blue in their respective directories. How you organize your simulation files from here is up to you. For backing up files to Github it is often best to keep simulation scripts and data files separate; however, some people prefer to keep things all in one directory. Here are two file management examples:
-
 <br>
+
 ONE FOLDER
 - `hoomd3.1-mod`
 	- *(software-installation)*
@@ -104,8 +104,8 @@ ONE FOLDER
 			- *(simulation-data-files)*
 			- *(analysis-scripts)*
 			- *(analysis-results)*
-
 <br>
+
 SEPARATED FOLDERS
 - `software`
 	- `hoomd3.1-mod`
