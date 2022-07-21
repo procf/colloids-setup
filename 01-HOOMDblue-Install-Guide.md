@@ -110,7 +110,7 @@ SEPARATED FOLDERS
 - `software`
 	- `hoomd3.1-mod`
 		- *(software-installation)*
-- *(simulation-project-name)*
+- `*(simulation-project-name)*`
 	- *(project-name)*`-scripts` [backed-up-to-github]
 		- *(simulation-scripts)*
 		- *(analysis-scripts)*	
