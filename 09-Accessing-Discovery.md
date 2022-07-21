@@ -32,17 +32,30 @@ Once you have been granted access to Discovery you should have both a home folde
 
 You can login to your Discovery home folder from your Terminal shell with the command
 ```bash
-ssh -Y your_username@login.discovery.neu.edu
+ssh your_username@login.discovery.neu.edu
 ```
-And by entering your Northeastern username and password.<br>
-*NOTE: The "-Y" parameter allows you to use applications with X11 and GUI interfaces. It is not strictly necessary to include this parameter if you are only using the command line, but it is good practice to remember it for when you do need it.*
+And by entering your Northeastern username and password.
 
 You can then move to the `scratch` folder with
 ```bash
 cd /scratch/your_username
 ```
 
-To learn more about connecting to Discovery, including setting up passwordless SSH, see [Connecting to Discovery](https://rc-docs.northeastern.edu/en/latest/get_started/connect.html#mac) on the Discovery docs.
+**NOTE**: If you would like to be able to use applications with a visual interface (i.e. X11 and GUI interfaces), including MATLAB or simply viewing Python plots directly from Discovery, then you need to do 4 things:
+1. Set up passwordless SSH access to Discovery as described on the [Discovery docs](https://rc-docs.northeastern.edu/en/latest/first_steps/connect_mac.html#passwordless-ssh) 
+1. (macOS only) Install XQuartz (available on the [XQuartz website](https://www.xquartz.org/)) and run it in the background (*Do NOT use the Terminal application within XQuartz to sign in to Discovery*, use the default Terminal that comes with your Mac)
+2. (macOS only) Before logging into Discovery, enter this command in the Terminal window
+```bash
+defaults write org.macosforge.xquartz.X11 enable_iglx -bool true
+```
+*You must fo this step every time you close and restart XQuartz*
+2. log into Discovery using the "-Y" flag
+```bash
+ssh -Y your_username@login.discovery.neu.edu
+```
+You can test if this worked with the command `xeyes` which will make a pair of eyes appear in the corner of your screen that follow your cursors movement.
+
+To learn more about connecting to Discovery, see [Connecting to Discovery](https://rc-docs.northeastern.edu/en/latest/get_started/connect.html#mac) in the Discovery docs.
 <br>
 <br>
 ## Learning How to Use Discovery
