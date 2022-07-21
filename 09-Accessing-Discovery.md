@@ -48,7 +48,8 @@ cd /scratch/your_username
 ```bash
 defaults write org.macosforge.xquartz.X11 enable_iglx -bool true
 ```
-*You must fo this step every time you close and restart XQuartz*<br>
+*You must fo this step every time you close and restart XQuartz*
+
 4. log into Discovery using the "-Y" flag
 ```bash
 ssh -Y your_username@login.discovery.neu.edu
