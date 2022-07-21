@@ -96,33 +96,33 @@ We will install the two versions of HOOMD-blue in their respective directories. 
 
 ONE FOLDER
 - `hoomd3.1-mod`
-	- *(software-installation)*
-	- *(virtual-python-environment)*
+	- *software-installation*
+	- *virtual-python-environment*
 	- `sims`
-		- *(simulation-project-name)*
-			- *(simulation-scripts)*
-			- *(simulation-data-files)*
-			- *(analysis-scripts)*
-			- *(analysis-results)*
+		- `(simulation-project-name)`
+			- *simulation-scripts*
+			- *simulation-data-files*
+			- *analysis-scripts*
+			- *analysis-results*
 <br>
 
 SEPARATED FOLDERS
 - `software`
 	- `hoomd3.1-mod`
-		- *(software-installation)*
-- `*(simulation-project-name)*`
-	- *(project-name)*`-scripts` [backed-up-to-github]
-		- *(simulation-scripts)*
-		- *(analysis-scripts)*	
+		- *software-installation*
+- `(simulation-project-name)`
+	- `(project-name)-scripts` [backed-up-to-github]
+		- *simulation-scripts*
+		- *analysis-scripts*	
 	- `sim-data`
-		- *(simulation-run)*
-			- *(simulation-data-files)*
+		- `(simulation-run)`
+			- *simulation-data-files*
 			- `analysis`
-				- *(analysis-results)*
+				- *analysis-results*
 		- `archive`
-			- *(archived-runs)*
+			- *archived-runs*
 - `archive`
-	- *(old-projects)*
+	- *old-projects*
 
 **You can organize your files ANY way you like, just make sure you have some way of keeping track of what you're doing so you can find results later! Your future self will thank you!**
 
