@@ -44,9 +44,10 @@ or log back out with the `logout` command
 ```bash
 logout
 ```
-
 <br>
+
 **NOTE**: If you would like to be able to use applications with a visual interface (i.e. X11 and GUI interfaces), including MATLAB or simply viewing Python plots directly from Discovery, then you need to do 4 things:
+
 1. Set up passwordless SSH access to Discovery as described on the [Discovery docs](https://rc-docs.northeastern.edu/en/latest/first_steps/connect_mac.html#passwordless-ssh) 
 2. (macOS only) Install XQuartz (available on the [XQuartz website](https://www.xquartz.org/)) and run it in the background (*Do NOT use the Terminal application within XQuartz to sign in to Discovery, use the default Terminal that comes with your Mac*)
 3. (macOS only) After you open XQuartz and before logging into Discovery, enter this command in the Terminal window
