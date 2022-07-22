@@ -132,33 +132,101 @@ SEPARATED FOLDERS
 The method of obtaining HOOMD-blue varies depending on which version you are trying to install.
 
 ### hoomd3.1-basic
+To install an older version of HOOMD-blue you need to use the release tarball for that version.
+
+Move to your `hoomd3.1-basic` directory and download the HOOMD-blue v.3.1.0 tarball
+```bash
+curl -Lo hoomd-v3.1.0.tar.gz https://github.com/glotzerlab/hoomd-blue/releases/download/v3.1.0/hoomd-v3.1.0.tar.gz
+```
+Extract the files from the tarball (the "v" flag displays all the files being extracted)
+```bash
+tar -xvf hoomd-v3.1.0.tar.gz
+```
+You can then delete the tarball if you want
+```bash
+rm hoomd-v3.1.0.tar.gz
+```
 
 ### hoomd3.1-mod
+Our modifications for HOOMD-blue v.3.1.0 can be installed from the Github repository [hoomd3.1-mod](https://github.com/procf/hoomd3.1-mod) 
 
-Move to your hoomd3.1-mod directory
-```bash
-cd hoomd3.1-mod
-```
-And clone our modifications from our Github repository
+Move to your `hoomd3.1-mod` directory and clone our modifications from the Github repository
 ```bash
 git clone git@github.com:procf/hoomd3.1-mod.git
 ```
+**NOTE**: This filepath is a bit clunky (../hoomd3.1-mod/hoomd3.1-mod/), but it is the best way to keep your software installation and cloned git repo separate.
+<br>
 
 ### the latest HOOMD-blue version
 
-Clone the latest version of HOOMD-blue from their Github repository. Instructions in the [HOOMD-blue docs](https://hoomd-blue.readthedocs.io/en/latest/building.html#obtain-the-source)
+To install the latest version of HOOMD-blue you can clone it directly from their Github repository. Instructions for this are in the [HOOMD-blue docs](https://hoomd-blue.readthedocs.io/en/latest/building.html#obtain-the-source)
 <br>
 <br>
 ## Creating a Python Virtual Environment
+Before we install HOOMD-blue we need to create a virtual Python environment to work in. 
+
+Virtual environments give you more control over which version of Python you are using (e.g. Python 3 vs Python 2) and let you create multiple different "development environments" with different packages installed (e.g. NumPy, SciPy, etc.). There are many ways to set up virtual Python environments (pyenv, venv, virtualenvwrapper, etc.), but HOOMD-blue recommends using venv. 
+
 ### hoomd3.1-basic
 
+In your `hoomd3.1-basic` directory, create a new Python 3 virual environment called `hoomd-venv` with
+```bash
+python3 -m venv hoomd-venv
+```
+To use your virtual environment, source into it with
+```bash
+source hoomd-venv/bin/activate
+```
+The name of your virtual environment (hoomd-venv) will now appear in the command prompt
+```bash
+% source hoomd-venv/bin/activate
+(hoomd-venv) % 
+```
+You can double check that you are now accessing the correct Python environment with the `which python` command
+```bash
+(hoomd-venv) % which python
+/Users/your_username/repositories/hoomd3.1-basic/hoomd-venv/bin/python
+```
+
 ### hoomd3.1-mod
+
+In your `hoomd3.1-mod` directory, create a new Python 3 virual environment called `hoomdmod-venv` with
+```bash
+python3 -m venv hoomdmod-venv
+```
+To use your virtual environment, source into it with
+```bash
+source hoomdmod-venv/bin/activate
+```
+The name of your virtual environment (hoomdmod-venv) will now appear in the command prompt
+```bash
+% source hoomdmod-venv/bin/activate
+(hoomdmod-venv) % 
+```
+You can double check that you are now accessing the correct Python environment with the `which python` command
+```bash
+(hoomdmod-venv) % which python
+/Users/your_username/repositories/hoomd3.1-mod/hoomdmod-venv/bin/python
+```
+
 <br>
 <br>
 ## Installing HOOMD-blue
 ### hoomd3.1-basic
+python3 hoomd-blue/install-prereq-headers.py
 
+# compile and install hoomd-blue 
+cmake -B build/hoomd -S hoomd-blue -DENABLE_MPI=on -DBUILD_HPMC=off -DBUILD_METAL=off -DBUILD_TESTING=off
+cmake --build build/hoomd
+cmake --install build/hoomd
+
+# install additional required py packages
+pip install --upgrade pip
+pip3 install numpy
+pip3 install gsd
+pip3 install matplotlib
 ### hoomd3.1-mod
+python3 hoomd3.1-mod/hoomd-blue/install-prereq-headers.py
 <br>
 <br>
 ## Next Steps
