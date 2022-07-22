@@ -17,7 +17,6 @@ The standard implementation of HOOMD-blue was adapted for our colloids simulatio
 4. [Getting HOOMD-blue](/01-HOOMDblue-Install-Guide.md#getting-hoomd-blue)
 5. [Creating a Python Virtual Environment](/01-HOOMDblue-Install-Guide.md#creating-a-python-virtual-environment)
 6. [Installing HOOMD-blue](/01-HOOMDblue-Install-Guide.md#installing-hoomd-blue)
-7. [Organizing Your Simulations](/01-HOOMDblue-Install-Guide.md#organizing-your-simulations)
 8. [Next Steps](/01-HOOMDblue-Install-Guide.md#next-steps)
 <br>
 
@@ -208,27 +207,73 @@ You can double check that you are now accessing the correct Python environment w
 (hoomdmod-venv) % which python
 /Users/your_username/repositories/hoomd3.1-mod/hoomdmod-venv/bin/python
 ```
+<br>
 
-<br>
-<br>
 ## Installing HOOMD-blue
+
 ### hoomd3.1-basic
-python3 hoomd-blue/install-prereq-headers.py
+Make sure you are in the correct vitual environemnt
+```bash
+(hoomd-venv) %
+```
 
-# compile and install hoomd-blue 
-cmake -B build/hoomd -S hoomd-blue -DENABLE_MPI=on -DBUILD_HPMC=off -DBUILD_METAL=off -DBUILD_TESTING=off
+Install the remaining prerequisites (pybind11, eigen, cereal)
+```bash 
+python3 hoomd-v3.1.0/install-prereq-headers.py
+```
+Configure HOOMD-blue with cmake
+```bash
+cmake -B build/hoomd -S hoomd-v3.1.0 -DENABLE_MPI=on -DBUILD_HPMC=off -DBUILD_METAL=off -DBUILD_TESTING=off
+```
+Compile
+```bash
 cmake --build build/hoomd
+```
+And install
+```bash
 cmake --install build/hoomd
+```
 
-# install additional required py packages
+Upgrade pip and install required/useful Python packages
+```bash
 pip install --upgrade pip
 pip3 install numpy
 pip3 install gsd
 pip3 install matplotlib
+```
+
 ### hoomd3.1-mod
+Make sure you are in the correct vitual environemnt
+```bash
+(hoomdmod-venv) %
+```
+
+Install the remaining prerequisites (pybind11, eigen, cereal)
+```bash 
 python3 hoomd3.1-mod/hoomd-blue/install-prereq-headers.py
+```
+Configure HOOMD-blue with cmake
+```bash
+cmake -B build/hoomd -S hoomd3.1-mod/hoomd-blue -DENABLE_MPI=on -DBUILD_HPMC=off -DBUILD_METAL=off -DBUILD_TESTING=off
+```
+Compile
+```bash
+cmake --build build/hoomd
+```
+And install
+```bash
+cmake --install build/hoomd
+```
+
+Upgrade pip and install required/useful Python packages
+```bash
+pip install --upgrade pip
+pip3 install numpy
+pip3 install gsd
+pip3 install matplotlib
+```
 <br>
-<br>
+
 ## Next Steps
 
 You are now ready to use HOOMD-blue! See [Simulating waterDPD](/02-Simulating-waterDPD.md) for more information on running simulations and next steps.
