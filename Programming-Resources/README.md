@@ -75,6 +75,9 @@ Recorded lectures from MIT CSAIL's course on using the shell, VIM, Command Line,
 * [Learn Git Branching](https://learngitbranching.js.org/)<br>
 An interactive set of tutorials for learning Git.
 
+* [Pro Git Book](https://git-scm.com/book/en/v2)<br>
+Comprehensive free book for learning to use Git repositories.
+
 * [Reproducible research: Goals, Guidelines and Git](https://opr.princeton.edu/workshops/Downloads/2019May_RRandGitPratt.pdf)<br>
 Slides from a 2019 Princeton workshop with an overview of reproducible research best practices and a guide to setting up Git.
 
