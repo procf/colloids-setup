@@ -126,7 +126,7 @@ SEPARATED FOLDERS
 <br>
 ## Installing hoomd3.1-basic
 
-### Getting HOOMD-blue
+### Getting the basic HOOMD-blue v3.1.0
 The method of obtaining HOOMD-blue varies depending on which version you are trying to install.
 
 To install HOOMD-blue 3.1.0 (an older version of HOOMD-blue) you need to use the release tarball for that version.
@@ -168,7 +168,7 @@ You can double check that you are now accessing the correct Python environment w
 /Users/your_username/repositories/hoomd3.1-basic/hoomd-venv/bin/python
 ```
 
-### Installing HOOMD-blue
+### Installing the basic HOOMD-blue v3.1.0
 Make sure you are in the `hoomd3.1-basic` directory and the correct vitual environemnt is activated
 ```bash
 (hoomd-venv) hoomd3.1-basic %
@@ -204,7 +204,7 @@ pip3 install matplotlib
 
 ## Installing hoomd3.1-mod
 
-### Getting HOOMD-blue
+### Getting our modified HOOMD-blue v3.1
 The method of obtaining HOOMD-blue varies depending on which version you are trying to install.
 
 Our modifications for HOOMD-blue v.3.1.0 can be installed from the Github repository [hoomd3.1-mod](https://github.com/procf/hoomd3.1-mod) 
@@ -240,7 +240,7 @@ You can double check that you are now accessing the correct Python environment w
 /Users/your_username/repositories/hoomd3.1-mod/hoomdmod-venv/bin/python
 ```
 
-### Installing HOOMD-blue
+### Installing our modified HOOMD-blue v3.1
 Make sure you are in the `hoomd3.1-mod` direcotry and the correct vitual environemnt is activated
 ```bash
 (hoomdmod-venv) hoomd3.1-mod %
