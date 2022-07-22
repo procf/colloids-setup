@@ -122,15 +122,15 @@ brew install cmake
 
 MacOS comes with Python 2 pre-installed, but you **DO NOT** want to use this Python. Not only do we want to use Python 3, rather than Python 2, but the pre-installed version of Python 2 is used by your computer internally, and so it's best not to mess with it. 
 
-One way to manage multiple versions of Python is by using virtual environments. If you plan on working with several different versions of Python across multiple projects on your laptop, then you may want to install [pyenv](https://github.com/pyenv/pyenv) and/or [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/index.html) for easier version and virtual environment management. This is not required to use HOOMD-blue. We will use virtual environemnts when working with HOOMD-blue, but you do not need pyenv or virtualenvwrapper for that, you will most often just use the built-in venv option. There is more information on venv in the [HOOMD-blue Installation Guide](../01-HOOMDblue-Install-Guide.md). If you are using pyenv, see the [pyenv website](https://github.com/pyenv/pyenv) for more details on how it works before installing it with Homebrew.
-
-Another popular option is to use the package and environment manager [conda](https://docs.conda.io/en/latest/) via Miniconda (the basic installation) or Anaconda (a larger installation with 7500+ packages included). Conda is also not required for using HOOMD-blue. If you are using conda, see the [conda website for installation steps](https://docs.conda.io/en/latest/).
-
-If you decide not to use pyenv or conda, then you can still install Python 3 with
+You can install Python 3 directly with a package manager like Homebrew
 ```bash
 brew install python
 ```
 This will also install pip, the Python package manager, which you can use to install NumPy and other required Python packages once we set up our virtual environments during the HOOMD-blue installation steps.
+
+We use virual environments when running out simulations. Virtual environments give you more control over which packages you are using (e.g. NumPy, SciPy, etc.), by letting you create different development environments with different sets of packages installed. There are many ways to set up virtual Python environments (pyenv, venv, virtualenvwrapper, etc.), but HOOMD-blue recommends using venv, which comes installed with Python.
+
+Another popular option is to use the package and environment manager [conda](https://docs.conda.io/en/latest/) via Miniconda (the basic installation) or Anaconda (a larger installation with 7500+ packages included). Conda is not required for using HOOMD-blue. If you are using conda, see the [conda website for installation steps](https://docs.conda.io/en/latest/).
 
 Whichever installation method you choose, you will be able to check your current version of Python with 
 ```bash
