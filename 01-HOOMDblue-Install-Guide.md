@@ -12,8 +12,8 @@ The standard implementation of HOOMD-blue was adapted for our colloids simulatio
 1. [HOOMD-blue Versions](/01-HOOMDblue-Install-Guide.md#hoomd-blue-versions)
 2. [Prerequisites](/01-HOOMDblue-Install-Guide.md#prerequisites)
 3. [Setting Up File Management](/01-HOOMDblue-Install-Guide.md#setting-up-file-management)
-4. [Installing hoomd3.1-basic](/01-HOOMDblue-Install-Guide.md#installing-hoomd3.1-basic)
-5. [Installing hoomd3.1-mod](/01-HOOMDblue-Install-Guide.md#installing-hoomd3.1-mod)
+4. [Installing hoomd3.1-basic](/01-HOOMDblue-Install-Guide.md#installing-hoomd31-basic)
+5. [Installing hoomd3.1-mod](/01-HOOMDblue-Install-Guide.md#installing-hoomd31-mod)
 6. [Installing the latest version](/01-HOOMDblue-Install-Guide.md#installing-the-latest-version)
 8. [Next Steps](/01-HOOMDblue-Install-Guide.md#next-steps)
 <br>
@@ -278,7 +278,7 @@ pip3 install matplotlib
 
 To install the latest version of HOOMD-blue you can clone it directly from their Github repository. The installation steps after that are essentially the same, but with slightly different file paths.
 
-Instructions for this are in the [HOOMD-blue docs](https://hoomd-blue.readthedocs.io/en/latest/building.html#obtain-the-source)
+Instructions for this are in the [HOOMD-blue docs](https://hoomd-blue.readthedocs.io/en/latest/building.html)
 <br>
 <br>
 ## Next Steps
