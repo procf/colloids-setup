@@ -125,15 +125,42 @@ SEPARATED FOLDERS
 	- *old-projects*
 
 **You can organize your files ANY way you like, just make sure you have some way of keeping track of what you're doing so you can find results later! Your future self will thank you!**
+<br>
+<br>
+## Getting HOOMD-blue
 
+The method of obtaining HOOMD-blue varies depending on which version you are trying to install.
+
+### hoomd3.1-basic
+
+### hoomd3.1-mod
+
+Move to your hoomd3.1-mod directory
+```bash
+cd hoomd3.1-mod
+```
+And clone our modifications from our Github repository
+```bash
+git clone git@github.com:procf/hoomd3.1-mod.git
+```
+
+### the latest HOOMD-blue version
+
+Clone the latest version of HOOMD-blue from their Github repository. Instructions in the [HOOMD-blue docs](https://hoomd-blue.readthedocs.io/en/latest/building.html#obtain-the-source)
+<br>
+<br>
 ## Creating a Python Virtual Environment
+### hoomd3.1-basic
 
-## Acquiring HOOMD-blue
-
+### hoomd3.1-mod
+<br>
+<br>
 ## Installing HOOMD-blue
+### hoomd3.1-basic
 
-## Organizing Your Simulations
-
+### hoomd3.1-mod
+<br>
+<br>
 ## Next Steps
 
 You are now ready to use HOOMD-blue! See [Simulating waterDPD](/02-Simulating-waterDPD.md) for more information on running simulations and next steps.
