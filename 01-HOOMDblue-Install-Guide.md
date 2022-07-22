@@ -212,15 +212,17 @@ You can double check that you are now accessing the correct Python environment w
 ## Installing HOOMD-blue
 
 ### hoomd3.1-basic
-Make sure you are in the correct vitual environemnt
+Make sure you are in the `hoomd3.1-basic` directory and the correct vitual environemnt
 ```bash
-(hoomd-venv) %
+(hoomd-venv) hoomd3.1-basic %
 ```
 
 Install the remaining prerequisites (pybind11, eigen, cereal)
 ```bash 
 python3 hoomd-v3.1.0/install-prereq-headers.py
 ```
+(enter "y" to proceed when prompted)
+
 Configure HOOMD-blue with cmake
 ```bash
 cmake -B build/hoomd -S hoomd-v3.1.0 -DENABLE_MPI=on -DBUILD_HPMC=off -DBUILD_METAL=off -DBUILD_TESTING=off
@@ -243,15 +245,17 @@ pip3 install matplotlib
 ```
 
 ### hoomd3.1-mod
-Make sure you are in the correct vitual environemnt
+Make sure you are in the `hoomd3.1-mod` direcotry and the correct vitual environemnt
 ```bash
-(hoomdmod-venv) %
+(hoomdmod-venv) hoomd3.1-mod %
 ```
 
 Install the remaining prerequisites (pybind11, eigen, cereal)
 ```bash 
 python3 hoomd3.1-mod/hoomd-blue/install-prereq-headers.py
 ```
+(enter "y" to proceed when prompted)
+
 Configure HOOMD-blue with cmake
 ```bash
 cmake -B build/hoomd -S hoomd3.1-mod/hoomd-blue -DENABLE_MPI=on -DBUILD_HPMC=off -DBUILD_METAL=off -DBUILD_TESTING=off
