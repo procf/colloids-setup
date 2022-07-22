@@ -241,20 +241,20 @@ You can double check that you are now accessing the correct Python environment w
 ```
 
 ### Installing our modified HOOMD-blue v3.1
-Make sure you are in the `hoomd3.1-mod` direcotry and the correct vitual environemnt is activated
+Make sure you are in the `hoomd3.1-mod` directory and the correct vitual environemnt is activated
 ```bash
 (hoomdmod-venv) hoomd3.1-mod %
 ```
 
 Install the remaining prerequisites (pybind11, eigen, cereal)
 ```bash 
-python3 hoomd3.1-mod/hoomd-blue/install-prereq-headers.py
+python3 hoomd3.1-mod/hoomd-v3.1.0/install-prereq-headers.py
 ```
 (enter "y" to proceed when prompted)
 
 Configure HOOMD-blue with cmake
 ```bash
-cmake -B build/hoomd -S hoomd3.1-mod/hoomd-blue -DENABLE_MPI=on -DBUILD_HPMC=off -DBUILD_METAL=off -DBUILD_TESTING=off
+cmake -B build/hoomd -S hoomd3.1-mod/hoomd-v3.1.0 -DENABLE_MPI=on -DBUILD_HPMC=off -DBUILD_METAL=off -DBUILD_TESTING=off
 ```
 Compile
 ```bash
