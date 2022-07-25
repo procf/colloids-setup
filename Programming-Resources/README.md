@@ -110,7 +110,7 @@ An example template for reproducible science projects (uses Conda)
 
 * [Formatting strings to automatically call variables](https://realpython.com/lessons/formatting/)
 
-* [Runnign Modules with __name__ = __main__](https://stackoverflow.com/questions/419163/what-does-if-name-main-do)
+* [Runnign Modules with \__name__ = \__main__](https://stackoverflow.com/questions/419163/what-does-if-name-main-do)
 
 <br>
 
