@@ -166,6 +166,8 @@ An example template for reproducible science projects (uses Conda)
 	* [f2py and alternatives](http://pythonchb.github.io/PythonTopics/interfacing_with_c/fortran_python.html)
 	* [f2py has limited KIND parameters](https://numpy.org/devdocs/f2py/advanced.html#dealing-with-kind-specifiers)
 	* [example using Python/C++/Fortran together](https://canvas.kth.se/courses/24933/pages/tutorial-cross-language-development-and-python-+-x)  
+
+* [Input/Output Formatting](https://annefou.github.io/Fortran/files/files.html)
 <br>
 
 ## Parallel Computing
