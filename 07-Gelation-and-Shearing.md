@@ -39,21 +39,21 @@ Accessing these changes in a simulation requires additional parameters in our si
 <br>
 ## Simulation Steps
 
-Initializing a Simulation
+**1 - Initializing a Simulation**
 * Set the basic parameters (size, number of particles, etc.) and create a single frame of the simulation with particles randomly positioned throughout the sapce. Particles will overlap at this stage. 
 * This step **must** be done serially (only use 1 node and 1 core).
 
-Bringing the Simulation to Thermal Equilibrium
+**2 - Bringing the Simulation to Thermal Equilibrium**
 * Using the initialized system, we will resolve overlaps by running the simulation with contact force but **zero** attraction between colloids and **zero** shear rate. These simulations are run until the particles have reached thermal equilibrium (i.e. the measured temperature of the system (kT) equals the value we chose, usually kT = 0.1)
 * *Before moving to the next step*, visualize the simulation in VMD and use the analysis module to make sure the temperature (kT) has stabilized (at least within ~10% of the set value)
 * For small simulations (e.g. L=30) you should use a small number of cores (e.g. 1 node and 8 cores), otherwise the simulation is divided into sections that are too small. For larger simulations (e.g. L=60) you can easily go up to at 27 cores per node.
 
-Creating a Gel
+**3 - Creating a Gel**
 * Using the equilibrium state as our initial state, we run the simulation with all the interparticle forces added (and **zero** shear rate) until a stable gel is formed (typically around 500 diffusion times)
 * *Before moving to the next step*, visualize the simulation in VMD and use the analysis module to make sure the temperature (kT) has remained stable and the average coordination number (Z) has reached a fairly stable maximum (usually Z= 6 a single type of colloidal particle).
 * For small simulations (e.g. L=30) you should use a small number of cores (e.g. 1 node and 8 cores), otherwise the simulation is divided into sections that are too small. For larger simulations (e.g. L=60) you can easily go up to at 27 cores per node.
 
-Shearing a Gel
+**4 - Shearing a Gel**
 * Using the gelation state as our initial state, we apply a shear rate and run the simulation for a number of times equivalent to the desired number of strains on the system.
 * *After shearing*, visualize the simulation in VMD and use the analysis module to find averages for different layers/bins/slabs of the system and use those averages to check the stress-strain curve and the velocity profile. You may also want to check the average coordination number (Z)
 
@@ -70,7 +70,9 @@ This covers the basic outline of colloidal gel simulations! The rest is up to yo
 
 *Background Reading:*
 
-If you haven't already, you should review the following papers for more background on DPD simulations of colloidal gel rheology
+If you haven't already, you should review the [Background Reading](/Background-Reading) documents summarizing DPD, our modifications to DPD, the Morse Potential, and how we apply shear. 
+
+You should also read the following papers for more background on DPD simulations of colloidal gel rheology
 * Background on DPD
 	* "[Microstructure and rheology of soft to rigid shear-thickening colloidal suspensions]" (2015) 
 	* "[Viscosity measurement techniques in Dissipative Particle Dynamics]" (2015)
