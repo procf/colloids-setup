@@ -205,14 +205,21 @@ This should help demonstrate how important it will be to find the right balance 
 <br>
 ## Next Steps
 
-*Background Reading:*
-* As recommended previously (after running `waterDPD.py` for the first time), you can learn more about the DPD model we are using (with discussion about adding shearing to the simulation) in "[Viscosity measurement techniques in Dissipative Particle Dynamics](https://www.sciencedirect.com/science/article/abs/pii/S0010465515002076)" (2015)
-
 *Learning R:*
 * If you would like to learn more about using R, check out the LinkedIn Learning courses and other resources listed in the [Programming Resources](/Programming-Resources#r)
 
-*Preparing for Shearing:*
-* As described in the paper above, we use the Lees-Edwards boundary condition. Implementing this boundary condition with full particle tracking in HOOMD-blue required some modification of HOOMD-blue's standard shearing process. Before running more complex simulations, see the guide to [Modifying HOOMD-blue](/06-Modifying-HOOMDblue.md) for next steps.
+
+
+You should now be familiar with all the basic steps required for our research!
+* [installed HOOMD-blue](/01-HOOMDblue-Install-Guide.md)
+* learned the [basics of DPD](/Background-Reading/1-DPD-8pg.pdf)
+* ran a [basic DPD simulation of water](/02-Simulating-waterDPD.md)
+* [installed](/03-VMD-Install-Guide.md) and [worked with](/04-Using-VMD.md) VMD to visualize your simulation
+* and ran basic analysis checks on the simulation to verify it ran correctly
+
+The next step is to actually put this all to work with some colloids:
+* If you haven't already, [install our modified version of HOOMD-blue](/01-HOOMDblue-Install-Guide.md#installing-hoomd31-mod) so you can run colloid simulation
+* Read the [Gelation and Shearing Guide](/06-Gelation-and-Shearing.md) for guidance on using our mods to simulate colloids
 
 
  
