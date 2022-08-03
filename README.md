@@ -26,7 +26,7 @@ These guides are numbered to follow the steps for getting set up with HOOMD-blue
 
 1. The [HOOMD-blue Installation and Setup Guide](/01-HOOMDblue-Install-Guide.md)
 
-2. An introduction to running a DPD simulation with HOOMD-blue: [Simulating waterDPD](/02-Simulating-waterDPD.md) (*to be updated for v3.0+*)
+2. An introduction to running a basic DPD simulation with HOOMD-blue: [Simulating waterDPD](/02-Simulating-waterDPD.md) (*to be updated for v3.0+*)
 
 3. [The VMD Installation Guide](/03-VMD-Install-Guide.md)
 
@@ -34,7 +34,7 @@ These guides are numbered to follow the steps for getting set up with HOOMD-blue
 
 5. The [Analysis Guide](/05-Analysis-Guide.md) for quantitatively checking your results. 
 
-6. An overview of how to simulate [Gelation and Shearing](/06-Gelation-and-Shearing.md) (*to be updated for v3.0+*)
+6. An overview of simulating colloids: [Gelation and Shearing](/06-Gelation-and-Shearing.md)
 
 7. [The Guide to Accessing "Discovery"](/07-Accessing-Discovery.md) (Northeastern's HPC cluster)
 
