@@ -169,7 +169,7 @@ You can double check that you are now accessing the correct Python environment w
 ```
 
 ### Installing the basic HOOMD-blue v3.1.0
-Make sure you are in the `hoomd3.1-basic` directory and the correct vitual environemnt is activated
+**Make sure you are in the `hoomd3.1-basic` directory and the correct vitual environemnt is activated**
 ```bash
 (hoomd-venv) hoomd3.1-basic %
 ```
@@ -241,7 +241,7 @@ You can double check that you are now accessing the correct Python environment w
 ```
 
 ### Installing our modified HOOMD-blue v3.1
-Make sure you are in the `hoomd3.1-mod` directory and the correct vitual environemnt is activated
+**Make sure you are in the `hoomd3.1-mod` directory and the correct vitual environemnt is activated**
 ```bash
 (hoomdmod-venv) hoomd3.1-mod %
 ```
