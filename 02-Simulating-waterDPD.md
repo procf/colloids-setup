@@ -36,15 +36,21 @@ git clone git@github.com:procf/colloids-setup.git
 ```
 Copy the waterDPD scripts from the cloned copy of this repository to make your own waterDPD project folder
 ```bash
-cp -r ~/repositories/colloids-setup/Scripts/waterDPD .
+cp -r ~/repositories/colloids-setup/Scripts/waterDPD-sims .
 ```
 <br>
 
 ## About waterDPD
 
-Inside the waterDPD folder is the script waterDPD.py and an analysis folder (we'll come to the analysis folder in the next step)
+Inside the waterDPD-sims folder are 3 subfolders
 ```bash
 % ls
+particle-arch shear-waterDPD waterDPD
+```
+
+Start with the waterDPD folder, which contains the waterDPD.py simulation script and an analysis folder
+```bash
+ls waterDPD
 analysis waterDPD.py
 ```
 
@@ -53,10 +59,10 @@ To examine the file with Vim, in the Terminal use the command
 ```bash
 vim waterDPD.py
 ```
-*Note: If you are viewing or editing* `waterDPD.py` *in an IDE you should already have line numbering enabled by default. If you are using Vim you will need to turn on line numbers with the command* `:set number` *or* `:set nu`<br>
+*Note: In Vim, if you do not already have line numbering enabled you can turn it on with the command* `:set number` *or* `:set nu`<br>
 (for more information on Vim basics, see the [macOS Setup guide](/System-Setup/02-macOS-Setup.md#text-editors) and the resources in [Foundational CS Skills](/Programming-Resources#foundational-cs-skills))
 
-You will see that the `waterDPD.py` Python script is divided into 4 sections:
+You will see that the `waterDPD.py` Python script is divided into 3 sections:
 1. Module Library: importing a list of packages
 2. Simulation Inputs: defining a set of input parameters
 3. Simulation: our DPD simulation, divided into
@@ -89,13 +95,10 @@ Equilibrium.gsd init.gsd waterDPD.py
 ```
 
 If you open one of these GSD files with vim, it will look like binary gibberish.
+
+**NOTE: If you rerun waterDPD.py in the same folder, it will overwrite the output files**
 <br>
 <br>
-## Modifying waterDPD.py
-
-
-
-
 ## Next Steps
 
 *Background Reading:*

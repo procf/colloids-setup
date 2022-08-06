@@ -24,6 +24,19 @@ Our R workflow was developed by Mohammad (Nabi) Nabizadeh. This guide was compil
 9. [Next Steps](/05-Log-Analysis-with-R.md#next-steps/)
 <br>
 
+
+
+
+## Modifying waterDPD.py
+
+In addition to the simulation parameters we typically set, you can also access most other parameters of the partiles in the simulation when running a simulation. 
+
+For example, after randomly distributing the particles in your simulation box for init.gsd, you can move them to specific locations (or change their velocity, etc.) before running the simulation.
+
+As an extreme example, take a look at the particle-arch folder.
+
+
+
 ## Why Choose R
 
 To analyze the `.log` file genearted by a HOOMD-blue colloids simulation we will primarily be plotting the numbers stored in the file. This can easily be done in R, Python, MATLAB, or other software and programming languages, but the quality of plotting options in R, and it's versatility and ease of use for statistical analysis, makes it by far the best choice (even if the syntax can take a little while to get used to).
