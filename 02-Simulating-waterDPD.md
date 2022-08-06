@@ -59,10 +59,17 @@ vim waterDPD.py
 You will see that the `waterDPD.py` Python script is divided into 4 sections:
 1. Module Library: importing a list of packages
 2. Simulation Inputs: defining a set of input parameters
-3. Simulation: divided into 1. initializing a system, and 2. defining interactions in HOOMD-blue and running the simulation (including outputs)
+3. Simulation: our DPD simulation, divided into
+	1. initializing a new system
+	2. running a simulation with that system:
+		* defining particle interactions
+		* choosing how to integrate through time
+		* setting up outputs 
+		* and running the simulation
 
 Our only output file is the GSD file, the native file format for HOOMD-blue. It stores the trajectories of all the particles in the system as a binary file with efficient random access to frames. This lets us use the GSD file with visualization tools (like VMD), but we will later need to extract data from the with the GSD Python API for qunatitative analysis of the system.
-
+<br>
+<br>
 ## Running a Simulation
 
 To run a simulation, source into your basic installation of HOOMD-blue:
@@ -82,11 +89,13 @@ Equilibrium.gsd init.gsd waterDPD.py
 ```
 
 If you open one of these GSD files with vim, it will look like binary gibberish.
-
+<br>
+<br>
 ## Modifying waterDPD.py
 
 
-
+<br>
+<br>
 ## Next Steps
 
 *Background Reading:*
