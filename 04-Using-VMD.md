@@ -38,7 +38,7 @@ You should keep the Terminal window open, but you do not need to interact with i
 <br>
 ## Opening a GSD file with VMD
 
-As described at the end of the [VMD Installation Guide](/03-VMD-Install-Guide.md), after installing the GSD Plugin you can open the GSD output of a HOOMD-blue simulation (such as the `Equilibrium.gsd` file produced by `waterDPD.py`) with VMD.
+As described at the end of the [VMD Installation Guide](/03-VMD-Install-Guide.md), after installing the GSD Plugin you can open the GSD output of a HOOMD-blue simulation (such as the Equilibrium.gsd file produced by waterDPD.py) with VMD.
 
 Open VMD by selecting the icon in Launchpad or the VMD application in the Applications/VMD folder.
 
@@ -46,7 +46,7 @@ Go to **VMD Main**
 * Select the "File" menu
 * Choose "New Molecule"
 * In the **Molecule File Browser** window, click the "Browse..." button next to "Filename:" and navigate to the location of your GSD file<br>
-(for the waterDPD example that should be `repositories/HOOMDblue/sims/water/Equilibrium.gsd`)
+(e.g. repositories/waterDPD-sims/waterDPD/Equilibrium.gsd)
 * The "Determine file type" setting should autofill with "HOOMD-blue GSD File"
 * Click the "Load" button
 
