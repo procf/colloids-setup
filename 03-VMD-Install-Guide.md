@@ -101,7 +101,7 @@ The Contents folder contains a directory called "vmd" where we will configure th
 Open a new Terminal window and move to the /Contents/vmd directory
 *Note: There are at least two Applications folders on your computer, one in your home directory and one in your root directory. You do NOT want the Applications folder in your home directory (*`~/Applications/`*), you want the Applications folder in your root directory (*`/Applications/`, *where most applications are installed).*
 ```bash
-% cd /Applications/VMD/Contents/vmd
+cd /Applications/VMD/Contents/vmd
 ```
 Copy the downloaded `gsd-vmd-main` folder to this directory with
 ```bash
@@ -154,7 +154,7 @@ Before you delete the duplicate Contents folder, the gsd-vmd-main folder in your
 <br>
 ## Opening GSD Files with VMD
 
-If you have not already done so, run the `waterDPD.py` example simulation, or another simulation that produces a GSD file (see [Simulating waterDPD](/02-Simulating-waterDPD.md) for details).
+If you have not already done so, run the waterDPD.py example simulation (see [Simulating waterDPD](/02-Simulating-waterDPD.md) for details).
 
 Open VMD by selecting the icon in Launchpad or the VMD application in the Applications/VMD folder.
 
@@ -162,7 +162,7 @@ Go to VMD Main
 * Choose "File"
 * Choose "New Molecule"
 * Click "Browse" next to "Filename" and navigate to the location of your GSD file<br>
-(for the waterDPD example that should be `repositories/HOOMDblue/sims/water/Equilibrium.gsd`)
+(e.g. repositories/waterDPD-sims/waterDPD/Equilibrium.gsd)
 * The "Determine file type" setting should autofill with "HOOMD-blue GSD File"
 * Click "Load"
 
