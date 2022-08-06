@@ -2,7 +2,7 @@
 
 This is a guide for running a simple DPD simulation of water with HOOMD-blue in preparation for colloids research in the PRO-CF Colloids Team.
 
-This guide is optimized for MacOS and usese the standard installation of HOOMD-blue. See the [HOOMD-blue Installation Guide](/01-HOOMDblue-Install-Guide.md) for prerequisites.
+This guide is optimized for MacOS and useses the **basic installation of HOOMD-blue** (See the [HOOMD-blue Installation Guide](/01-HOOMDblue-Install-Guide.md) for prerequisites).
 
 [Last Update: August 2022]
 
@@ -94,8 +94,8 @@ If you open one of these GSD files with vim, it will look like binary gibberish.
 ## Modifying waterDPD.py
 
 
-<br>
-<br>
+
+
 ## Next Steps
 
 *Background Reading:*
