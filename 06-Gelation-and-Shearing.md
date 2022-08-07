@@ -3,11 +3,14 @@
 This is an overview of the PRO-CF Colloids Team approach to colloid gelation and shearing simulations with HOOMD-blue.
 
 Before running gelation or shearing simulations you should have already familiarized yourself with how to run and analyze basic simulations:
-* [installed the basic version of the HOOMD-blue software](/01-HOOMDblue-Install-Guide.md)
-* read the [guide to standard DPD](/Background-Reading/1-DPD-8pg.pdf) and ran a [DPD simulation of water](/02-Simulating-waterDPD.md)
-* [installed](/03-VMD-Install-Guide.md) and [worked with](/04-Using-VMD.md) VMD to visualize your simulation results
-* [analyzed the results](/05-Log-Analysis-with-R.md) to verify that it ran correctly
-* and [installed our in-house modified version of HOOMD-blue](/01-HOOMDblue-Install-Guide.md##installing-hoomd31-mod) for running colloid simulations
+* [installed HOOMD-blue](/01-HOOMDblue-Install-Guide.md)
+* learned the [basics of DPD](/Background-Reading/1-DPD-8pg.pdf)
+* ran a [basic DPD simulation of water](/02-Simulating-waterDPD.md)
+* [installed](/03-VMD-Install-Guide.md) and [worked with](/04-Using-VMD.md) VMD to visualize your simulation
+* ran basic analysis checks on the simulation to verify it ran correctly
+* installed [our modified version of HOOMD-blue](/01-HOOMDblue-Install-Guide.md#installing-hoomd31-mod) 
+* learned the [basics of how we apply shear flow](/Background-Reading/4-Shearing-4pg.pdf)
+* and run a simple shearing simulation of water
 
 Once you have completed all those steps you should be familiar with the basics of DPD simulations and how to run them. This gives you the necessary background to understand our colloid simulations and run them yourself!
 
