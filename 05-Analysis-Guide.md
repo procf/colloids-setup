@@ -8,7 +8,7 @@ This guide is optimized for MacOS. See [Simulating waterDPD](/02-Simulating-wate
 
 [Last Update: August 2022]
 
-Different parts of our analysis workflow were develoepd by Mohammad (Nabi) Nabizadeh and Dr. Deepak Mangal. They were streamlined for this guide by Rob Campbell.
+Different parts of our analysis workflow were developed by Mohammad (Nabi) Nabizadeh and Dr. Deepak Mangal. They were streamlined for this guide by Rob Campbell.
 
 ## Contents
 1. [Why Choose R](/05-Log-Analysis-with-R.md#why-choose-r)
@@ -23,7 +23,60 @@ Different parts of our analysis workflow were develoepd by Mohammad (Nabi) Nabiz
 <br>
 
 
+## Types of Analysis 
 
+The primary way to collect data in a HOOMD-blue simulation is to save data to the GSD file. 
+
+Generally the best practice is to a run a simulation and then, after the simulation is completed, extract specific data from the GSD file as needed. This is the method we will discuss here. It is also possible to output data to a table as you run the simulation, and to save that table to a file (as explained in the [HOOMD-blue documentation](https://hoomd-blue.readthedocs.io/en/latest/tutorial/02-Logging/04-Writing-Formatted-Output.html)).
+
+We usually work with GSD files in one of three ways:
+1. For basic analyses (such as confirming that a simulation has run correctly), we usually use a python script to extract data from the GSD file and then plot it with [Matplotlib](https://matplotlib.org/).
+2. For more intensive analyses (such as calculating average contact number, mean squared displacement, pair correlation function, etc.), we usually use a Fortran module to efficiently calculate these values from the GSD data. The Fortran module is run from a Python script using f2py.
+3. For more plotting options and more efficient statistical analysis, members of our group have also developed a variety of analysis processes in the [R](https://www.r-project.org/) programming language.
+
+This tutorial focuse on basic analyses (type 1), and provides some advice on installing and learning R (type 3). Information about the Fortran module is included in the [Gelation and Shearing guide](/06-Gelation-and-Shearing.md).
+<br>
+<br>
+## Basic Analyses
+
+The basic analyses to check if a simulation has run correctly are to plot the change in system kinetic temperature (kT) over time, and the change in the negative of the xy-component of the pressure tensor (AKA the shear stress) over time.
+
+To do this we first extract these data from the GSD file using a Python script, and then we plot the data.
+
+Go to the waterDPD-sims folder and cd into the waterDPD/analysis folder.
+
+The extractdata-waterDPD.py script extract the temperature and xy-component of the pressure tensor from each frame of the Equilibrium.gsd file and saves it to a file called "gsd-properties.txt" (labeled with the DPD time the frame occured at).
+
+The plot-kT.py script uses the gsd-properties.txt data to plot temperature versus DPD time. This should show a large spike in temperature at the start of the simulation, which then stabilizes at the chosen kT value (in this case kT = 0.1).
+
+The plot-shearstress.py script uses the gsd-properties.txt data to plot shear stress versus DPD time. This should show a relatively constant average around zero (becuase no shear is being applied to the equilibrium simulation).
+
+
+
+
+
+
+
+
+
+
+
+
+## Extracting Data from GSD
+
+
+
+## Checking Thermal Equilibrium
+
+
+
+## Checking Gelation
+
+## Checking Shearing
+
+## Efficient Analysis in Fortran
+
+## Using R for Statistical Analysis
 
 ## Modifying waterDPD.py
 

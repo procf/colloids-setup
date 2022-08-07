@@ -19,7 +19,8 @@ These workflows were first developed by Mohammad (Nabi) Nabizadehi as part of hi
 ## Contents
 1. [Necessary Modifications for Colloid Simulations](/07-Gelation-and-Shearing.md#necessary-modifications-for-colloid-simulations) 
 2. [Simulation Steps](/07-Gelation-and-Shearing.md#simulation-steps)
-3. [Next Steps](/07-Gelation-and-Shearing.md#next-steps)
+3. [Analysis](/07-Gelation-and-Shearing.md#analysis)
+4. [Next Steps](/07-Gelation-and-Shearing.md#next-steps)
 <br>
 
 ## Necessary Modifications for Colloid Simulations 
@@ -60,6 +61,25 @@ Accessing these changes in a simulation requires additional parameters in our si
 Congratulations, you now have data!
 <br>
 <br>
+## Analysis
+
+The basic analyses to check if a simulation has run correctly are:
+1. for Initialization
+	* view the frame in VMD
+2. for Equilibrrium
+	* view the simulation in VMD: motion should spike as at the beginning and then slow down as particles come to equilibrium 
+	* Plot system kinetic temperature (kT) versus time; the temperature will spike up at the beginning but should eventually stabilize around the set kT value
+	* Plot the negative of the xy-component of the pressure tensor (the shear stress) versus time, which should stabilize around zero (there is NO shear in equilibrium).
+3. for Gelation
+	* view the simulation in VMD: particles should go from freely moving and disordered into a mostly stable space spanning network (with more than one chain)
+	* Plot the system kinetic temperature (kT) versus time: the temperatre should remain stable around the set kT value
+	* plot the negative of the xy-component of the pressure tensor (the shear stress) versus time, which should remain stable around zero (there is no shear in gelation)
+4. for Shearing
+	* view the simulation in VMD: the system should be deformed, and a gel's structure will probably be destroyed over time (depending on the shear rate)
+	* plot the system kinetic termperature (kT) versus time: the temperature should remain stable around the set kT value
+	* plot the negative of the xy-component of the pressure tensor (the shear stress) versus the number of strains, giving you a stress-strain curve
+	* plot the velocity profile 
+
 ## Next Steps
 
 This covers the basic outline of colloidal gel simulations! The rest is up to you and your research.
