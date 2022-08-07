@@ -1,5 +1,6 @@
 ## Scripts
 
-This folder contains example scripts for:
-1. running a DPD simulation of water: [waterDPD](/Scripts/waterDPD-sims)
-2. running monodisperse colloid simulations: colloids
+This folder contains example scripts for simulations in the PRO-CF Colloids Team.
+
+[waterDPD-sims](/Scripts/waterDPD-sims): example scripts for a DPD simulation of water
+
