@@ -13,8 +13,7 @@ This guide is optimized for MacOS and useses the **basic installation of HOOMD-b
 2. [Getting waterDPD Scripts](/02-Simulating-waterDPD.md#getting-waterdpd-scripts)
 3. [About waterDPD](/02-Simulating-waterDPD.md#about-waterdpd)
 4. [Running a Simulation](/02-Simulating-waterDPD.md#running-a-simulation)
-5. [Modifying waterDPD.py](/02-Simulating-waterDPD.md#modifying-waterdpdpy)
-6. [Next Steps](/02-Simulating-waterDPD.md#next-steps)
+5. [Next Steps](/02-Simulating-waterDPD.md#next-steps)
 
 <br>
 
