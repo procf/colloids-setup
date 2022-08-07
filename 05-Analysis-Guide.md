@@ -75,7 +75,7 @@ This method can also be used to change other particle parameters, such as giving
 
 Now that we've brought a simulation to equilibrium, we can apply a simple shear flow. 
 
-**If you haven't already, [install our modified version of HOOMD-blue](/01-HOOMDblue-Install-Guide.md#installing-hoomd31-mod).** And take a look at the [shearing guide](/Background-Reading/4-Shearing-4pg.pdf) in the Background Reading to understand how we apply shear to a simulation.
+**If you haven't already**, [install our modified version of HOOMD-blue](/01-HOOMDblue-Install-Guide.md#installing-hoomd31-mod) and take a look at the [shearing guide](/Background-Reading/4-Shearing-4pg.pdf) in the Background Reading to understand how we apply shear to a simulation.
 
 An example code for a shearing simulation is the shear-waterDPD.py script in the waterDPD-sims/shear-waterDPD folder. Be sure to run it using the modified version of HOOMD-blue (and *not* the basic version of HOOMD-blue).
 
