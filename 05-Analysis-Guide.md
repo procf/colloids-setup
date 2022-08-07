@@ -11,6 +11,12 @@ This guide is optimized for MacOS. See [Simulating waterDPD](/02-Simulating-wate
 Different parts of our analysis workflow were developed by Mohammad (Nabi) Nabizadeh and Dr. Deepak Mangal. They were streamlined for this guide by Rob Campbell.
 
 ## Contents
+1. [Types of Analysis](/05-Analysis-Guide.md#types-of-analysis)
+2. [Basic Analyses of waterDPD](/05-Analysis-Guide.md#basic-analyses-of-waterdpd)
+3. [Modyfing waterDPD and Analyzing the Changes](/05-Analysis-Guide.md#modyfing-waterdpd-and-analyzing-the-changes)
+4. [Shearing waterDPD](/05-Analysis-Guide.md#shearing-waterdpd)
+5. [(OPTIONAL) Installing R](/05-Analysis-Guide.md#)
+
 1. [Why Choose R](/05-Log-Analysis-with-R.md#why-choose-r)
 2. [Getting and Installing R, RStudio, and the Tidyverse](/05-Log-Analysis-with-R.md#getting-and-installing-r-rstudio-and-the-tidyverse)
 3. [The RStudio Console](/05-Log-Analysis-with-R.md#the-rstudio-console)
@@ -56,11 +62,36 @@ The plot-kT.py script uses the gsd-properties.txt data to plot temperature versu
 The plot-shearstress.py script uses the gsd-properties.txt data to plot shear stress versus DPD time. This should show a relatively constant average around zero (becuase no shear is being applied to the equilibrium simulation).
 <br>
 <br>
+## Modyfing waterDPD and Analyzing the Changes
+
+Now that we've successfully run a simple simulation, we can play around with it.
+
+### Change simulation parameters
+1. Try reruning the simulation for different lengths (change N_timesteps) and then see how the simulation visually and quantitatively changes.
+
+2. Try rerunning the simulation for different system temperatures (change kT) and see how the simulation visually and quantitatively changes.
+
+### Manipulate the particles:
+
+In addition to changing the simulation parameters we typically set, you can access the invidual particles in a simulation and change their parameters as well.
+
+For example, the particle-arch folder in waterDPD-sims contains a script where the position of particles in the center of the simulation are moved into a semi-circle, turning the initial configuration of the system into an arch shape. 
+
+If you look at the script you'll see that after randomly distributing the particles in the simulation box for init.gsd, we access the particle positions and move them into the arch shape.
+
+If you run the simulation and open it's Equilibrium.gsd file in VMD, you will be able to see what this looks like.
+
+This method can also be used to change other particle parameters, such as giving them an initial velocity.
+<br>
+<br>
+## Shearing waterDPD
 
 
 
 
 
+
+## (OPTIONAL) Installing R
 
 
 
