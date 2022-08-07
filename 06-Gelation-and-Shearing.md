@@ -66,23 +66,35 @@ Congratulations, you now have data!
 <br>
 ## Analysis
 
-The basic analyses to check if a simulation has run correctly are:
-1. for Initialization
+The basic analyses to check if a simulation has run correctly at each step are:
+1. Initialization
 	* view the frame in VMD
-2. for Equilibrrium
+2. Equilibrrium
 	* view the simulation in VMD: motion should spike as at the beginning and then slow down as particles come to equilibrium 
 	* Plot system kinetic temperature (kT) versus time; the temperature will spike up at the beginning but should eventually stabilize around the set kT value
 	* Plot the negative of the xy-component of the pressure tensor (the shear stress) versus time, which should stabilize around zero (there is NO shear in equilibrium).
-3. for Gelation
+3. Gelation
 	* view the simulation in VMD: particles should go from freely moving and disordered into a mostly stable space spanning network (with more than one chain)
 	* Plot the system kinetic temperature (kT) versus time: the temperatre should remain stable around the set kT value
 	* plot the negative of the xy-component of the pressure tensor (the shear stress) versus time, which should remain stable around zero (there is no shear in gelation)
-4. for Shearing
+4. Shearing
 	* view the simulation in VMD: the system should be deformed, and a gel's structure will probably be destroyed over time (depending on the shear rate)
 	* plot the system kinetic termperature (kT) versus time: the temperature should remain stable around the set kT value
 	* plot the negative of the xy-component of the pressure tensor (the shear stress) versus the number of strains, giving you a stress-strain curve
-	* plot the velocity profile 
+	* plot the solvent velocity profile (which uses the Fortran module) 
 
+Our Fortran module can be used to calculate the mean squared displacement, average coordination number, radial distribution function, pair correlation function, solvent velocity profile, and the corrected temperature and pressure (the colloid contributions separated from the solvent contribution).
+
+If you make any changes to these calculations you need to recompile the module using the command:
+```bash
+f2py -c module_analysis.f90 -m module
+```
+
+And then use the sim-analysis.py script to call those functions and run them for your GSD file. You can limit which analyses to run by going to the bottom of the sim-analysis.py script and commenting out the names of the analyses you do not need.
+
+These files are all avaialble in the Scripts folder.
+<br>
+<br>
 ## Next Steps
 
 This covers the basic outline of colloidal gel simulations! The rest is up to you and your research.
