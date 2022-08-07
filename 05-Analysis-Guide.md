@@ -15,8 +15,9 @@ Different parts of our analysis workflow were developed by Mohammad (Nabi) Nabiz
 2. [Basic Analyses of waterDPD](/05-Analysis-Guide.md#basic-analyses-of-waterdpd)
 3. [Modyfing waterDPD and Analyzing the Changes](/05-Analysis-Guide.md#modyfing-waterdpd-and-analyzing-the-changes)
 4. [Shearing waterDPD](/05-Analysis-Guide.md#shearing-waterdpd)
-5. [(OPTIONAL) Installing R](/05-Analysis-Guide.md#)
+5. [(OPTIONAL) Installing R](/05-Analysis-Guide.md#optional-installing-r)
 
+## Old Contents
 1. [Why Choose R](/05-Log-Analysis-with-R.md#why-choose-r)
 2. [Getting and Installing R, RStudio, and the Tidyverse](/05-Log-Analysis-with-R.md#getting-and-installing-r-rstudio-and-the-tidyverse)
 3. [The RStudio Console](/05-Log-Analysis-with-R.md#the-rstudio-console)
