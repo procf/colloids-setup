@@ -19,10 +19,10 @@ These workflows were first developed by Mohammad (Nabi) Nabizadehi as part of hi
 <br>
 
 ## Contents
-1. [Necessary Modifications for Colloid Simulations](/07-Gelation-and-Shearing.md#necessary-modifications-for-colloid-simulations) 
-2. [Simulation Steps](/07-Gelation-and-Shearing.md#simulation-steps)
-3. [Analysis](/07-Gelation-and-Shearing.md#analysis)
-4. [Next Steps](/07-Gelation-and-Shearing.md#next-steps)
+1. [Necessary Modifications for Colloid Simulations](/06-Gelation-and-Shearing.md#necessary-modifications-for-colloid-simulations) 
+2. [Simulation Steps](/06-Gelation-and-Shearing.md#simulation-steps)
+3. [Analysis](/06-Gelation-and-Shearing.md#analysis)
+4. [Next Steps](/06-Gelation-and-Shearing.md#next-steps)
 <br>
 
 ## Necessary Modifications for Colloid Simulations 
