@@ -7,7 +7,7 @@ Before running gelation or shearing simulations you should have already familiar
 * [learned the basics of DPD](/Background-Reading/1-DPD-8pg.pdf)
 * [ran a basic DPD simulation of water](/02-Simulating-waterDPD.md)
 * [installed](/03-VMD-Install-Guide.md) and [worked with](/04-Using-VMD.md) VMD to visualize your simulation
-* ran basic analysis checks on the simulation to verify it ran correctly
+* [ran basic analysis checks](/05-Analysis-Guide.md) on the simulation to verify it ran correctly
 * [installed our modified version of HOOMD-blue](/01-HOOMDblue-Install-Guide.md#installing-hoomd31-mod) 
 * [learned the basics of how we apply shear flow](/Background-Reading/4-Shearing-4pg.pdf)
 * and [run a simple shearing simulation of water](/05-Analysis-Guide.md#shearing-waterdpd)
