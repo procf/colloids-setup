@@ -91,7 +91,7 @@ f2py -c module_analysis.f90 -m module
 
 And then use the sim-analysis.py script to call those functions and run them for your GSD file. You can limit which analyses to run by going to the bottom of the sim-analysis.py script and commenting out the names of the analyses you do not need.
 
-These files are all avaialble in the Scripts folder.
+Example simulation scripts and analysis scripts are all availabl in the [hoomd-3.1mod repository](https://github.com/procf/hoomd3.1-mod)
 <br>
 <br>
 ## Next Steps
