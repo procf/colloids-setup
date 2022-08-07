@@ -199,4 +199,4 @@ For the best quality visualization of a colloidal gel, we recommend the followin
 
 ## Next Steps
 
-See the guide to [log analysis in R](/05-Log-Analysis-with-R.md) for an introduction to other ways to analyze a completed simulation. And the full guide to post-processing simulation data for other post-processing and visualization tips.
+See the [Analysis Guide](/05-Analysis-Guide.md) for an introduction to other ways to analyze a completed simulation.
