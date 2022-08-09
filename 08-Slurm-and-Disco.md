@@ -98,7 +98,7 @@ sbatch script-name
 
 An sbatch script is a bash file. Bash files that are *executable*, such as an sbatch script, typically are NOT given an extension as part of their name (i.e. they are called "script-name" NOT "script-name.bash").
 
-In a bash file, `#` marks a bash command and `##` marks a comment.
+In a bash file `#` marks a bash command and `##` marks a comment.
 
 Our bash files typically have 3 sections:
 
