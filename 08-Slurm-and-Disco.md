@@ -1,7 +1,5 @@
 # Running Simulations on Discovery
 
-***TO BE UPDATED***
-
 This is a guide to the basics of running DPD colloids simulations with HOOMD-blue using Discovery, Northeastern University's HPC cluster. 
 
 This guide is optimized for macOS. See the [Guide to Accessing Discovery](/08-Accessing-Discovery.md) for prerequisites. This guide also assumes that you are familiar with the other content in this repository and know how to run DPD simulations of colloids with HOOMD-blue.
@@ -12,19 +10,42 @@ This guide was compiled by Rob Campbell.
 <br>
 
 ## Contents
-1. [GitHub and Discovery](/08-Slurm-and-Disco.md#github-and-discovery)
-1. [Installing HOOMD-blue on Discovery](/08-Slurm-and-Disco.md#installing-hoomd-blue-on-discovery)
-2. [Scheduling a Job with Slurm](/08-Slurm-and-Disco.md#scheduling-a-job-with-slurm)
-3. [Monitoring a Running Job](/08-Slurm-and-Disco.md#monitoring-a-running-job)
+1. [Running Jobs on Discovery](/08-Slurm-and-Disco.md#running-jobs-on-discovery)
+2. [GitHub on Discovery](/08-Slurm-and-Disco.md#github-on-discovery)
+3. [Installing HOOMD-blue on Discovery](/08-Slurm-and-Disco.md#installing-hoomd-blue-on-discovery)
+4. [Writing sbatch Scripts](/08-Slurm-and-Disco.md#writing-sbatch-scripts)
+5. [Monitoring a Job and Job Stats](/08-Slurm-and-Disco.md#monitoring-a-job-and-job-stats)
 <br>
 
-## GitHub and Discovery
+## Running Jobs on Discovery
+
+When you sign into Discovery you are on the "login node" but you should **ALWAYS** run your jobs on a "compute node" using either srun (for interactive jobs) or sbatch (for scheduling jobs to run in the background).
+
+The "s" in srun and sbatch stands for the [Slurm Workload Manager](https://slurm.schedmd.com/documentation.html), which is what most HPC clusters use to manage all the different "jobs" users are running. More information about Slurm is available in the [Discovery documentation](https://rc-docs.northeastern.edu/en/latest/using-discovery/usingslurm.html) and in this repository's [Programming Resources](/Programming-Resources#slurm).
+
+Whether you are using srun or sbatch, you will only have access to the resources available on the partition that you run your job on. (e.g. a timelimit of <24hrs for the short partition vs. <5days for the long partition, certain CPU architectures are only available on certain partitions, etc.). Make sure that your job matches the [limits/requirements for the partition you are working on](https://rc-docs.northeastern.edu/en/latest/hardware/partitions.html) before running it.
+
+The [Discovery documentation has a full guide to srun](https://rc-docs.northeastern.edu/en/latest/using-discovery/srun.html) and the variety of flags that are available for customizing your session. The simplest way to use srun is to move to the first available compute node (with no restrictions on what type of node that is), and then use that node interactively as you normally would on your own computer. To do this, use the command:
+```bash
+srun --pty /bin/bash
+```
+OR, if you have X11 enabled for graphical interfaces, be sure to carry that over with
+```bash
+srun --pty --x11 /bin/bash
+```
+
+The [Discovery documentaion also has a full guide to sbatch](https://rc-docs.northeastern.edu/en/latest/using-discovery/sbatch.html). You can use sbatch to run a job in the background (on a *separate* compute node) from either the login node OR an srun session, but you will need to write a bash script with all of the commands you want to run.
+
+We will use sbatch scripts to install HOOMD-blue in this tutorial.
+<br>
+<br>
+## GitHub on Discovery
 
 In order to install your own version of HOOMD-blue on the Discovery cluster you will first need to set up command line git.
 
-Since Discovery runs Linux, you will need to use the Linux commands to link to GitHub:
+This is the same as setting up git on your computer, but since Discovery runs Linux, you will need to use the Linux commands to link to GitHub.
 
-Login to Discovery and make sure you are in your home directory (`~` AKA `/home/your_username`)
+First, login to Discovery and make sure you are in your home directory (`~` AKA `/home/your_username`)
 ```bash
 ssh your_username@login.discovery.neu.edu
 ```
@@ -49,62 +70,66 @@ and set your email (use an email address that you have verified on Github)
 
 Follow the Github's step-by-step instructions on setting up SSH Authentication on Linux, starting with [Checking for existing SSH keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys).
 
-You can now work with private Github repositories on Discovery.
+You can now work with GitHub repositories on Discovery.
 <br>
 <br>
 ## Installing HOOMD-blue on Discovery
 
 **You should install your own version(s) of HOOMD-blue in your folder on `/work/props`.**
 
-You should **always** install software using a compute node and NOT the login node (either using srun or sbatch). You will also need to load the modules for all the required software (i.e. Python, OpenMPI, etc.) before installing HOOMD-blue.
+As mentioned above, you should **always** install software using a compute node and NOT the login node (either using an interactive srun session or an sbatch script). You will also need to load the modules for all the required software (i.e. Python, OpenMPI, etc.) before installing HOOMD-blue.
 
-To simplify things we have created a series of sbatch scripts that complete all the steps for installation. They are available in the [Scripts/hpc](/Scripts/hpc) folder of this repository.
+To simplify things we created sbatch scripts that complete all the steps for installation. They are available in the [Scripts/hpc](/Scripts/hpc) folder of this repository.
 
 To access them on Discovery, clone this repository to your work folder
 ```bash
 git clone git@github.com:procf/colloids-setup.git
 ```
-and then copy the relevant scripts to the direcotry where you want to install HOOMD-blue. 
+and then copy the relevant scripts to the directory where you want to install HOOMD-blue. 
 
-## Scheduling a Job with Slurm
-
-It is best practice to use a bash file (i.e. `exec.bash`) to submitting a job on Discovery. This file will use the [Slurm Workload Manager](https://slurm.schedmd.com/documentation.html) to manage the job. More information about Slurm is available in the [Discovery documentation](https://rc-docs.northeastern.edu/en/latest/using-discovery/usingslurm.html) and in this repository's [Programming Resources](/Programming-Resources#slurm).
-
-You can also view an example [exec.bash](/exec.bash) file.
-
-Make sure that your job matches the [limits/requirements for the partition you are working on](https://rc-docs.northeastern.edu/en/latest/hardware/partitions.html).
-
-In a bash file, `#` marks a bash command and `##` marks a comment.
-
-Every line with #sbatch means you are specifying an attribute related to the job. Typical requests include
-* `--nodes` the number of nodes requested (commented out in the example because we are not using parallel code)
-* `--time=days-hours:min:sec` the length of time requested: all parameters are a number, hours must be less than 24, min and sec less than 6
-* `--job-name` your reference name for the job
-* `--mem` requested memory allocation
-* `--gres` for setting GPU options (commented out in the example file)
-* `--output=Output.%j.out` the name for output files (containing the progress output typically displayed in the Terminal when a job is running, here instead saved to a file you can view later). In this example this is set to "Output.jobnumber"
-* `-p` or `--partition` the partition you want to work on (short=general) *NOTE: Only use one of these flags, "partition" or "p"*
-
-When you are planning a job, we recommend that you request more time than you need (i.e. plan a job that takes 3 days to run and request the maximum time (5 days) on the long partition to run it). This gives you built in time to fix the simulation if anything goes wrong. Just remember to end your job when it's finished so you free up the resources for other users!
-
-At one point there was an issue with Discovery where you had to specify the desired CPU architecture for your job using `--constraint`, but this has been fixed and choosing a specific architecture is now optional
-
-After all of the #sbatch commands have been set, enter the commands you want the job to run on Discovery. Typically this will be
-* load any required software modules
-* source into your virtual environment
-* run your simulation
-
-For regular HOOMD-blue simulations the only module you will need to load is python (i.e. python/3.8.1).
-
-**NOTE: It is recommended that you specify the exact path of the installation of python in your virtual environment, just to be absolutely sure Discovery does not default to the installation on the shared drive when running your simulation.**
-
-Once you have completed your exec.bash script, you can run it with `sbatch`:
+When you are ready to install, run the script with
 ```bash
-sbatch exec.bash
+sbatch script-name
 ```
 <br>
 
-## Monitoring a Running Job
+## Writing sbatch Scripts
+
+Taking a look at the hoomd-basic-install script gives you an idea of the basic structure of a sbatch script:
+
+An sbatch script is a bash file.
+
+Bash files that are executable, such as an sbatch script, typically are NOT given an extension at the end (i.e. they are called script-name NOT script-name.bash)
+
+In a bash file, `#` marks a bash command and `##` marks a comment.
+
+A bash script always starts with "#!/bin/bash"
+
+Every line that starts with "#SBATCH" or "#sbatch" specifies an attribute related to the job we are running with Slurm. Typically this includes:
+* `-J` or `--job-name` your reference name for the job
+* `-N` or `--nodes` the number of nodes requested
+* `-n` (for use with MPI) the number of cores requested on those nodes
+* `-t days-hours:min:sec` or `--time=days-hours:min:sec` the length of time requested for the job (all parameters are a number, for example "24:00:00" for 1 day or "4-12:00:00" for 4 and a half days)
+* `-p` or `--partition` the partition you want to work on (i.e. short, long, etc.) 
+* `--constraint` which lets you select specific types of CPU (for example, when running MPI scripts you should only use the newer "Infiniband" CPUs, which have better communication, and you select this with "--constraint=ib")
+* `--mem` requested specific memory allocation (we do not often use this)
+* `--gres` for setting GPU options (we don't use this with HOOMD-blue because we don't do GPU simulations)
+* `-o %A.out` or `--output=Output.%j.out` the name for standard output file (containing the text that would typically be displayed in the Terminal when a job is running, here it is instead saved to a file you can view later); by default slurm usually save standard output and standard error to the file "slurm-%j.out", where the "%j" is the job number, but you can specify a different name with these commands (%A is also the job number)
+* `-e %A.out` the name for the standard error file, if you want to separate out error text from output text
+
+When you are planning a job, it's recommended that you request more time than you need (i.e. plan a job that takes 12 hours to run and request the maximum 24 hours on the short partition to run it). This gives you built in time to fix the simulation if anything goes wrong.
+
+As mentioned above, if you are running MPI simulations, it's also recommended that you only use the newest compute nodes, which use Infiniband for faster communication between nodes (turn this on with the `--constraint=ib` flag).
+
+After all of the sbatch commands have been set, enter the commands you want the job to run on Discovery. Typically this will be
+* purge software modules to remove any that are unneeded (a safety step)
+* load Python
+* source into your virtual environment
+* load additional required modules
+* run your simulation
+<br>
+
+## Monitoring Jobs and Job Stats
 
 You can use squeue to view your current jobs, displaying the job number, partition it is running on, job name, the user running the job, the status (running/pending, etc.), the time the job has been running, the number of nodes being used, and a list of the specific node IDs
 ```bash
@@ -112,8 +137,8 @@ You can use squeue to view your current jobs, displaying the job number, partiti
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
 ```
 
-
-
-
-
+Once a job is complete you can view how long it ran (as well as other stats) with the command
+```bash
+seff [jobID]
+```
 
