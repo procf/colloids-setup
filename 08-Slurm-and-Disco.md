@@ -14,7 +14,7 @@ This guide was compiled by Rob Campbell.
 2. [GitHub on Discovery](/08-Slurm-and-Disco.md#github-on-discovery)
 3. [Installing HOOMD-blue on Discovery](/08-Slurm-and-Disco.md#installing-hoomd-blue-on-discovery)
 4. [Writing sbatch Scripts](/08-Slurm-and-Disco.md#writing-sbatch-scripts)
-5. [Monitoring a Job and Job Stats](/08-Slurm-and-Disco.md#monitoring-a-job-and-job-stats)
+5. [Monitoring a Job and Job Stats](/08-Slurm-and-Disco.md#monitoring-jobs-and-job-stats)
 <br>
 
 ## Running Jobs on Discovery
