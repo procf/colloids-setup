@@ -116,9 +116,9 @@ Our bash files typically have 3 sections:
 	* `-o %A.out` or `--output=Output.%j.out` the name for standard output file (containing the text that would typically be displayed in the Terminal when a job is running, here it is instead saved to a file you can view later); by default slurm usually save standard output and standard error to the file "slurm-%j.out", where the "%j" is the job number, but you can specify a different name with these commands (%A is also the job number)
 	* `-e %A.out` the name for the standard error file, if you want to separate out error text from output text
 
-*When you are planning a job, it's recommended that you request more time than you need (i.e. plan a job that takes 12 hours to run and request the maximum 24 hours on the short partition to run it). This gives you built in time to fix the simulation if anything goes wrong.
+*When you are planning a job, it's recommended that you request more time than you need (i.e. plan a job that takes 12 hours to run and request the maximum 24 hours on the short partition to run it). This gives you built in time to fix the simulation if anything goes wrong.*
 
-As mentioned above, if you are running MPI simulations, it's also recommended that you only use the newest compute nodes, which use Infiniband for faster communication between nodes (turn this on with the "--constraint=ib" flag).*
+*As mentioned above, if you are running MPI simulations, it's also recommended that you only use the newest compute nodes, which use Infiniband for faster communication between nodes (turn this on with the "--constraint=ib" flag).*
 
 3. After all of the sbatch commands have been set, enter the commands you want the job to run on Discovery. Typically this will be
 	* purge software modules to remove any that are unneeded (a safety step)
