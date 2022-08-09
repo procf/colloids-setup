@@ -4,7 +4,7 @@ This is a guide for installing the Visual Molecular Dynamics ([VMD]) software, a
 
 This guide is for optimized for MacOS. 
 
-[Last Update: June 2022]
+[Last Update: August 2022]
 
 [VMD]: https://www.ks.uiuc.edu/Research/vmd/
 
@@ -173,7 +173,7 @@ You can close the Molecule File Browser and select the OpenGL Display window to 
 <br>
 ## Installing the VMD Movie Plugin Requirements
 
-You should also install the VMD Movie Plugin software requirements so that you have the full set of movie options when saving visualizations.
+As a final step, you should also install the VMD Movie Plugin software requirements so that you have the full set of movie options when saving visualizations.
 
 The list of requirements for different operating systems is available on the VMD website [here](http://www.ks.uiuc.edu/Research/vmd/plugins/vmdmovie/). 
 
