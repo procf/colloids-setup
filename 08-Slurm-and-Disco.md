@@ -23,7 +23,7 @@ When you sign into Discovery you are on the "login node" but you should **ALWAYS
 
 The "s" in srun and sbatch stands for the [Slurm Workload Manager](https://slurm.schedmd.com/documentation.html), which is what most HPC clusters use to manage all the different "jobs" users are running. More information about Slurm is available in the [Discovery documentation](https://rc-docs.northeastern.edu/en/latest/using-discovery/usingslurm.html) and in this repository's [Programming Resources](/Programming-Resources#slurm).
 
-Whether you are using srun or sbatch, you will only have access to the resources available on the partition that you run your job on. (e.g. a timelimit of <24hrs for the short partition vs. <5days for the long partition, certain CPU architectures are only available on certain partitions, etc.). Make sure that your job matches the [limits/requirements for the partition you are working on](https://rc-docs.northeastern.edu/en/latest/hardware/partitions.html) before running it.
+Whether you are using srun or sbatch, you will only have access to the resources available on the partition you are running your job on. (e.g. a timelimit of <24hrs for the short partition vs. <5days for the long partition, certain CPU architectures are only available on certain partitions, etc.). Make sure that your job matches the [limits/requirements for the partition you are working on](https://rc-docs.northeastern.edu/en/latest/hardware/partitions.html) before running it.
 
 The [Discovery documentation has a full guide to srun](https://rc-docs.northeastern.edu/en/latest/using-discovery/srun.html) and the variety of flags that are available for customizing your session. The simplest way to use srun is to move to the first available compute node (with no restrictions on what type of node that is), and then use that node interactively as you normally would on your own computer. To do this, use the command:
 ```bash
@@ -33,6 +33,7 @@ OR, if you have X11 enabled for graphical interfaces, be sure to carry that over
 ```bash
 srun --pty --x11 /bin/bash
 ```
+<br>
 
 The [Discovery documentaion also has a full guide to sbatch](https://rc-docs.northeastern.edu/en/latest/using-discovery/sbatch.html). You can use sbatch to run a job in the background (on a *separate* compute node) from either the login node OR an srun session, but you will need to write a bash script with all of the commands you want to run.
 
@@ -58,7 +59,7 @@ Initialize git
 ```bash
 git init
 ```
-Congifure git with your GitHub credentials
+Congifure git with your GitHub username
 ```bash
 % git config --global user.name "your_Github_username"
 ```
@@ -68,7 +69,7 @@ and set your email (use an email address that you have verified on Github)
 ```
 *Note: Your username and email will be recorded as part of the commit history of any repository you contribute to. If you would like your email to be kept private, you can use the Github-generated `users.noreply.github.com` email instead. To access this* [manage your email settings on Github](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-user-account/managing-email-preferences/setting-your-commit-email-address)
 
-Follow the Github's step-by-step instructions on setting up SSH Authentication on Linux, starting with [Checking for existing SSH keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys).
+Follow Github's step-by-step instructions for setting up SSH Authentication on Linux, starting with [Checking for existing SSH keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys).
 
 You can now work with GitHub repositories on Discovery.
 <br>
@@ -95,38 +96,36 @@ sbatch script-name
 
 ## Writing sbatch Scripts
 
-Taking a look at the hoomd-basic-install script gives you an idea of the basic structure of a sbatch script:
-
-An sbatch script is a bash file.
-
-Bash files that are executable, such as an sbatch script, typically are NOT given an extension at the end (i.e. they are called script-name NOT script-name.bash)
+An sbatch script is a bash file. Bash files that are *executable*, such as an sbatch script, typically are NOT given an extension as part of their name (i.e. they are called "script-name" NOT "script-name.bash").
 
 In a bash file, `#` marks a bash command and `##` marks a comment.
 
-A bash script always starts with "#!/bin/bash"
+Our bash files typically have 3 sections:
 
-Every line that starts with "#SBATCH" or "#sbatch" specifies an attribute related to the job we are running with Slurm. Typically this includes:
-* `-J` or `--job-name` your reference name for the job
-* `-N` or `--nodes` the number of nodes requested
-* `-n` (for use with MPI) the number of cores requested on those nodes
-* `-t days-hours:min:sec` or `--time=days-hours:min:sec` the length of time requested for the job (all parameters are a number, for example "24:00:00" for 1 day or "4-12:00:00" for 4 and a half days)
-* `-p` or `--partition` the partition you want to work on (i.e. short, long, etc.) 
-* `--constraint` which lets you select specific types of CPU (for example, when running MPI scripts you should only use the newer "Infiniband" CPUs, which have better communication, and you select this with "--constraint=ib")
-* `--mem` requested specific memory allocation (we do not often use this)
-* `--gres` for setting GPU options (we don't use this with HOOMD-blue because we don't do GPU simulations)
-* `-o %A.out` or `--output=Output.%j.out` the name for standard output file (containing the text that would typically be displayed in the Terminal when a job is running, here it is instead saved to a file you can view later); by default slurm usually save standard output and standard error to the file "slurm-%j.out", where the "%j" is the job number, but you can specify a different name with these commands (%A is also the job number)
-* `-e %A.out` the name for the standard error file, if you want to separate out error text from output text
+1. A bash script always starts with `#!/bin/bash`
+
+2. Every line that starts with `#SBATCH` or `#sbatch` specifies an attribute related to the job we are running with Slurm. Typically this includes:
+	* `-J name` or `--job-name=name` your reference name for the job
+	* `-N #` or `--nodes=#` the number of nodes requested
+	* `-n #` (for use with MPI) the number of cores requested on those nodes
+	* `-t days-hours:min:sec` or `--time=days-hours:min:sec` the length of time requested for the job (all parameters are a number, for example "24:00:00" for 1 day or "4-12:00:00" for 4 and a half days)
+	* `-p` or `--partition` the partition you want to work on (i.e. short, long, etc.) 
+	* `--constraint=name` which lets you select specific types of CPU (for example, when running MPI scripts you should only use the newer cores with faster "Infiniband" communication, and you can select this with "--constraint=ib")
+	* `--mem=#GB` for requesting specific memory allocation (we do not often use this)
+	* `--gres` for setting GPU options (we don't use this with HOOMD-blue because we don't do GPU simulations)
+	* `-o %A.out` or `--output=Output.%j.out` the name for standard output file (containing the text that would typically be displayed in the Terminal when a job is running, here it is instead saved to a file you can view later); by default slurm usually save standard output and standard error to the file "slurm-%j.out", where the "%j" is the job number, but you can specify a different name with these commands (%A is also the job number)
+	* `-e %A.out` the name for the standard error file, if you want to separate out error text from output text
 
 When you are planning a job, it's recommended that you request more time than you need (i.e. plan a job that takes 12 hours to run and request the maximum 24 hours on the short partition to run it). This gives you built in time to fix the simulation if anything goes wrong.
 
-As mentioned above, if you are running MPI simulations, it's also recommended that you only use the newest compute nodes, which use Infiniband for faster communication between nodes (turn this on with the `--constraint=ib` flag).
+As mentioned above, if you are running MPI simulations, it's also recommended that you only use the newest compute nodes, which use Infiniband for faster communication between nodes (turn this on with the "--constraint=ib" flag).
 
-After all of the sbatch commands have been set, enter the commands you want the job to run on Discovery. Typically this will be
-* purge software modules to remove any that are unneeded (a safety step)
-* load Python
-* source into your virtual environment
-* load additional required modules
-* run your simulation
+3. After all of the sbatch commands have been set, enter the commands you want the job to run on Discovery. Typically this will be
+	* purge software modules to remove any that are unneeded (a safety step)
+	* load Python
+	* source into your virtual environment
+	* load additional required modules
+	* run your simulation
 <br>
 
 ## Monitoring Jobs and Job Stats
