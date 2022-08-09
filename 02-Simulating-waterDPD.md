@@ -21,7 +21,7 @@ This guide is optimized for MacOS and useses the **basic installation of HOOMD-b
 
 A dissipative particle dynamics (DPD) simulation uses discrete particles to represent clusters of atoms in a system. Simulating a colloidal system will require at least two different types of particles (one for colloidal particles, and one for solvent particles that represent the background fluid) and a number of modifications to standard DPD. Therefore, the first step is to start with an even simpler system of just one type of particle: water.
 
-To understand the basics of how DPD simulations work, read the Background Reading [into to DPD](/Background-Reading/1-DPD-8pg.pdf) (8 pages).
+To understand the basics of how DPD simulations work, read the [into to DPD](/Background-Reading/1-DPD-8pg.pdf) (8 pages) PDF in the Background Reading folder.
 
 This tutorial guides you through using HOOMD-blue to run a DPD simulation of a random distribution of water molecules. You will need the `waterDPD.py` file provided in this repository to run this simulation.
 <br>
@@ -33,7 +33,7 @@ If you haven't already, clone this repository to your computer. (see the [Github
 cd repositories/
 git clone git@github.com:procf/colloids-setup.git
 ```
-Copy the waterDPD scripts from the cloned copy of this repository to make your own waterDPD project folder
+And copy the waterDPD scripts from the cloned copy of this repository into your repositories directory to create your own waterDPD project folder
 ```bash
 cp -r ~/repositories/colloids-setup/Scripts/waterDPD-sims .
 ```
@@ -49,7 +49,7 @@ particle-arch shear-waterDPD waterDPD
 
 Start with the waterDPD folder, which contains the waterDPD.py simulation script and an analysis folder
 ```bash
-ls waterDPD
+% ls waterDPD
 analysis waterDPD.py
 ```
 
@@ -72,14 +72,16 @@ You will see that the `waterDPD.py` Python script is divided into 3 sections:
 		* setting up outputs 
 		* and running the simulation
 
-Our only output file is the GSD file, the native file format for HOOMD-blue. It stores the trajectories of all the particles in the system as a binary file with efficient random access to frames. This lets us use the GSD file with visualization tools (like VMD), but we will later need to extract data from the with the GSD Python API for qunatitative analysis of the system.
+Our only output file is the GSD file, the native file format for HOOMD-blue. It stores the trajectories of all the particles in the system as a binary file with efficient random access to frames. We can use the GSD file with visualization tools (like VMD) to visually inspect the simulation, but later we will need to extract our quantitative data from the GSD file with the GSD Python API.
 <br>
 <br>
 ## Running a Simulation
 
+waterDPD.py uses the **basic installation** of HOOMD-blue.
+
 To run a simulation, source into your basic installation of HOOMD-blue:
 ```bash
-source [path-to-software]/hoomd3.1-basic/hoomd-venv/bin/activate
+source ~/repositories/hoomd3.1-basic/hoomd-venv/bin/activate
 ```
 
 And run the simulation with
@@ -93,7 +95,7 @@ Successfully running the file will add the two output files to the directory: in
 Equilibrium.gsd init.gsd waterDPD.py
 ```
 
-If you open one of these GSD files with vim, it will look like binary gibberish.
+If you open one of these GSD files with Vim, it will look like binary gibberish.
 
 **NOTE: If you rerun waterDPD.py in the same folder, it will overwrite the output files**
 <br>
