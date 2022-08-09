@@ -1,10 +1,10 @@
 # Using VMD
 
-This is a brief introduction to using [VMD] to visulaize the results of HOOMD-blue simulation data for research in the PRO-CF Colloids Team.
+This is an introduction to using [VMD] to visulaize the results of HOOMD-blue simulation data for research in the PRO-CF Colloids Team.
 
 This guide is optimized for MacOS. See [Simulating waterDPD](/02-Simulating-waterDPD.md) for more details on running a simulation with HOOMD-blue and the [VMD Installation Guide](/03-VMD-Install-Guide.md) for help installing VMD.
 
-[Last Updated: June 2022].
+[Last Updated: August 2022].
 
 Our VMD workflow was developed by Mohammad (Nabi) Nabizadeh. This guide was compiled by Rob Campbell.
 
@@ -57,7 +57,7 @@ You can close the **Molecule File Browser** and view your file in the **OpenGL D
 
 NAMD and VMD were designed to visualize biomolecular data, integrating molecular modeling, bioinformatics and molecular dynamics (think proteins, drug molecules, other macromolecules and biomolecular interactions). 
 
-The default vizualisation settings assume that you are viewing a protein or other macromolecule, and start by displaying the "bonds" between each particle. For the `Equilibrium.gsd` file, this displays a cube-shaped network of lines.
+The default vizualisation settings assume that you are viewing a protein or other macromolecule, and start by displaying the "bonds" between each particle. For the Equilibrium.gsd file, this displays a cube-shaped network of lines.
 <br>
 <br>
 ## Changing Lines to Spheres
@@ -102,8 +102,8 @@ Back in the **Graphical Representations** window there are several other changes
 To change the size and shape of the spheres, adjust "Sphere Scale" and "Sphere Resolution" (use (<<) and (>>) for large jumps, and (<) and (>) for smaller changes).
 
 Change the color of your particles with the "Coloring Method" dropdown menu. 
-* For example, if your file includes velocity outputs you can color code the particles accordingly by going to "Trajectory" and choosing "Velocity" (for `Equilibrium.gsd` there is no velocity output, so all the particles will be white, signifying 0 velocity). 
-* You can also go to "Position" and choose "X" to have the particles in `Equilibrium.gsd` at -5 rendered blue, while the particles at +5 are rendered red. 
+* For example, if your file includes velocity outputs you can color code the particles accordingly by going to "Trajectory" and choosing "Velocity" (for Equilibrium.gsd there is no velocity output, so all the particles will be white, signifying 0 velocity). 
+* You can also go to "Position" and choose "X" to have the particles in Equilibrium.gsd at -5 rendered blue, while the particles at +5 are rendered red. 
 * To select a uniform color for your particles, choose "ColorID" and a new dropdown menu with numbers will appear. When you open it you will see VMD's numbered color options.
 * You can also program VMD to render color based on other outputs (such as stress). See the guide to additional post-processing simulation data for details.
 
@@ -138,7 +138,7 @@ If you zoom in on the image in Preview you will see that the base settings produ
 The default file type is TGA (a raster graphics file format). You can save or export to other filetypes from Preview.
 
 If you did not change the default destination your file will have saved to your home folder. <br>
-***Note: Re-rendering a file with the same name will overwrite an existing file without warning.***
+***Note: Re-rendering a file with the same name will overwrite an existing file.***
 
 VMD is best at rendering a single image, rather than exporting video, so generally speaking the best way to make a high-quality video of a VMD visualization is to save each frame as an image and then assemble the animation with QuickTime Player's built-in "Open Image Sequence" option.
 
