@@ -18,16 +18,16 @@ Different parts of our analysis workflow were developed by Mohammad (Nabi) Nabiz
 
 ## Types of Analysis 
 
-For qualitative analysis of a simulation we always view the GSD file in VMD to visualy inspect the results.
+For **qualitative** analysis of a simulation we always view the GSD file in VMD to visualy inspect the results (as discussed in the guide to [Using VMD](/04-Using-VMD.md)).
 
-The primary way to collect quantitative data from a HOOMD-blue simulation is to save data to the GSD file. 
+The primary way to collect **quantitative** data from a HOOMD-blue simulation is to save data to the GSD file. 
 
-Generally the best practice is to a run a simulation and then, after the simulation is completed, extract specific data from the GSD file as needed. This is the method we will discuss here. It is also possible to output data to a table as you run the simulation, and to save that table to a file (as explained in the [HOOMD-blue documentation](https://hoomd-blue.readthedocs.io/en/latest/tutorial/02-Logging/04-Writing-Formatted-Output.html)).
+Generally the best practice is to a run a simulation and then, after the simulation is completed, extract specific data from the GSD file as needed. This is the method we will discuss here; however, it is also possible to output data to a table as you run the simulation, and to save that table to a file (as explained in the [HOOMD-blue documentation](https://hoomd-blue.readthedocs.io/en/latest/tutorial/02-Logging/04-Writing-Formatted-Output.html)).
 
 We usually work with the data in a GSD file in one of three ways:
 1. For basic analyses (such as confirming that a simulation has run correctly), we usually use a python script to extract data from the GSD file and then plot it with [Matplotlib](https://matplotlib.org/).
 2. For more intensive analyses (such as calculating average contact number, mean squared displacement, pair correlation function, etc.), we usually use a Fortran module to efficiently calculate these values from the GSD data. The Fortran module is run from a Python script using f2py.
-3. For more plotting options and more efficient statistical analysis, members of our group have also developed a variety of analysis processes in the [R](https://www.r-project.org/) programming language.
+3. For more plotting options and more efficient statistical analysis, members of our group have also developed a variety of analysis processes in the [Rprogramming language](https://www.r-project.org/).
 
 This tutorial focuse on basic analyses (type 1), and provides some advice on installing and learning R (type 3). Information about the Fortran module is included in the [Gelation and Shearing guide](/06-Gelation-and-Shearing.md).
 <br>
@@ -36,17 +36,21 @@ This tutorial focuse on basic analyses (type 1), and provides some advice on ins
 
 Start by viewing the Equilibrium.gsd file in VMD. You should be able to see the water particles start with very fast motion that slowly equilibrates and reaches a steady state by the end of the simulation (see [Using VMD](/04-Using-VMD.md) for more advice on visualizing the simulation).
 
-The basic qunatitive analyses to confirm that this simulation has run correctly are to plot the change in system kinetic temperature (kT) over time, and the change in the negative of the xy-component of the pressure tensor (AKA the shear stress) over time.
+The basic quantitive analyses to confirm that this simulation has run correctly are to:
+1. plot the change in system kinetic temperature (kT) over time
+2. plot the change in the negative of the xy-component of the pressure tensor (AKA the shear stress) over time
 
 To do this we first extract these data from the GSD file using a Python script, and then we plot the data.
 
 Go to the waterDPD-sims folder and cd into the waterDPD/analysis folder.
 
-The extractdata-waterDPD.py script extract the temperature and xy-component of the pressure tensor from each frame of the Equilibrium.gsd file and saves it to a file called "gsd-properties.txt" (labeled with the DPD time the frame occured at).
+The extractdata-waterDPD.py script extract the temperature and xy-component of the pressure tensor from each frame of the Equilibrium.gsd file and saves it to a file called "gsd-properties.txt" (data is labeled with the DPD time of the frame where it occured).
 
 The plot-kT.py script uses the gsd-properties.txt data to plot temperature versus DPD time. This should show a large spike in temperature at the start of the simulation, which then stabilizes at the chosen kT value (in this case kT = 0.1).
 
 The plot-shearstress.py script uses the gsd-properties.txt data to plot shear stress versus DPD time. This should show a relatively constant average around zero (becuase no shear is being applied to the equilibrium simulation).
+
+If these plots do not reach these equilibrium values, than either something went wrong in the simulation OR the simulation needs to run for more time.
 <br>
 <br>
 ## Modyfing waterDPD and Analyzing the Changes
@@ -54,19 +58,19 @@ The plot-shearstress.py script uses the gsd-properties.txt data to plot shear st
 Now that we've successfully run a simple simulation, we can play around with it.
 
 ### Change simulation parameters
-1. Try reruning the simulation for different lengths (change N_timesteps) and then see how the simulation visually and quantitatively changes.
+1. Try reruning the simulation for different lengths of time (change N_timesteps) and then see how the simulation visually and quantitatively changes.
 
 2. Try rerunning the simulation for different system temperatures (change kT) and see how the simulation visually and quantitatively changes.
 
 ### Manipulate the particles:
 
-In addition to changing the simulation parameters we typically set, you can access the invidual particles in a simulation and change their parameters as well.
+In addition to changing overall simulation parameters, you can access the invidual particles in a simulation and change their parameters as well.
 
-For example, the particle-arch folder in waterDPD-sims contains a script where the position of particles in the center of the simulation are moved into a semi-circle, turning the initial configuration of the system into an arch shape. 
+For example, the particle-arch folder in waterDPD-sims contains a script where the position of particles in the center of the simulation are moved into a semi-circle, turning the initial configuration of the system into an H-shaped arch. 
 
 If you look at the script you'll see that after randomly distributing the particles in the simulation box for init.gsd, we access the particle positions and move them into the arch shape.
 
-If you run the simulation and open it's Equilibrium.gsd file in VMD, you will be able to see what this looks like.
+If you run the simulation and open it's H-Equilibrium.gsd file in VMD, you will be able to see what this looks like.
 
 This method can also be used to change other particle parameters, such as giving them an initial velocity.
 <br>
@@ -77,18 +81,22 @@ Now that we've brought a simulation to equilibrium, we can apply a simple shear 
 
 **If you haven't already**, [install our modified version of HOOMD-blue](/01-HOOMDblue-Install-Guide.md#installing-hoomd31-mod) and take a look at the [shearing guide](/Background-Reading/4-Shearing-4pg.pdf) in the Background Reading to understand how we apply shear to a simulation.
 
-An example code for a shearing simulation is the shear-waterDPD.py script in the waterDPD-sims/shear-waterDPD folder. Be sure to run it using the modified version of HOOMD-blue (and *not* the basic version of HOOMD-blue).
+An example code for a shearing simulation is the shear-waterDPD.py script in the waterDPD-sims/shear-waterDPD folder. This script follows the same basic structure, however there are two major changes:
+1. Even though this simulation does not include any colloid particles, we have to set additional parameters as if we are including colloidal particles. This is because our modifications for colloids and for shearing are integrated. We cannot use our shearing method without also providing dummy variables for colloidal interactions. These parameters are explained in the next [Gelation and Shearing guide](/06-Gelation-and-Shearing.md), but you do not need to worry about them right now.
+2. After setting the particle interactions and the integration method, we also add several steps to manually control the Box Resize process and avoid HOOMD-blue's default shearing method. In basic HOOMD-blue, shear is applied by changing the shape of the simulation box to change the position of particles, and then that change in position is converted into a change in velocity. We want to do the opposite: apply a change in velocity that results in a change in position. That is why we have to add several steps to control the Box Resize process in addition to adding a shear rate (SR). More details of our shearing method are in the [shearing background reading](/Background-Reading/4-Shearing-4pg.pdf).
 
-The way we extract data from the GSD file is a little bit different because we want to report the data from each frame in terms of the number of strains, not the DPD time. 
+Be sure to run shear-waterDPD.py using the modified version of HOOMD-blue (and *not* the basic version of HOOMD-blue).
+
+For the analysis script, most of it is the same; however, our time units are different. We want to report the data from each frame in terms of the number of strains, not the DPD time. Calculating this value requires additional information from the simulation.
 
 Once we have extracted the data, the plot of shear stress versus strain gives us the system's stress-strain curve for our chosen shear rate.
 <br>
 <br>
 ## (OPTIONAL) Installing R
 
-You can analyze the data from these simulations in pretty much any language (Python, MATLAB, R, etc.), but the quality of plotting options in R and it's versatility and ease of use for statistical analysis makes it great for advanced analysis. 
+You can analyze the data from these simulations in pretty much any language (Python, MATLAB, R, etc.), but the quality of plotting options in R and it's versatility and ease of use for statistics makes it especially great for our advanced analyses. 
 
-Nabi has done extensive analysis in R, but most of those scripts worked from a different format of data files (output by an older version of HOOMD-blue). If you'd like to start doing analysis in R you will have to write your own analysis scripts, but you can chat with Rob or Nabi for some of their older examples.
+Nabi has done extensive analysis in R, but most of those scripts worked from a different format of data files (output by an older version of HOOMD-blue). If you'd like to start doing analysis in R you will probably have to write your own analysis scripts, but you can chat with Rob or Nabi for some of their older examples.
 
 For more resources on getting started, see the LinkedIn Learning courses and related resources listed in the [Programming Resources document](/Programming-Resources#r).
 
