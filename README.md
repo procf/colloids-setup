@@ -15,7 +15,7 @@ The [System Setup folder](/System-Setup) contains information for choosing a lap
 
 The [Programming Resources folder](/Programming-Resources) contains a variety of resources that can help you with the command line, VIM, Python, R, C++, Git/Github, and other skills that are useful for our work.
 
-The [Background Reading folder](/Background-Reading) contains a series of short explainers on the basics of what we do: i.e. what is DPD, what modifications do we make to DPD for colloids (and why), what is the Morse Potential we typically use, and how do we apply shear. 
+The [Background Reading folder](/Background-Reading) contains a series of short explainers on the basics of what we do: i.e. what is DPD, what modifications do we make to DPD for colloids (and why), what is the Morse Potential we typically use, and how do we apply shear. The README also contains a list of important papers you should read at some point. 
 
 Once you have received and set up your computer, the remaining files should help you install HOOMD-blue and VMD and give you the information you need to get started with colloids simulations (including example [Scripts](/Scripts))
 <br>
