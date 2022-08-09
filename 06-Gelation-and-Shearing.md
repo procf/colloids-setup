@@ -29,69 +29,68 @@ These workflows were first developed by Mohammad (Nabi) Nabizadehi as part of hi
 
 DPD simulations were originally designed for coarse-grained simulations of a single type of atom or molecule, e.g. water. The particle interactions are soft (particles effectively have no radius and can overlap with each other in space) and limited to Conservative, Dissipative, and Random Force contributions.
 
-We want to take that solvent fluid and suspend hard colloid particles in it, which means we need to prevent our colloid particles from overlapping. We also want to add other interparticle forces to effect the behavior of the colloid particles so that we can form gels.
+We want to take that solvent fluid and suspend hard colloid particles in it, which means we need to prevent our colloid particles from overlapping. We also want to add other interparticle forces to modify the behavior of our colloid particles so that we can form gels.
 
 Making this happen is relatively straightforward, but it requires many changes to how the calculations work. A detailed summary of what these changes are and why we make them is available in the Background Readings on [DPD for colloids](/Background-Reading/2-DPD-for-Colloids-18pg.pdf) (18 pages) and [Morse Potential](/Background-Reading/3-Morse-Potential-2pg.pdf) (2 pages).
 
-Once we've made a colloidal gel, we also need to make some changes to be able to shear the gel correctly and retain information about it's structure. These changes are explained in the Background Reading on [Shear](/Background-Reading/4-Shearing-4pg.pdf) (4 pages).
+Once we've made a colloidal gel, we also need to make some changes to be able to shear the gel correctly and retain information about it's structure. You should be familiar with these from running a basic shearing simulation of water, and they are explained in the Background Reading on [Shear](/Background-Reading/4-Shearing-4pg.pdf) (4 pages).
 
 Implementing these changes in HOOMD-blue requires modifying the source code: we have to add additional files for the new force calculation (to prevent particle overlaps and add new interparticle interaction forces) and we need to make sure those changes are accessible and consistent throughout the software. We also need to update how particles behave when they cross a boundary, so that shear flow occurs correctly. This is why we developed (and continue to develop) our [hoomd3.1-mod](https://github.com/procf/hoomd3.1-mod) software. 
 
-Accessing these changes in a simulation requires additional parameters in our simulation scripts.
+Once we've made these changes to HOOMD-blue's source code, accessing them in a simulation requires additional parameters in our simulation scripts.
 <br>
 <br>
 ## Simulation Steps
 
-**1 - Initializing a Simulation**
-* Set the basic parameters (size, number of particles, etc.) and create a single frame of the simulation with particles randomly positioned throughout the sapce. Particles will overlap at this stage. 
+Our simulations now have several steps, and it is easiest to separate them into different files so that we can check our results along the way (and avoid computational errors) AND so we can speed up certain parts of the simulation by using MPI parallelization.
+
+Templates for each of these steps are avaialble in the [hoomd-3.1mod repository](https://github.com/procf/hoomd3.1-mod).
+
+**Step 1 - Initializing a Simulation**
+* Set the basic parameters (size, number of particles, etc.) and create a single frame of the simulation with particles randomly positioned throughout the space. Particles will overlap at this stage. 
 * This step **must** be done serially (only use 1 node and 1 core).
 
-**2 - Bringing the Simulation to Thermal Equilibrium**
-* Using the initialized system, we will resolve overlaps by running the simulation with contact force but **zero** attraction between colloids and **zero** shear rate. These simulations are run until the particles have reached thermal equilibrium (i.e. the measured temperature of the system (kT) equals the value we chose, usually kT = 0.1)
-* *Before moving to the next step*, visualize the simulation in VMD and use the analysis module to make sure the temperature (kT) has stabilized (at least within ~10% of the set value)
-* For small simulations (e.g. L=30) you should use a small number of cores (e.g. 1 node and 8 cores), otherwise the simulation is divided into sections that are too small. For larger simulations (e.g. L=60) you can easily go up to at 27 cores per node.
+**Step 2 - Bringing the Simulation to Thermal Equilibrium**
+* Using the initialized system, we will resolve overlaps by running the simulation using contact force, but we will apply **zero** attraction between colloids and **zero** shear rate. These simulations are run until the particles have reached thermal equilibrium (i.e. the measured temperature of the system (kT) equals the value we chose, usually kT = 0.1)
+* *Before moving to the next step*, visualize the simulation in VMD and use the analysis module to make sure the temperature (kT) has stabilized (at least within ~10% of the set value) and the average shear stress is zero.
+* You can run this step with MPI and up to 27 cores per node; however, for smaller simulations you may not be able to divide it into 27 parts. If that happens and you get errors, try reducing the number of cores to 8 or fewer.
 
-**3 - Creating a Gel**
-* Using the equilibrium state as our initial state, we run the simulation with all the interparticle forces added (and **zero** shear rate) until a stable gel is formed (typically around 500 diffusion times)
+**Step 3 - Creating a Gel**
+* Using the equilibrium state as our initial state, we run the simulation with all the interparticle forces added (and **zero** shear rate) until a stable gel is formed (typically around 500 colloid particle diffusion times)
 * *Before moving to the next step*, visualize the simulation in VMD and use the analysis module to make sure the temperature (kT) has remained stable and the average coordination number (Z) has reached a fairly stable maximum (usually Z= 6 a single type of colloidal particle).
 * For small simulations (e.g. L=30) you should use a small number of cores (e.g. 1 node and 8 cores), otherwise the simulation is divided into sections that are too small. For larger simulations (e.g. L=60) you can easily go up to at 27 cores per node.
 
-**4 - Shearing a Gel**
+**Step 4 - Shearing a Gel**
 * Using the gelation state as our initial state, we apply a shear rate and run the simulation for a number of times equivalent to the desired number of strains on the system.
-* *After shearing*, visualize the simulation in VMD and use the analysis module to find averages for different layers/bins/slabs of the system and use those averages to check the stress-strain curve and the velocity profile. You may also want to check the average coordination number (Z)
+* *After shearing*, visualize the simulation in VMD and use the analysis module to bin the system (find average values for different layers/bins/slabs of the system) and to separate out the effects of colloids from solvent. You will then use those averages to check the stress-strain curve and the velocity profile. You may also want to check the average coordination number (Z)
 
 Congratulations, you now have data!
 <br>
 <br>
 ## Analysis
 
-The basic analyses to check if a simulation has run correctly at each step are:
-1. Initialization
-	* view the frame in VMD
-2. Equilibrrium
-	* view the simulation in VMD: motion should spike as at the beginning and then slow down as particles come to equilibrium 
-	* Plot system kinetic temperature (kT) versus time; the temperature will spike up at the beginning but should eventually stabilize around the set kT value
-	* Plot the negative of the xy-component of the pressure tensor (the shear stress) versus time, which should stabilize around zero (there is NO shear in equilibrium).
-3. Gelation
-	* view the simulation in VMD: particles should go from freely moving and disordered into a mostly stable space spanning network (with more than one chain)
-	* Plot the system kinetic temperature (kT) versus time: the temperatre should remain stable around the set kT value
-	* plot the negative of the xy-component of the pressure tensor (the shear stress) versus time, which should remain stable around zero (there is no shear in gelation)
-4. Shearing
-	* view the simulation in VMD: the system should be deformed, and a gel's structure will probably be destroyed over time (depending on the shear rate)
-	* plot the system kinetic termperature (kT) versus time: the temperature should remain stable around the set kT value
-	* plot the negative of the xy-component of the pressure tensor (the shear stress) versus the number of strains, giving you a stress-strain curve
-	* plot the solvent velocity profile (which uses the Fortran module) 
+As we discussed in the [Analysis Guide](/05-Analysis-Guide.md), we have to extract data from the GSD file before we can analyze and plot it.
 
-Our Fortran module can be used to calculate the mean squared displacement, average coordination number, radial distribution function, pair correlation function, solvent velocity profile, and the corrected temperature and pressure (the colloid contributions separated from the solvent contribution).
+In addition to the basic extraction and plotting of data that we ran for water, there are a number of more advance analyses that we frequently use: 
+1. For gelation:
+	* mean squared displacement
+	* average coordination number
+	* radial distribution function
+	* pair correlation function
+2. For shearing:
+	* corrected kinetic temperature and pressure (colloid contributions only)
+	* averaged solvent velocity profile
 
-If you make any changes to these calculations you need to recompile the module using the command:
+These analyses can all be done in Python, R, or other programming languages, but for computational speed and efficiency we have created a Fortran module that is extracts and calculates these values.
+
+After compilation, the Fortran module is run with a Python script using [f2py](https://numpy.org/doc/stable/f2py/), a NumPy Fortran-to-Python interface. This Python script is set up a series of modules, with simulation specific inputs at the beginning. They are called at the bottom of the script, so you can easily limit which analyses you run by scrolling to the bottom of the script and commenting out the analyses you do not need. Running this script calls the relevant sections of the Fortran module and outputs data files for the selected analyses.
+
+If you need to make any changes to these analyses, you will probably need to modify both the Python and Fortran codes. After modifying the Fortran code, remember to recompile the module before using it by running the command:
 ```bash
 f2py -c module_analysis.f90 -m module
 ```
 
-And then use the sim-analysis.py script to call those functions and run them for your GSD file. You can limit which analyses to run by going to the bottom of the sim-analysis.py script and commenting out the names of the analyses you do not need.
-
-Example simulation scripts and analysis scripts are all availabl in the [hoomd-3.1mod repository](https://github.com/procf/hoomd3.1-mod)
+Copies of the standard Fortran and Python scripts are both available in the [hoomd-3.1mod repository](https://github.com/procf/hoomd3.1-mod)
 <br>
 <br>
 ## Next Steps
@@ -99,14 +98,14 @@ Example simulation scripts and analysis scripts are all availabl in the [hoomd-3
 This covers the basic outline of colloidal gel simulations! The rest is up to you and your research.
 
 *HPC Computing:*
-* See the remaining guides for information about [accessing](/09-Accessing-Discovery.md) Northeastern's HPC cluster, "Discovery," and [working with](/10-Slurm-and-Disco.md) HPC simulations.
+* See the remaining guides for information about [accessing](/07-Accessing-Discovery.md) Northeastern's HPC cluster, "Discovery," and [working with](/08-Slurm-and-Disco.md) HPC simulations.
 <br>
 
 *Background Reading:*
 
 If you haven't already, you should review the [Background Reading](/Background-Reading) documents summarizing DPD, our modifications to DPD, the Morse Potential, and how we apply shear. 
 
-You should also read the following papers for more background on DPD simulations of colloidal gel rheology
+You should also read the list of recommended papers:
 * Background on DPD
 	* "[Dissipative particle dynamics: Bridging the gap between atomistic and mesoscopic simulation]" (1997)
 
