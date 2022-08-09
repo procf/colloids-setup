@@ -1,0 +1,39 @@
+#!/bin/bash
+#SBATCH -J instl
+#SBATCH -n 1 -N 1
+#SBATCH -t 1:00:00
+#SBATCH -o %A-instl.out
+#SBATCH -e %A-instl.err
+
+# obtain hoomd-blue if you don't already have it
+curl -Lo hoomd-v3.1.0.tar.gz https://github.com/glotzerlab/hoomd-blue/releases/download/v3.1.0/hoomd-v3.1.0.tar.gz
+# extract the tarball
+tar -xvf hoomd-v3.1.0.tar.gz
+# remove the tarball
+rm hoomd-v3.1.0.tar.gz
+
+# create new virtual environment to store hoomd-blue
+module load python/3.8.1
+python3 -m venv hoomd-venv
+source hoomd-venv/bin/activate
+
+# load required modules 
+#module load python/3.8.1
+module load cmake/3.18.1
+module load gcc/11.1.0
+module load openmpi/4.1.2-gcc11.1
+
+# install prereqs (pybind11, cereal, Eigen)
+# pipe "yes" to to input "y" by default when prompted
+yes | python3 hoomd-v3.1.0/install-prereq-headers.py
+
+# compile and install hoomd-blue 
+cmake -B build/hoomd -S hoomd-v3.1.0 -DENABLE_MPI=on -DBUILD_HPMC=off -DBUILD_METAL=off -DBUILD_TESTING=off
+cmake --build build/hoomd
+cmake --install build/hoomd
+
+# install additional required py packages
+pip install --upgrade pip
+pip3 install numpy
+pip3 install gsd
+pip3 install matplotlib

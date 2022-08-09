@@ -1,0 +1,17 @@
+#!/bin/bash
+#SBATCH -J shr-wDPD
+#SBATCH -n 8 -N 1
+#SBATCH -t 24:00:00
+#SBATCH -p short
+#SBATCH --constraint=ib
+##SBATCH --mem=128Gb
+#SBATCH -o %A.out
+#SBATCH -e %A.err
+
+module purge
+module load python/3.8.1
+# add path-to-hoomd-basic: 
+source #/work/props/your-name/software/hoomd3.1-basic/hoomd-venv/bin/activate
+module load gcc/11.1.0
+module load openmpi/4.1.2-gcc11.1
+mpirun -n 8 python3 waterDPD.py
