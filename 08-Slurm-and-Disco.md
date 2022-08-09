@@ -2,25 +2,60 @@
 
 ***TO BE UPDATED***
 
-This is a guide to the basics of running colloids simulations on Discovery, Northeastern University's HPC cluster, for research in the PRO-CF Colloids Team.
+This is a guide to the basics of running DPD colloids simulations with HOOMD-blue using Discovery, Northeastern University's HPC cluster. 
 
 This guide is optimized for macOS. See the [Guide to Accessing Discovery](/08-Accessing-Discovery.md) for prerequisites. This guide also assumes that you are familiar with the other content in this repository and know how to run DPD simulations of colloids with HOOMD-blue.
 
-[Last Update: June 2022]
+[Last Update: August 2022]
 
 This guide was compiled by Rob Campbell.
 <br>
 
 ## Contents
-1. [Installing HOOMD-blue on Discovery](/09-Slurm-and-Disco.md#installing-hoomd-blue-on-discovery)
-2. [Scheduling a Job with Slurm](/09-Slurm-and-Disco.md#scheduling-a-job-with-slurm)
-3. [Monitoring a Running Job](/09-Slurm-and-Disco.md#monitoring-a-running-job)
+1. [GitHub and Discovery](/08-Slurm-and-Disco#github-and-discovery)
+1. [Installing HOOMD-blue on Discovery](/08-Slurm-and-Disco.md#installing-hoomd-blue-on-discovery)
+2. [Scheduling a Job with Slurm](/08-Slurm-and-Disco.md#scheduling-a-job-with-slurm)
+3. [Monitoring a Running Job](/08-Slurm-and-Disco.md#monitoring-a-running-job)
 <br>
 
+## GitHub and Discovery
+
+In order to install your own version of HOOMD-blue on the Discovery cluster you will first need to set up command line git.
+
+Since Discovery runs Linux, you will need to use the Linux commands to link to GitHub:
+
+Login to Discovery and make sure you are in your home directory (`~` AKA `/home/your_username`)
+```bash
+ssh your_username@login.discovery.neu.edu
+```
+```bash
+[your_username@login-01 ~]$ pwd
+/home/your_username
+```
+
+Initialize git
+```bash
+git init
+```
+Congifure git with your GitHub credentials
+```bash
+% git config --global user.name "your_Github_username"
+```
+and set your email (use an email address that you have verified on Github)
+```bash
+% git config --global user.email "the_email_you_use_with_Github"
+```
+*Note: Your username and email will be recorded as part of the commit history of any repository you contribute to. If you would like your email to be kept private, you can use the Github-generated `users.noreply.github.com` email instead. To access this* [manage your email settings on Github](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-user-account/managing-email-preferences/setting-your-commit-email-address)
+
+Follow the Github's step-by-step instructions on setting up SSH Authentication on Linux, starting with [Checking for existing SSH keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys).
+
+You can now work with private Github repositories on Discovery.
+<br>
+<br>
 ## Installing HOOMD-blue on Discovery
 
-You can install your own version of HOOMD-blue in your folder on `/work/props`.
-***NOTE: This installation process can take several hours***
+You should install your own version(s) of HOOMD-blue in your folder on `/work/props`.
+
 
 Go to the your folder on the `work` directory and create a new folder for your installation of HOOMD-blue.
 ```bash
