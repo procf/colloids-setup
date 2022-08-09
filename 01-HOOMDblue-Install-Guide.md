@@ -1,6 +1,6 @@
 # HOOMD-blue Installation and Setup Guide
 
-This is a guide to installing [HOOMD-blue] on **your own computer** for use in the PRO-CF Colloids Team. This guide is optizimed for MacOS. Information about using or re-installing HOOMD-blue on the Discovery HPC cluster is availabel in the guide to [Running Simulations on Discovery](10-Slurm-and-Disco.md).
+This is a guide to installing [HOOMD-blue] on **your own computer** for use in the PRO-CF Colloids Team. This guide is optizimed for MacOS. Information about using or re-installing HOOMD-blue on the Discovery HPC cluster is availabel in the guide to [Running Simulations on Discovery](08-Slurm-and-Disco.md).
 
 [Last Update: July 2022]
 
@@ -27,12 +27,12 @@ Our implementation of HOOMD-blue includes several modifications to the base code
 Our latest set of modifications were made to [HOOMD-blue version 3.1](https://hoomd-blue.readthedocs.io/en/v3.1.0/index.html)
 
 It is recommended that you install **at least 2 versions of HOOMD-blue**:
-1. The standard HOOMD-blue v3.1 (so it is available for debugging)
+1. The standard HOOMD-blue v3.1 (so it is available for debugging): [documented by the HOOMD-blue team](https://hoomd-blue.readthedocs.io/en/v3.1.0/)
 2. Our modified version of HOOMD-blue v3.1: [documented in the repository hoomd3.1-mod](https://github.com/procf/hoomd3.1-mod)
 
-And if you're interested, you can always install the [latest version of HOOMD-blue](https://hoomd-blue.readthedocs.io/en/latest/)!
+And if you're interested, you can always install the [latest version of HOOMD-blue](https://hoomd-blue.readthedocs.io/en/latest/) as well.
 
-All of the installation steps are outlined in the HOOMD-blue documentation, but we'll walk through them here as well.
+All of the installation steps are outlined in the HOOMD-blue documentation, but we'll also walk through them here.
 <br>
 <br>
 ## Prerequisites
@@ -60,12 +60,12 @@ OpenMPI can be installed using [Homebrew](https://brew.sh/) or another package m
 
 HOOMD-blue v3.1 comes with a script for installing pybind11, eigen, and cereal that we will use later on.
 
-*Note: It is not recommended to install HOOMD-blue prerequisites with conda. See the HOOMD-blue docs page* [Installing from Binaries](https://hoomd-blue.readthedocs.io/en/v3.1.0/installation.html) *if you want to install with conda.*
+*Note: It is **not** recommended to install HOOMD-blue prerequisites with conda. See the HOOMD-blue docs page* [Installing from Binaries](https://hoomd-blue.readthedocs.io/en/v3.1.0/installation.html) *if you want to install with conda.*
 <br>
 <br>
 ## Setting Up File Management
 
-This section gives recommendations for file organization. If you already have a file organization system you like you can skip this-- open Terminal and move to the directory where you want to install HOOMD-blue, then skip to the [next section](/01-HOOMDblue-Install-Guide.md#getting-hoomd-blue)
+This section gives recommendations for file organization. If you already have a file organization system you like you can skip this: instead, open Terminal and move to the directory where you want to install HOOMD-blue, and then jump to the [next section](/01-HOOMDblue-Install-Guide.md#getting-hoomd-blue).
 
 Whenever you open a new Terminal window you start in your `home` directory (AKA `~` or `Users/your_username`). To check this, open Terminal and enter the command for "present working directory" `pwd` to view your current location on the command line. It should look like this:
 ```bash
@@ -77,7 +77,7 @@ You can view what is in the home directory with the command
 ls
 ```
 
-In the [Guide to Git and Github](https://github.com/procf/getting-started/blob/main/github-guide.md) we recommended keeping the `home` directory clean by creating a `src` or `repositories` directory to store your command line programming files. This is where we recommend installing HOOMD-blue. 
+In the [Guide to Git and Github](https://github.com/procf/getting-started/blob/main/github-guide.md) we recommended keeping the `home` directory clean by creating a `src` or `repositories` directory to store your command line programming files. That is also where we recommend installing HOOMD-blue. 
 
 Move to the `repositories` directory with
 ```bash
@@ -88,13 +88,13 @@ and make a new directory to for each HOOMD-blue version
 mkdir hoomd3.1-basic
 mkdir hoomd3.1-mod
 ```
-We will install the two versions of HOOMD-blue in their respective directories. How you organize your simulation files from here is up to you. For backing up files to Github it is often best to keep simulation scripts and data files separate; however, some people prefer to keep things all in one directory. Here are two file management examples (`folders` and *files*):
+We will install the two versions of HOOMD-blue in their respective directories. How you organize your simulation files from here is up to you. For backing up files to Github it is often best to keep software, simulation scripts, and data files all in separate repositories; however, some people prefer to keep things all those grouped into one directory. Here are two file management examples (`folders` and *files*):
 <br>
 
 ONE FOLDER
 - `hoomd3.1-mod`
 	- *software-installation*
-	- *virtual-python-environment*
+	- `virtual-python-environment`
 	- `sims`
 		- `(simulation-project-name)`
 			- *simulation-scripts*
@@ -107,6 +107,7 @@ SEPARATED FOLDERS
 - `software`
 	- `hoomd3.1-mod`
 		- *software-installation*
+		- `virtual-python-environment`
 - `(simulation-project-name)`
 	- `(project-name)-scripts` [backed-up-to-github]
 		- *simulation-scripts*
@@ -121,7 +122,7 @@ SEPARATED FOLDERS
 - `archive`
 	- *old-projects*
 
-**You can organize your files ANY way you like, just make sure you have some way of keeping track of what you're doing so you can find results later! Your future self will thank you!**
+**You can organize your files ANY way you like, just make sure you have some way of keeping track of what you're doing so you can find results later -- your future self will thank you!**
 <br>
 <br>
 ## Installing hoomd3.1-basic
@@ -278,7 +279,7 @@ pip3 install matplotlib
 
 To install the latest version of HOOMD-blue you can clone it directly from their Github repository. The installation steps after that are essentially the same, but with slightly different file paths.
 
-Instructions for this are in the [HOOMD-blue docs](https://hoomd-blue.readthedocs.io/en/latest/building.html)
+Instructions for this are in the [HOOMD-blue docs](https://hoomd-blue.readthedocs.io/en/latest/building.html).
 <br>
 <br>
 ## Next Steps
