@@ -12,7 +12,7 @@ This guide was compiled by Rob Campbell.
 <br>
 
 ## Contents
-1. [GitHub and Discovery](/08-Slurm-and-Disco#github-and-discovery)
+1. [GitHub and Discovery](/08-Slurm-and-Disco.md#github-and-discovery)
 1. [Installing HOOMD-blue on Discovery](/08-Slurm-and-Disco.md#installing-hoomd-blue-on-discovery)
 2. [Scheduling a Job with Slurm](/08-Slurm-and-Disco.md#scheduling-a-job-with-slurm)
 3. [Monitoring a Running Job](/08-Slurm-and-Disco.md#monitoring-a-running-job)
