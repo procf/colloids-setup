@@ -4,19 +4,21 @@ This is a guide to getting setup to use the Discovery Cluster at Northeastern Un
 
 This guide is optimized for macOS.
 
-[Last Update: July 2022]
+[Last Update: August 2022]
 
 This guide was compiled by Rob Campbell.
 
 ## Contents
-1. [Getting Access](/09-Accessing-Discovery.md#getting-access)
-2. [Connecting to Discovery](/09-Accessing-Discovery.md#connecting-to-discovery)
-3. [Learning How to Use Discovery](/09-Accessing-Discovery.md#learning-how-to-use-discovery)
-4. [Getting Access to the `work` Directory](/09-Accessing-Discovery.md#getting-access-to-the-work-directory)
-5. [Requesting Access to Additonal Partitions](/09-Accessing-Discovery.md#requesting-access-to-additonal-partitions)
-6. [Copying files to Discovery](/09-Accessing-Discovery.md#copying-files-to-discovery)
-7. [Loading Existing Software](/09-Accessing-Discovery.md#loading-existing-software)
-8. [Next Steps](/09-Accessing-Discovery.md#next-steps)
+1. [Getting Access](/07-Accessing-Discovery.md#getting-access)
+2. [Connecting to Discovery](/07-Accessing-Discovery.md#connecting-to-discovery)
+3. [X11 and Visual Interfaces](/07-Accessing-Discovery.md#x11-and-visual-interdaces)
+4. [Learning How to Use Discovery](/07-Accessing-Discovery.md#learning-how-to-use-discovery)
+5. [X11 and Visual Interfaces](/07-Accessing-Discovery.md#x11-and-visual-interdaces)
+6. [Getting Access to the work Directory](/07-Accessing-Discovery.md#getting-access-to-the-work-directory)
+7. [Requesting Access to Additonal Partitions](/07-Accessing-Discovery.md#requesting-access-to-additonal-partitions)
+8. [Copying files to and from Discovery](/07-Accessing-Discovery.md#copying-files-to-and-from-discovery)
+9. [Loading Existing Software](/07-Accessing-Discovery.md#loading-existing-software)
+10. [Next Steps](/07-Accessing-Discovery.md#next-steps)
 <br>
 
 ## Getting Access
@@ -44,9 +46,14 @@ or log back out with the `logout` command
 ```bash
 logout
 ```
+To learn more about connecting to Discovery, see [Connecting to Discovery](https://rc-docs.northeastern.edu/en/latest/get_started/connect.html#mac) in the Discovery docs.
 <br>
+<br>
+## X11 and Visual Interfaces
 
-**NOTE**: If you would like to be able to use applications with a visual interface (i.e. X11 and GUI interfaces), including MATLAB or simply viewing Python plots directly from Discovery, then you need to do 4 things:
+At some point you will probably also wayt to be able to use applications with a visual interface (i.e. using X11 and GUI interfaces). This includes things like MATLAB, or viewing Python plots directly from Discovery (without having to save and download a file to your local computer first).
+
+Setting up X11 requires 4 additional steps:
 
 1. Set up passwordless SSH access to Discovery as described on the [Discovery docs](https://rc-docs.northeastern.edu/en/latest/first_steps/connect_mac.html#passwordless-ssh) 
 2. (macOS only) Install XQuartz (available on the [XQuartz website](https://www.xquartz.org/)) and run it in the background (*Do NOT use the Terminal application within XQuartz to sign in to Discovery, use the default Terminal that comes with your Mac*)
@@ -61,8 +68,6 @@ defaults write org.macosforge.xquartz.X11 enable_iglx -bool true
 ssh -Y your_username@login.discovery.neu.edu
 ```
 You can test if this worked with the command `xeyes` which will make a pair of eyes appear in the corner of your screen that follow your cursors movement.
-
-To learn more about connecting to Discovery, see [Connecting to Discovery](https://rc-docs.northeastern.edu/en/latest/get_started/connect.html#mac) in the Discovery docs.
 <br>
 <br>
 ## Learning How to Use Discovery
@@ -83,7 +88,7 @@ After connecting to Discovery, you can check this with
 cd /work/props
 ```
 
-If you do not have permission to access this directory contact RC Help.
+**If you do not automatically have permission to access this directory contact RC Help.**
 
 After you get access to `/work/props` you can create your own folder for your projects
 ```bash
@@ -99,7 +104,7 @@ You automatically have access to the essential partitions for running small jobs
 Discuss with Safa and other current students about whether or not you need access to these partitions. If you do, you can request access using the [Partition Access Request Form](https://service.northeastern.edu/tech?id=sc_cat_item&sys_id=0c34d402db0b0010a37cd206ca9619b7).
 <br>
 <br>
-## Copying files to Discovery
+## Copying files to and from Discovery
 
 There are several ways that you can copy files to and from Discovery:
 
@@ -148,5 +153,5 @@ More information about modules is available in the [Discovery documentation](htt
 <br>
 ## Next Steps
 
-Once you have access to Discovery and are familiar with the basics you can begin running simulations on Discovery. See the [introduction to HPC simulations](/10-Slurm-and-Disco.md) for more information.
+Once you have access to Discovery and are familiar with the basics you can begin running simulations on Discovery. See the [introduction to HPC simulations](/08-Slurm-and-Disco.md) for more information.
 
