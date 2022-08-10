@@ -27,7 +27,7 @@ SR = 0.1 # shear parameter (shear rate = SR*L_X)
 N_strains = 10 # number of strains
 theta = 1.0 # xy tilt factor
 delta_T_shearing = round(theta/SR/dt_Integration) # timestep for shear
-nframe_strain = delta_T_shearing/N_strain # 10 frames in theta strains
+nframe_strain = delta_T_shearing/10 # 10 frames in theta strains
 
 # system parameters
 KT = 0.1 # system temperature
@@ -77,7 +77,7 @@ all_ = hoomd.filter.All()
 nl = hoomd.md.nlist.Tree(buffer=0.05);
 
 # define DPD Morse force (attraction) interactions
-morse = hoomd.md.pair.DPDMorse(nlist=nl, kT=KT, default_r_cut=1.0 * r_c, bond_calc=True)
+morse = hoomd.md.pair.DPDMorse(nlist=nl, kT=KT, default_r_cut=1.0 * r_c, bond_calc=False)
 # specify the conservative (A) and dissipative (gamma) parameters 
 # for solvent particle interactios. NOTE: use gamma=45 not gamma=4.5
 # (no Morse Potential for solvent, Morse parameters are zero or ignored)
