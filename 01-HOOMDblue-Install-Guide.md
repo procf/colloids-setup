@@ -15,6 +15,7 @@ The standard implementation of HOOMD-blue was adapted for our colloids simulatio
 4. [Installing hoomd3.1-basic](/01-HOOMDblue-Install-Guide.md#installing-hoomd31-basic)
 5. [Installing hoomd3.1-mod](/01-HOOMDblue-Install-Guide.md#installing-hoomd31-mod)
 6. [Installing the latest version](/01-HOOMDblue-Install-Guide.md#installing-the-latest-version)
+7. [Updating your installation](/01-HOOMD-blue-Install-Guide.md#updating-your-installation)
 8. [Next Steps](/01-HOOMDblue-Install-Guide.md#next-steps)
 <br>
 
@@ -282,6 +283,22 @@ To install the latest version of HOOMD-blue you can clone it directly from their
 Instructions for this are in the [HOOMD-blue docs](https://hoomd-blue.readthedocs.io/en/latest/building.html).
 <br>
 <br>
+## Updating your installation
+
+If you make any changes to HOOMD-blue's source code, you will need to recompile and reinstall the software.
+
+**First, move to the directory for the version of HOOMD-blue you want to update is located (where the build directory is located), and source into the virtual environment**
+
+Compile
+```bash
+cmake --build build/hoomd
+```
+And re-install
+```bash
+cmake --install build/hoomd
+```
+<br>
+
 ## Next Steps
 
 You are now ready to use HOOMD-blue! See [Simulating waterDPD](/02-Simulating-waterDPD.md) for more information on running simulations and next steps.
