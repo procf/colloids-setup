@@ -27,7 +27,7 @@ SR = 0.1 # shear parameter (shear rate = SR*L_X)
 N_strains = 10 # number of strains
 theta = 1.0 # xy tilt factor
 delta_T_shearing = round(theta/SR/dt_Integration) # timestep for shear
-nframe_strain = delta_T_shearing/10 # 20 frames in theta strains
+nframe_strain = delta_T_shearing/N_strain # 10 frames in theta strains
 
 # system parameters
 KT = 0.1 # system temperature
@@ -117,7 +117,7 @@ box_resize=hoomd.update.BoxResize(trigger=period, box1=initial_box, box2=final_b
 	filter=all_, SR=SR*L_Y)
 sim.operations += box_resize
 
-# run for one shear times (theta = 1.0, i.e. 1 strain)
+# shear one shear time (theta = 1.0, i.e. 1 strain)
 sim.run(delta_T_shearing+1)
 
 # clear the box-resize operation for the next round
@@ -127,9 +127,10 @@ sim.operations -= box_resize
 for i in range(N_strains):
 	# set the box resize operation
 	initial_box = hoomd.Box.from_box(sim.state.box)
-	initial_box.xy = -theta # reset the box to zero
+	initial_box.xy = -theta # oscillatory for more efficiency
 	final_box = hoomd.Box.from_box(initial_box)
 	final_box.xy = theta
+	# delta_T_shearing is now in terms of 2*theta
 	delta_T_shearing = round((final_box.xy-initial_box.xy)/SR/dt_Integration)
 	box_resize = hoomd.update.BoxResize(trigger=period, box1=initial_box, box2=final_box,
 		variant = hoomd.variant.Ramp(A=0, B=1, t_start=sim.timestep,
@@ -141,6 +142,3 @@ for i in range(N_strains):
 
 	# clear the box-resize operation for the next round
 	sim.operations -= box_resize
-
-# run the simulation!
-sim.run(N_time_steps)
