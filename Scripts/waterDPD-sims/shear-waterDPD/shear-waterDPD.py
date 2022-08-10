@@ -1,5 +1,5 @@
 ## DPD simulation of shear flow in water using HOOMD-blue v3.1.0
-## NOTE: Requires Equilibrium.gsd of water
+## NOTE: Requires Equilibrium.gsd of water located in "../waterDPD/"
 ## (2022)
 
 #########  MODULE LIBRARY
@@ -64,7 +64,7 @@ sim = hoomd.Simulation(device=device, seed=50)
 
 # start the simulation from the equilibrium system
 sim.timestep = 0 # set initial timestep to 0
-sim.create_state_from_gsd(filename='Equilibrium.gsd')
+sim.create_state_from_gsd(filename='../waterDPD/Equilibrium.gsd')
 
 # assign particle types to groups 
 groupA = hoomd.filter.Type(['A'])
