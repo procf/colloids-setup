@@ -52,7 +52,7 @@ Required for installation:
 * Eigen >= 3.2
 * cereal >= 1.1
 
-Xcode should incldue both clang and gcc on macOS. Python 2 is also included on macOS, but you will need to install Python 3 separately. See the [macOS System Setup Recommendations and Tips](/System-Setup/02-macOS-Setup.md) for information about getting a package manager for installing software from the command line (e.g. Homebrew), installing Xcode, setting up Python 3, and installing CMake.
+Xcode should incldue both clang and gcc on macOS, **however** you may still need to manually install gcc with a package manager (such as Homebrew) to have access to all the gcc files used when compiling HOOMD-blue. Python 2 is also included on macOS, but you will need to install Python 3 separately. See the [macOS System Setup Recommendations and Tips](/System-Setup/02-macOS-Setup.md) for information about getting a package manager for installing software from the command line (e.g. Homebrew), installing Xcode, setting up Python 3, and installing CMake.
 
 You should already have set up git to access this repository. For more details on git see the [Guide to Git and Github](https://github.com/procf/getting-started/blob/main/github-guide.md) in the "getting-started" repo.
 
