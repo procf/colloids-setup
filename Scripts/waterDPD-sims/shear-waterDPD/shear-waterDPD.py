@@ -123,8 +123,10 @@ sim.run(delta_T_shearing+1)
 # clear the box-resize operation for the next round
 sim.operations -= box_resize
 
+remaining_strains = (N_strains - 1)/2
+
 # continue to shear the system up to N_strains
-for i in range(N_strains):
+for i in range(remaining_strains):
 	# set the box resize operation
 	initial_box = hoomd.Box.from_box(sim.state.box)
 	initial_box.xy = -theta # oscillatory for more efficiency
