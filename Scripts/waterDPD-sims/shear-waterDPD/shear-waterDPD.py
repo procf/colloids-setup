@@ -106,6 +106,8 @@ sim.operations.writers.append(gsd_writer)
 gsd_writer.log = logger
 
 ## 2. Apply shear
+# NOTE: if N_strains is ODD, runs for a total of N_strains
+#       if N_strains is EVEN, run for a total of (N_strains + 1)
 
 # set the box resize operation
 initial_box = hoomd.Box.from_box(sim.state.box)
@@ -123,9 +125,9 @@ sim.run(delta_T_shearing+1)
 # clear the box-resize operation for the next round
 sim.operations -= box_resize
 
-remaining_strains = (N_strains - 1)/2
+remaining_strains = int(N_strains/2)
 
-# continue to shear the system up to N_strains
+# continue to shear the system up to (N_strains + 1)
 for i in range(remaining_strains):
 	# set the box resize operation
 	initial_box = hoomd.Box.from_box(sim.state.box)
