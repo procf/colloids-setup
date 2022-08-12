@@ -9,7 +9,7 @@ import gsd.hoomd
 
 
 ######### INPUT PARAMETERS
-filepath = 'Equilibrium.gsd'
+filepath = '../Equilibrium.gsd'
 period = 1 # from simulation
 dt_Integration = 0.01 # from simulation
 t1 = period * dt_Integration # timestep conversion factor

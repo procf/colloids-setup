@@ -9,7 +9,7 @@ import gsd.hoomd
 import math
 
 ######### INPUT PARAMETERS
-filepath = 'Shearing0.1.gsd'
+filepath = '../Shearing0.1.gsd'
 
 # NOTE: for shear analysis, we want time in terms of strain
 # 	i.e. the trigger is "nframe_strain" not "period"
