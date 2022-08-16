@@ -18,7 +18,6 @@ L_Y = 10 # from simulation
 theta = 1.0 # from simulation
 dt_Integration = 0.01 # from simulation
 delta_T_shearing = round(theta/(SR*L_Y)/dt_Integration)
-N_strains = 10 # number of strains
 nframe_strain = delta_T_shearing/10 # 10 frames per for each theta strain(s)
 t1 = theta / nframe_strain # timestep conversion to strains
 
