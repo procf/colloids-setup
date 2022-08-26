@@ -1,5 +1,5 @@
 # From a GSD file, plot the shear stress (-pressure_xy) 
-# of a simulation versus DPD time
+# of a simulation versus DPD time (semi-log)
 # NOTE: requires "gsd-properties.txt" created with the
 #	sim-analysis.py script
 
@@ -8,8 +8,11 @@ import matplotlib.pyplot as plt
 
 f = np.genfromtxt('gsd-properties.txt')
 plt.plot(f[:,0],-f[0:,1], "bo", markersize="0.5")
+
+plt.xscale('log')
+
 plt.axhline(y=0.0, color="r")
-plt.xlabel('Strains')
-plt.ylabel('shear stress')
+plt.xlabel('Strain')
+plt.ylabel('Shear stress')
 #plt.savefig('stres-strain.png',dpi=600, transparent=False)
 plt.show()
