@@ -170,6 +170,12 @@ You can double check that you are now accessing the correct Python environment w
 /Users/your_username/repositories/hoomd3.1-basic/hoomd-venv/bin/python
 ```
 
+### Make sure you have Open-MPI installed
+Make sure that you have installed Open-MPI
+```
+brew install open-mpi
+```
+
 ### Installing the basic HOOMD-blue v3.1.0
 **Make sure you are in the `hoomd3.1-basic` directory and the correct vitual environemnt is activated**
 ```bash
@@ -240,6 +246,12 @@ You can double check that you are now accessing the correct Python environment w
 ```bash
 (hoomdmod-venv) % which python
 /Users/your_username/repositories/hoomd3.1-mod/hoomdmod-venv/bin/python
+```
+
+### Make sure you have Open-MPI installed
+Make sure that you have installed Open-MPI
+```
+brew install open-mpi
 ```
 
 ### Installing our modified HOOMD-blue v3.1
