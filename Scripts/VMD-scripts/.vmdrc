@@ -84,8 +84,8 @@ display shadows on
 display ambientocclusion on
 mol default color Name
 mol default material AOChalky
-mol default style Points
-mol default selection {type B}
+mol default style Points # use Points instead of VDW incase large filesize
+mol default selection {type B} # only load COLLOIDS
 
 
 
