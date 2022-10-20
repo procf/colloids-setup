@@ -205,7 +205,7 @@ Just like there is a `.zshrc` file that we can use to configure our Terminal she
 There are two ways that you can change the `.vmdrc` file
 1. Create a new `.vmdrc` file in your home directory (this will take precedence over all over .vmdrc files when openin VMD)
 2. Edit the existing `.vmdrc` file in: /Applications/VMD/VMD\ 1.9.4a51-x86_64-Rev9.app/Contents/vmd/.vmdrc<br>
-*NOTE: Remember that dot files do not show up with the ls command, you must instead use ls -la*
+*NOTE: Remember that dot files do not show up with the* `ls` *command, you must instead use* `ls -la`
 
 You may also want to change the default settings for the Movie Maker plugin by modifying the `vmdmovie.tcl` file located at: /Applications/VMD/VMD\ 1.9.4a51-x86_64-Rev9.app/Contents/vmd/plugins/noarch/tcl/vmdmovie1.9/vmdmovie.tcl
 
