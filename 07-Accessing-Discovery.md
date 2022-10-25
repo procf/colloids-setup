@@ -13,12 +13,11 @@ This guide was compiled by Rob Campbell.
 2. [Connecting to Discovery](/07-Accessing-Discovery.md#connecting-to-discovery)
 3. [X11 and Visual Interfaces](/07-Accessing-Discovery.md#x11-and-visual-interdaces)
 4. [Learning How to Use Discovery](/07-Accessing-Discovery.md#learning-how-to-use-discovery)
-5. [X11 and Visual Interfaces](/07-Accessing-Discovery.md#x11-and-visual-interdaces)
-6. [Getting Access to the work Directory](/07-Accessing-Discovery.md#getting-access-to-the-work-directory)
-7. [Requesting Access to Additonal Partitions](/07-Accessing-Discovery.md#requesting-access-to-additonal-partitions)
-8. [Copying files to and from Discovery](/07-Accessing-Discovery.md#copying-files-to-and-from-discovery)
-9. [Loading Existing Software](/07-Accessing-Discovery.md#loading-existing-software)
-10. [Next Steps](/07-Accessing-Discovery.md#next-steps)
+5. [Getting Access to the work Directory](/07-Accessing-Discovery.md#getting-access-to-the-work-directory)
+6. [Requesting Access to Additonal Partitions](/07-Accessing-Discovery.md#requesting-access-to-additonal-partitions)
+7. [Copying files to and from Discovery](/07-Accessing-Discovery.md#copying-files-to-and-from-discovery)
+8. [Loading Existing Software](/07-Accessing-Discovery.md#loading-existing-software)
+9. [Next Steps](/07-Accessing-Discovery.md#next-steps)
 <br>
 
 ## Getting Access

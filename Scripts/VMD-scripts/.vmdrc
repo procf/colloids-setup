@@ -9,6 +9,7 @@
 # !!! Modified by Rob Campbell on 2022/10/20 [Rob2022]
 # !!! to use the modified file copy this to your home directory: ~
 # !!! or replace the original: /Applications/VMD/VMD\ 1.9.4a51-x86_64-Rev9.app/Contents/vmd/.vmdrc  
+# NOTE: adding a comment at the end of a line BREAKS that setting
 
 ############################################################################
 # RCS INFORMATION:
@@ -84,10 +85,10 @@ display shadows on
 display ambientocclusion on
 mol default color Name
 mol default material AOChalky
-mol default style Points # use Points instead of VDW incase large filesize
-mol default selection {type B} # only load COLLOIDS
-
-
+# use Points instead of VDW incase large filesize
+mol default style Points
+# only load COLLOIDS
+mol default selection {type B}
 
 # User's default values for newly loaded molecules/reps, etc
 #  mol default color {colorID 5}
@@ -96,3 +97,32 @@ mol default selection {type B} # only load COLLOIDS
 #  mol default material {Transparent}
 
 
+# Change settings for existing molecules [Rob2022]
+# this allows you to open files correctly from the command line 
+# for more details: https://sites.google.com/site/akohlmey/random-hacks/vmd-init-script?authuser=0
+proc reset_viz {molid} {
+  # operate only on existing molecules
+  if {[lsearch [molinfo list] $molid] >= 0} {
+    # delete all representations
+    set numrep [molinfo $molid get numreps]
+    for {set i 0} {$i < $numrep} {incr i} {
+      mol delrep $i $molid
+    }
+    # add new representations
+    mol color Name
+    mol material AOChalky
+    # use Points instead of VDW incase large filesize
+    mol representation Points
+    # only load COLLOIDS
+    mol selection {type B}
+    mol addrep $molid 
+  } 
+}
+proc reset_viz_proxy {args} {
+  foreach {fname molid rw} $args {}
+  eval "after idle {reset_viz $molid}"
+}
+## hook up the function
+trace variable vmd_initialize_structure w reset_viz_proxy
+# take care of molecule loaded at start
+after idle { reset_viz 0 }
