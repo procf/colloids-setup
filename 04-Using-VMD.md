@@ -24,6 +24,7 @@ Our VMD workflow was developed by Mohammad (Nabi) Nabizadeh. This guide was comp
 11. [Other Tools](/04-Using-VMD.md#other-tools)
 12. [Recommendations for High Quality Visualizations](/04-Using-VMD.md#recommendations-for-high-quality-visualizations)
 12. [Some Recommended Visualization Styles](/04-Using-VMD.md#some-recommended-visualization-styles)
+13. [Changing the Default Settings in VMD](/04-Using-VMD.md#changing-the-default-settings-in-vmd)
 13. [Next Steps](/04-Using-VMD.md#next-steps)
 <br>
 
@@ -197,6 +198,20 @@ For the best quality visualization of a colloidal gel, we recommend the followin
 	* use Tachyon for large, high quality images: go to **VMD Main** File/Render to open the **File Render Controls** window, and in "Render the current scene using" select "Tachyon (internal, in-memory rendering)"
 <br>
 
+## Changing the Default Settings in VMD
+
+Just like there is a `.zshrc` file that we can use to configure our Terminal shell, there is a `.vmdrc` file that we can use to configure the default settings for VMD.
+
+There are two ways that you can change the `.vmdrc` file
+1. Create a new `.vmdrc` file in your home directory (this will take precedence over all over .vmdrc files when openin VMD)
+2. Edit the existing `.vmdrc` file in: /Applications/VMD/VMD\ 1.9.4a51-x86_64-Rev9.app/Contents/vmd/.vmdrc<br>
+*NOTE: Remember that dot files do not show up with the* `ls` *command, you must instead use* `ls -la`
+
+You may also want to change the default settings for the Movie Maker plugin by modifying the `vmdmovie.tcl` file located at: /Applications/VMD/VMD\ 1.9.4a51-x86_64-Rev9.app/Contents/vmd/plugins/noarch/tcl/vmdmovie1.9/vmdmovie.tcl
+
+Rob's modified versions of both of these files are available in the [Scripts/VMD-scripts folder](/Scripts/VMD-scripts). **Take a few minutes to read through them and modify them for your computer and your simulation preferences before adding them to your version of VMD**
+<br>
+<br>
 ## Next Steps
 
 See the [Analysis Guide](/05-Analysis-Guide.md) for an introduction to other ways to analyze a completed simulation.

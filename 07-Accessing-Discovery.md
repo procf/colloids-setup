@@ -13,19 +13,18 @@ This guide was compiled by Rob Campbell.
 2. [Connecting to Discovery](/07-Accessing-Discovery.md#connecting-to-discovery)
 3. [X11 and Visual Interfaces](/07-Accessing-Discovery.md#x11-and-visual-interdaces)
 4. [Learning How to Use Discovery](/07-Accessing-Discovery.md#learning-how-to-use-discovery)
-5. [X11 and Visual Interfaces](/07-Accessing-Discovery.md#x11-and-visual-interdaces)
-6. [Getting Access to the work Directory](/07-Accessing-Discovery.md#getting-access-to-the-work-directory)
-7. [Requesting Access to Additonal Partitions](/07-Accessing-Discovery.md#requesting-access-to-additonal-partitions)
-8. [Copying files to and from Discovery](/07-Accessing-Discovery.md#copying-files-to-and-from-discovery)
-9. [Loading Existing Software](/07-Accessing-Discovery.md#loading-existing-software)
-10. [Next Steps](/07-Accessing-Discovery.md#next-steps)
+5. [Getting Access to the work Directory](/07-Accessing-Discovery.md#getting-access-to-the-work-directory)
+6. [Requesting Access to Additonal Partitions](/07-Accessing-Discovery.md#requesting-access-to-additonal-partitions)
+7. [Copying files to and from Discovery](/07-Accessing-Discovery.md#copying-files-to-and-from-discovery)
+8. [Loading Existing Software](/07-Accessing-Discovery.md#loading-existing-software)
+9. [Next Steps](/07-Accessing-Discovery.md#next-steps)
 <br>
 
 ## Getting Access
 
 To request access to the Discovery cluster, complete the [ServiceNow Research Computing Access Request form](https://service.northeastern.edu/tech?id=sc_cat_item&sys_id=0ae24596db535fc075892f17d496199c). We do not need the software Gaussian.
 
-More details on getting access and using Discovery are available in [the Discovery documentation](https://rc-docs.northeastern.edu/en/latest/get_started/get_access.html).
+More details on getting access and using Discovery are available in [the Discovery documentation](https://rc-docs.northeastern.edu/en/latest/first_steps/get_access.html).
 <br>
 <br>
 ## Connecting to Discovery
@@ -46,7 +45,7 @@ or log back out with the `logout` command
 ```bash
 logout
 ```
-To learn more about connecting to Discovery, see [Connecting to Discovery](https://rc-docs.northeastern.edu/en/latest/get_started/connect.html#mac) in the Discovery docs.
+To learn more about connecting to Discovery, see [Connecting to Discovery](https://rc-docs.northeastern.edu/en/latest/first_steps/connect_mac.html) in the Discovery docs.
 <br>
 <br>
 ## X11 and Visual Interfaces
@@ -72,11 +71,11 @@ You can test if this worked with the command `xeyes` which will make a pair of e
 <br>
 ## Learning How to Use Discovery
 
-To get started understanding the Discover cluster you should watch the introductory training video on [Northeastern's LinkedIn Learning page](https://www.linkedin.com/checkpoint/enterprise/login/74653650?pathWildcard=74653650&application=learning&redirect=https%3A%2F%2Fwww%2Elinkedin%2Ecom%2Flearning%2Fcontent%2F1139340%3Fu%3D74653650).
+To get started understanding the Discover cluster, check out Discovery's [read-the-docs](https://rc-docs.northeastern.edu/en/latest/welcome/welcome.html).
 
-You can also sign up for [training sessions](https://rc.northeastern.edu/support/training/) on introductory and advanced topics.
+The RC team has recorded several training sessions that are available through Canvas, and you can sign up for future [training sessions from the Trainings page](https://rc.northeastern.edu/support/training/) on introductory and advanced topics.
 
-And you can schedule an "office hours" style meeting for 1-on-1 help from a Research Computing staff member at the RC [Consulting page](https://rc.northeastern.edu/support/consulting/).
+You can also schedule an "office hours" style meeting for 1-on-1 help from a Research Computing staff member at the RC [Consulting page](https://rc.northeastern.edu/support/consulting/).
 <br>
 <br>
 ## Getting Access to the `work` Directory

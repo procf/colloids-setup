@@ -87,6 +87,8 @@ An example code for a shearing simulation is the shear-waterDPD.py script in the
 
 Be sure to run shear-waterDPD.py using the modified version of HOOMD-blue (and *not* the basic version of HOOMD-blue).
 
+The shear-waterDPD.py file also created two new files for tracking colloid-colloids bonds, "BondFormedHistory.csv" and "BondBrokeHistory.csv". These files are empty for this simulation, and you can ignore them and/or delete them.
+
 For the analysis script, most of it is the same; however, our time units are different. We want to report the data from each frame in terms of the number of strains, not the DPD time. Calculating this value requires additional information from the simulation.
 
 Once we have extracted the data, the plot of shear stress versus strain gives us the system's stress-strain curve for our chosen shear rate.

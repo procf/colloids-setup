@@ -18,8 +18,9 @@ This guide is for optimized for MacOS.
 7. [Installing the GSD Plugin](/03-VMD-Install-Guide.md#installing-the-gsd-plugin)
 8. [Adding the GSD Plugin to the Original VMD Application](/03-VMD-Install-Guide.md#adding-the-gsd-plugin-to-the-original-vmd-application)
 9. [Opening GSD Files with VMD](/03-VMD-Install-Guide.md#opening-gsd-files-with-vmd)
+11. [Opening VMD from the Command Line](03-VMD-Install-Guide.md#opening-vmd-from-the-command-line)
 10. [Installing the VMD Movie Plugin Requirements](03-VMD-Install-Guide.md#installing-the-vmd-movie-plugin-requirements)
-11. [Next Steps](/03-VMD-Install-Guide.md#next-steps)
+12. [Next Steps](/03-VMD-Install-Guide.md#next-steps)
 <br>
 
 ## Prerequisites
@@ -171,6 +172,35 @@ The GSD file should now open!
 You can close the Molecule File Browser and select the OpenGL Display window to view the default visualization setting (which displays "bonds" between your particles).
 <br>
 <br>
+## Opening VMD from the Command Line
+
+So, everything now works great, but there are 2 problems:
+1. You can't keep VMD in the Dock
+2. You may have noticed that VMD always opens in the home directory, so you will always have to navigate from there to your files before you can open them.
+
+The best way to solve these problems is to open VMD from the Command Line (i.e. the Terminal) instead.
+
+The easiest way to do this is to add an "alias" to the configuration file for your Terminal shell (on MacOS this is the `.zshrc` file, as opposed to the `.bashrc` file).
+
+Check to see if you have a .zhsrc file (this will also create a new one if you do not already have it)
+```
+cd ~ && vim .zshrc
+```
+Copy and paste the following lines at the end of your .zshrc file
+```
+# add alias for VMD
+alias vmd='csh /Applications/VMD/VMD\ 1.9.4a51-x86_64-Rev9.app/Contents/MacOS/startup.command.csh'
+```
+Restart your Terminal session (or open a new window) and you should now be able to open VMD using the command `vmd`
+
+You can now cd into any directory you like and open VMD with that location as the workin directory!
+
+You can also open a gsd file in VMD from the Terminal with
+```
+vmd filename.gsd
+```
+<br>
+
 ## Installing the VMD Movie Plugin Requirements
 
 As a final step, you should also install the VMD Movie Plugin software requirements so that you have the full set of movie options when saving visualizations.

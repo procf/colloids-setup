@@ -14,13 +14,12 @@ filepath = '../Shearing0.1.gsd'
 # NOTE: for shear analysis, we want time in terms of strain
 # 	i.e. the trigger is "nframe_strain" not "period"
 SR = 0.1 # from simulation
-L_Y = 10 # from simulation
+N_strains = 10 # from simulation
 theta = 1.0 # from simulation
 dt_Integration = 0.01 # from simulation
-delta_T_shearing = round(theta/(SR*L_Y)/dt_Integration)
-N_strains = 10 # number of strains
-nframe_strain = delta_T_shearing/N_strains # number of frames per theta
-t1 = theta / nframe_strain # timestep conversion to strains
+delta_T_shearing = round(theta/SR/dt_Integration)
+nframe_strain = delta_T_shearing/10 # 10 frames per for each theta strain(s)
+t1 = theta / nframe_strain * N_strains # timestep conversion to strains
 
 
 ######### DEFINE SIM CHECKS
