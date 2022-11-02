@@ -40,12 +40,14 @@ Go to the [VMD website](https://www.ks.uiuc.edu/Development/Download/download.cg
 
 You will be prompted to create a username and password to register with VMD. Register for 1 user.
 
-Select and download the version appropriate for your operating system. For MacOS versions this will download a DMG file (e.g. `vmd194a51-macx86_64.dmg`) to your Downloads folder.
+Select and download the version appropriate for your operating system. For MacOS versions this will download a DMG file to your Downloads folder e.g. 
+* for Intel: `vmd194a51-macx86_64.dmg`
+* for ARM: `vmd194a57-arm64-Rev12.dmg`
 <br>
 <br>
 ## Installing VMD
 
-Open the DMG file. This will mount the DMG file as a virtual disk and open a new window with a VMD application (called something like `VMD 1.9.4a51-x86_64-Rev9`) and a PDF of the VMD User's Guide.
+Open the DMG file. This will mount the DMG file as a virtual disk and open a new window with a VMD application (called something like `VMD 1.9.4a51-x86_64-Rev9` for Intel Macs or `VMD 1.9.4a57-arm64-Rev12` for ARM Macs) and a PDF of the VMD User's Guide.
 
 Open a new Finder window and go to Applications. In Applications, make a new folder called "VMD"<br>
 *Note: In order to manually add a plugin to VMD, which we will do later, you must use this filename or the default filepath will be incorrect. This installation does not currently work for alternate filepaths.*
@@ -125,7 +127,9 @@ And then install the plugin
 make install
 ```
 <br>
-You can now run VMD (with the GSD plugin installed) from the duplicate Contents folder. To open this version of VMD, select the Unix executable file vmd_MACOSXX86_64 located in the Applications/VMD/Contents/vmd/ folder.
+You can now run VMD (with the GSD plugin installed) from the duplicate Contents folder. To open this version of VMD, select the Unix executable file lovated in the Applications/VMD/Contents/vmd/ folder:
+* for Intel: vmd_MACOSXX86_64
+* for ARM: vmd_MACOSXARM64
 
 This is functional, but not ideal.
 <br>
@@ -138,6 +142,7 @@ You now have two versions of VMD
 
 If you want to open VMD from an application icon, rather than the Unix executable file, you can copy the new, configured GSD plugin to the original version of VMD.
 
+For Intel Macs:<br>
 Open a new Terminal window and move to the VMD application molfile directory (where plugins are stored)
 ```bash
 cd /Applications/VMD/VMD\ 1.9.4a51-x86_64-Rev9.app/Contents/vmd/plugins/MACOSXX86_64/molfile/  
@@ -146,6 +151,17 @@ Copy the GSD plugin from where it was installed in the duplicate Contents folder
 ```bash
 cp /Applications/VMD/Contents/vmd/plugins/MACOSXX86_64/molfile/gsdplugin.so .
 ```
+
+For Intel Macs:<br>
+Open a new Terminal window and move to the VMD application molfile directory (where plugins are stored)
+```bash
+cd /Applications/VMD/VMD\ 1.9.4a57-arm64-Rev12.app/Contents/vmd/plugins/MACOSXARM64/molfile/  
+```
+Copy the GSD plugin from where it was installed in the duplicate Contents folderto this molfile directory (where you are currently located)
+```bash
+cp /Applications/VMD/Contents/vmd/plugins/MACOSXARM64/molfile/gsdplugin.so .
+```
+
 
 Your should now be able to open GSD files with the original VMD application! You can open the VMD application from the Applications/VMD folder or from Launchpad.<br>
 ***NOTE: Unfortunately you cannot keep VMD in the Dock.*** *Right-clicking on the icon and selecting "Keep in Dock" will work once, but after you close VMD the path will break and direct to the VMD icon file, not the VMD application. Bummer.*
@@ -186,11 +202,17 @@ Check to see if you have a .zhsrc file (this will also create a new one if you d
 ```
 cd ~ && vim .zshrc
 ```
-Copy and paste the following lines at the end of your .zshrc file
+**For Intel** Copy and paste the following lines at the end of your .zshrc file
 ```
 # add alias for VMD
 alias vmd='csh /Applications/VMD/VMD\ 1.9.4a51-x86_64-Rev9.app/Contents/MacOS/startup.command.csh'
 ```
+**For ARM** Copy and paste the following lines at the end of your .zshrc file
+```
+# add alias for VMD
+alias vmd='csh /Applications/VMD/VMD\ 1.9.4a57-arm64-Rev12.app/Contents/MacOS/startup.command.csh'
+```
+
 Restart your Terminal session (or open a new window) and you should now be able to open VMD using the command `vmd`
 
 You can now cd into any directory you like and open VMD with that location as the workin directory!
