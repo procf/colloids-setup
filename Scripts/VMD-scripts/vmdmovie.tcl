@@ -3,8 +3,7 @@
 ##
 ## !!! Modified by Rob Campbell on 2022/10/20 [Rob2022]
 ## !!! changes default settings to "trajectory" movies
-## !!! and the default directory to Rob_filepath
-Rob_filepath = "/Users/robcampbell/repositories/pro-cf/" 
+## !!! and the default directory to Rob's directory: "/Users/robcampbell/repositories/pro-cf/" 
 ##     After installing VMD, this file is located in:
 ##     /Applications/VMD/VMD\ 1.9.4a51-x86_64-Rev9.app/Contents/vmd/plugins/noarch/tcl/vmdmovie1.9/vmdmovie.tcl
 ##
@@ -67,8 +66,8 @@ namespace eval ::MovieMaker:: {
   variable w                         ;# handle to main window
 
   # global settings for work directories etc
-  # change default working directory
-  variable workdir     Rob_filepath      ;# area for temp and output files
+  # change default working directory [Rob2022]
+  variable workdir     "/Users/robcampbell/repositories/pro-cf/"      ;# area for temp and output files
   #variable workdir     "frames"      ;# area for temp and output files
   variable basename    "untitled"    ;# basename for animation files 
 
@@ -97,7 +96,8 @@ namespace eval ::MovieMaker:: {
   variable scalefactor  "0.5"         ;# post blur enlargement/decimation factor
   ;# default string for  image text labels
   variable prelabel     "0"
-  variable labeltext    {Produced by VMD: http://www.ks.uiuc.edu/Research/vmd/}
+  variable labeltext    {Produced by VMD:
+ http://www.ks.uiuc.edu/Research/vmd/}
   variable labelsize    "7"           ;# height of characters above baseline
   variable labelrow     "auto"        ;# baseline pixel row
   variable labelcolor   "gray"        ;# color to use, black, gray, or white
@@ -138,6 +138,7 @@ proc ::MovieMaker::moviemaker {} {
   variable statustotal 
   global tcl_platform 
   global env
+  # remove search for directory info [Rob2022]
   #if [info exists env(TMPDIR)] {
   #  set workdir $env(TMPDIR)
   #} else {
