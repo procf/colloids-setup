@@ -32,7 +32,8 @@ light 2 off
 light 3 off
 
 # position the stage and axes
-axes location Off #lowerleft #turn off axes [Rob2022]
+# turn axes Off not lowerleft [Rob2022]
+axes location Off
 stage location off
 
 # Use desaturated ("dirty" not "pure") colors for better quality images [Rob2022]
