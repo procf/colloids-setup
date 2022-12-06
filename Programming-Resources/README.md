@@ -17,8 +17,9 @@ This guide was compiled by Rob Campbell.
 4. [R](/Programming-Resources#r)
 5. [C/C++](/Programming-Resources#cc)
 6. [Fortran](/Programming-Resources#fortran)
-7. [Parallel Computing](/Programming-Resources#parallel-computing)
-8. [HPC](/Programming-Resources#hpc)
+7. [Customizing VMD](/Programming-Resources#customizing-vmd)
+8. [Parallel Computing](/Programming-Resources#parallel-computing)
+9. [HPC](/Programming-Resources#hpc)
 <br>
 
 ## Best Practices for Scientific Computing
@@ -169,6 +170,14 @@ An example template for reproducible science projects (uses Conda)
 
 * [Input/Output Formatting](https://annefou.github.io/Fortran/files/files.html)
 <br>
+
+## Customizing VMD
+
+* How to [change the default window layout](https://ambermd.org/tutorials/basic/tutorial2/section1.htm)
+
+* Modifying the [init script](https://sites.google.com/site/akohlmey/random-hacks/vmd-init-script?authuser=0) to change default display settings
+
+* Change the [default VMD movie maker settings](https://sunxiaoquan.wordpress.com/2016/08/31/change-vmd-movie-maker-default-setting/)
 
 ## Parallel Computing
 
