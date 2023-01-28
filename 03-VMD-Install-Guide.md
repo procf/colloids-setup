@@ -152,7 +152,7 @@ Copy the GSD plugin from where it was installed in the duplicate Contents folder
 cp /Applications/VMD/Contents/vmd/plugins/MACOSXX86_64/molfile/gsdplugin.so .
 ```
 
-For Intel Macs:<br>
+For ARM Macs:<br>
 Open a new Terminal window and move to the VMD application molfile directory (where plugins are stored)
 ```bash
 cd /Applications/VMD/VMD\ 1.9.4a57-arm64-Rev12.app/Contents/vmd/plugins/MACOSXARM64/molfile/  
