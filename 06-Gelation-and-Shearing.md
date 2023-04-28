@@ -72,16 +72,17 @@ Congratulations, you now have data!
 As we discussed in the [Analysis Guide](/05-Analysis-Guide.md), we have to extract data from the GSD file before we can analyze and plot it.
 
 In addition to the basic extraction and plotting of data that we ran for water, there are a number of more advance analyses that we frequently use: 
-1. For gelation:
-	* mean squared displacement
-	* average coordination number
-	* radial distribution function
-	* pair correlation function
-2. For shearing:
-	* corrected kinetic temperature and pressure (colloid contributions only)
-	* averaged solvent velocity profile
+* mean squared displacement
+* average coordination number
+* radial distribution function g(r)
+* number density fluctuations (AKA Index of Dispersion)
+* Voronoi volume distribution
+* pair correlation function
+* (for shearing only) corrected kinetic temperature and pressure (colloid contributions only)
+* (for shearing only) averaged solvent velocity profile
 
-These analyses can all be done in Python, R, or other programming languages, but for computational speed and efficiency we have created a Fortran module that is extracts and calculates these values.
+
+These analyses can all be done in Python, R, or other programming languages, but for computational speed and efficiency we have created a Fortran module that is extracts and calculates many of these values.
 
 After compilation, the Fortran module is run with a Python script using [f2py](https://numpy.org/doc/stable/f2py/), a NumPy Fortran-to-Python interface. This Python script is set up a series of modules, with simulation specific inputs at the beginning. They are called at the bottom of the script, so you can easily limit which analyses you run by scrolling to the bottom of the script and commenting out the analyses you do not need. Running this script calls the relevant sections of the Fortran module and outputs data files for the selected analyses.
 
