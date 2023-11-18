@@ -1,52 +1,23 @@
 # Programming Resources
 
-This is a collection of programming resources that can help you get started with the tools you need to do research in the PRO-CF Colloids Team.
+Our simulations use several difference tools and programming languages. All of us were new to at least some of these when we first started in the group. This is a list of resources that we found helpful for getting started. Please help us add more resources to this list if you find any that are especially useful!
 
-Our simulations use a variety of tools and programming languages. All of us were new to at least some of these things when we started working in the PRO-CF Research Group, and we're still exploring new things that might make our research easier/better! This directory contains some general resources (either online or as PDFs) that have been useful for learning these skills.
-
-[Last Update: June 2022]
+[Last Update: November 2023]
 
 This guide was compiled by Rob Campbell.
 <br>
 
 ## Contents
-1. [Best Practices for Scientific Computing](/Programming-Resources#best-practices-for-scientific-computing)
-1. [Best Practices for Collaborating on Code](/Programming-Resources#best-practices-for-collaborating-on-code)
-2. [Foundational CS Skills](/Programming-Resources#foundational-cs-skills) (i.e. Command Line, VIM, Git, Markdown, and other general skills)
-3. [Python](/Programming-Resources#python)
-4. [R](/Programming-Resources#r)
-5. [C/C++](/Programming-Resources#cc)
-6. [Fortran](/Programming-Resources#fortran)
-7. [Customizing VMD](/Programming-Resources#customizing-vmd)
-8. [Parallel Computing](/Programming-Resources#parallel-computing)
-9. [HPC](/Programming-Resources#hpc)
-<br>
-
-## Best Practices for Scientific Computing
-
-* [Good Enough Practices for Scientific Computing]<br>
-2016 follow up to "Best Practices for Scientific Computing" as 6 best practices specifically geared towards people who are just getting started with scientific computing. 
-
-* [Best Practices for Scientific Computing]<br>
-2014 paper outlining 8 best practices for scientific computing.
-<br>
-
-## Best Practices for Collaborating on Code
-
-* [Stealing Google's Coding Practices for Academia]<br>
-A 2016 blogpost on the differences between academic code and production code, making an argument for best practices for collaborative programming in academic research: style guides, tooling, code review, pair programming, and open source.
-
-* [Reproducible research: Goals, Guidelines and Git]<br>
-Slides from a 2019 Princeton workshop with an overview of reproducible research best practices and a guide to setting up Git (geared towards bioinformatics, but still useful)
-
-* [Making READMEs Readable]<br>
-Best practices for open-source READMEs/documentation
-
-[Good Enough Practices for Scientific Computing]: https://swcarpentry.github.io/good-enough-practices-in-scientific-computing/
-[Best Practices for Scientific Computing]: https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745
-[Stealing Google's Coding Practices for Academia]: https://da-data.blogspot.com/2016/04/stealing-googles-coding-practices-for.html?m=1
-[Reproducible research: Goals, Guidelines and Git]: https://opr.princeton.edu/workshops/Downloads/2019May_RRandGitPratt.pdf
-[Making READMEs Readable]: https://github.com/18F/open-source-guide/blob/18f-pages/pages/making-readmes-readable.md
+1. [Foundational CS Skills](/Programming-Resources#foundational-cs-skills) (i.e. Command Line, VIM, Git, Markdown, and other general skills)
+2. [Python](/Programming-Resources#python)
+3. [R](/Programming-Resources#r)
+4. [C/C++](/Programming-Resources#cc)
+5. [Fortran](/Programming-Resources#fortran)
+6. [Customizing VMD](/Programming-Resources#customizing-vmd)
+7. [Parallel Computing](/Programming-Resources#parallel-computing)
+8. [HPC](/Programming-Resources#hpc)
+9. [Best Practices for Scientific Computing](/Programming-Resources#best-practices-for-scientific-computing)
+10. [Best Practices for Collaborating on Code](/Programming-Resources#best-practices-for-collaborating-on-code)
 <br>
 
 ## Foundational CS Skills
@@ -107,11 +78,10 @@ An example template for reproducible science projects (uses Conda)
 
 * [Jupyter Notebooks and Jupyter Lab](https://jupyter.org/)
 
-* [Spyder IDE](https://www.spyder-ide.org/)
+* For help inheriting some of the analysis code originally written as modules:
+	* [Formatting strings to automatically call variables](https://realpython.com/lessons/formatting/)
 
-* [Formatting strings to automatically call variables](https://realpython.com/lessons/formatting/)
-
-* [Runnign Modules with \_\_name\_\_ = \_\_main\_\_](https://stackoverflow.com/questions/419163/what-does-if-name-main-do)
+	* [Runnign Modules with \_\_name\_\_ = \_\_main\_\_](https://stackoverflow.com/questions/419163/what-does-if-name-main-do)
 
 <br>
 
@@ -192,3 +162,31 @@ An example template for reproducible science projects (uses Conda)
 * [Slurm Workload Manager website](https://slurm.schedmd.com/documentation.html) (with links to tutorials and a quick start guide)
 
 * [Slurm Commands Summary](https://slurm.schedmd.com/pdfs/summary.pdf) (PDF)
+
+## Best Practices for Scientific Computing
+
+* [Good Enough Practices for Scientific Computing]<br>
+2016 follow up to "Best Practices for Scientific Computing" as 6 best practices specifically geared towards people who are just getting started with scientific computing. 
+
+* [Best Practices for Scientific Computing]<br>
+2014 paper outlining 8 best practices for scientific computing.
+<br>
+
+## Best Practices for Collaborating on Code
+
+* [Stealing Google's Coding Practices for Academia]<br>
+A 2016 blogpost on the differences between academic code and production code, making an argument for best practices for collaborative programming in academic research: style guides, tooling, code review, pair programming, and open source.
+
+* [Reproducible research: Goals, Guidelines and Git]<br>
+Slides from a 2019 Princeton workshop with an overview of reproducible research best practices and a guide to setting up Git (geared towards bioinformatics, but still useful)
+
+* [Making READMEs Readable]<br>
+Best practices for open-source READMEs/documentation
+
+[Good Enough Practices for Scientific Computing]: https://swcarpentry.github.io/good-enough-practices-in-scientific-computing/
+[Best Practices for Scientific Computing]: https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745
+[Stealing Google's Coding Practices for Academia]: https://da-data.blogspot.com/2016/04/stealing-googles-coding-practices-for.html?m=1
+[Reproducible research: Goals, Guidelines and Git]: https://opr.princeton.edu/workshops/Downloads/2019May_RRandGitPratt.pdf
+[Making READMEs Readable]: https://github.com/18F/open-source-guide/blob/18f-pages/pages/making-readmes-readable.md
+<br>
+
