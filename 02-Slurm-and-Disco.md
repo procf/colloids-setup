@@ -100,7 +100,7 @@ Our bash files typically have 3 sections:
 	* run your simulation
 <br>
 <br>
-<br>
+
 ## Monitoring Jobs and Job Stats
 
 You can use squeue to view a list of your current jobs: the job number, partition it is running on, job name, the user running the job, the status (running/pending, etc.), how long the job has been running, the number of nodes being used, and a list of the specific node IDs
@@ -121,9 +121,6 @@ Because of how we wrote the sbatch script, for sbatch jobs the jobID is the name
 <br>
 ## Next Steps 
 
-You now know all about how Discovery works! You'll get a lot of hands-on practice with Discovery over the rest of this guide.
+You now know all about how Discovery works! You'll get hands-on practice with Discovery over the rest of this guide.
 
 The next step is to [Install HOOMD-blue](03-HOOMDblue-Install-Guide.md) on Discovery and/or your local computer.
-
-
-
