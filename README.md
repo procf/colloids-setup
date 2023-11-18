@@ -2,27 +2,34 @@
 
 Welcome to the PRO-CF Colloids simulation team! :tada:
 
-These files will guide you through everything you need to know to start running dissipative particle dynamics (DPD) simulations of colloids with [HOOMD-blue] for research in our group.
+These files will guide you through everything you need to know to start running colloid simulations with [HOOMD-blue] for research in our group.
+
+Dissipative Particle Dynamics (DPD) or Brownian Dynamics (BD)
 
 [HOOMD-blue]: http://glotzerlab.engin.umich.edu/hoomd-blue/
 
-[Last Update: August 2022]
+[Last Update: November 2023]
 <br>
 <br>
 ## Before you Begin
 
-The [System Setup folder](/System-Setup) contains information for choosing a laptop or other workstation, and steps for setting up a new MacOS computer before installing HOOMD-blue.
+If you are ordering or setting up a new computer:
+* The [System Setup folder](/System-Setup) contains information for choosing a laptop or other workstation, and steps for setting up a new MacOS computer before installing HOOMD-blue.
 
-The [Programming Resources folder](/Programming-Resources) contains a variety of resources that can help you with the command line, VIM, Python, R, C++, Git/Github, and other skills that are useful for our work.
+If you are new to programming:
+* The [Programming Resources folder](/Programming-Resources) contains some references that can help you get started the command line, VIM, Python, R, C++, Git/Github, and other skills that are useful for our work.
 
-The [Background Reading folder](/Background-Reading) contains a series of short explainers on the basics of what we do: i.e. what is DPD, what modifications do we make to DPD for colloids (and why), what is the Morse Potential we typically use, and how do we apply shear. The README also contains a list of important papers you should read at some point. 
+If you are running DPD sims:
+* The [Background Reading folder](/Background-Reading) contains a quick overview of our DPD sims: what is DPD, what modifications do we make to DPD for colloids (and why), what is the Morse Potential we typically use, and how do we apply shear. The README in this folder also contains a list of important papers you should read at some point. 
 
-Once you have received and set up your computer, the remaining files should help you install HOOMD-blue and VMD and give you the information you need to get started with colloids simulations (including example [Scripts](/Scripts))
+The remaining files will help you install HOOMD-blue and VMD and start running colloid simulations.
 <br>
 <br>
 ## Installing Software and Running Simulations
 
-These guides are numbered to follow the steps for getting set up with HOOMD-blue, VMD, the Discovery Research Cluster, and other related tools for running and analyzing simulation data:
+Follow these guides to get set up with the Discovery Research Cluster, HOOMD-blue, VMD, and other tools:
+
+1. [Accessing "Discovery"](/01-Accessing-Discovery.md) (Northeastern's HPC cluster)
 
 1. The [HOOMD-blue Installation and Setup Guide](/01-HOOMDblue-Install-Guide.md)
 
