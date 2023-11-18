@@ -16,13 +16,13 @@ The standard implementation of HOOMD-blue was adapted for our colloids simulatio
 	* [Prerequisites](/03-HOOMDblue-Install-Guide.md#disco-prerequisites)
 	* [Installing hoomd basic](/03-HOOMDblue-Install-Guide.md#disco-installing-hoomd-basic)
 	* [Installing hoomd mod](/03-HOOMDblue-Install-Guide.md#disco-installing-hoomd-mod)
-	* [Updating your installation](/03-HOOMD-blue-Install-Guide.md#disco-updating-your-installation)
+	* [Updating your installation](/03-HOOMDblue-Install-Guide.md#disco-updating-your-installation)
 3. [Installing on your local computer](/03-HOOMDblue-Install-Guide.md#installing-on-your-local-computer)	
 	* [Creating the software directory](/03-HOOMDblue-Install-Guide.md#local-creating-the-software-directory)
 	* [Prerequisites](/03-HOOMDblue-Install-Guide.md#local-prerequisites)
 	* [Installing hoomd basic](/03-HOOMDblue-Install-Guide.md#local-installing-hoomd-basic)
 	* [Installing hoomd mod](/03-HOOMDblue-Install-Guide.md#local-installing-hoomd-mod)
-	* [Updating your installation](/03-HOOMD-blue-Install-Guide.md#local-updating-your-installation)
+	* [Updating your installation](/03-HOOMDblue-Install-Guide.md#local-updating-your-installation)
 8. [Next Steps](/03-HOOMDblue-Install-Guide.md#next-steps)
 <br>
 
@@ -140,7 +140,7 @@ mkdir hoomd4.2.1-basic
 mkdir hoomd4.2.1-mod
 ```
 <br>
-<br>
+
 ### [LOCAL] Prerequisites
 
 Our implementation of HOOMD-blue is currently **CPU only** (no GPU components), **with MPI enabled**.
