@@ -4,7 +4,7 @@ This is a guide to the basics of running simulation jobs on Discovery, Northeast
 
 This guide is optimized for macOS. See the [Guide to Accessing Discovery](/01-Accessing-Discovery.md) first.
 
-[Last Update: August 2023]
+[Last Update: November 2023]
 
 This guide was compiled by Rob Campbell.
 <br>

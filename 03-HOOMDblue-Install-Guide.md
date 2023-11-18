@@ -1,8 +1,8 @@
 # HOOMD-blue Installation and Setup Guide
 
-This is a guide to installing [HOOMD-blue] on **your own computer** for use in the PRO-CF Colloids Team. This guide is optizimed for MacOS. Information about using or re-installing HOOMD-blue on the Discovery HPC cluster is availabel in the guide to [Running Simulations on Discovery](08-Slurm-and-Disco.md).
+This is a guide to installing [HOOMD-blue] for use in the PRO-CF Colloids Team. This guide is optizimed for macOS and includes instructions for installation on Discovery and on your own computer. 
 
-[Last Update: July 2022]
+[Last Update: November 2023]
 
 The standard implementation of HOOMD-blue was adapted for our colloids simulations by Mohammad (Nabi) Nabizadeh and streamlined and adapted for MPI by Dr. Deepak Mangal. This guide was compiled by Rob Campbell.
 
