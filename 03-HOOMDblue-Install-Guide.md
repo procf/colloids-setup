@@ -19,6 +19,26 @@ The standard implementation of HOOMD-blue was adapted for our colloids simulatio
 8. [Next Steps](/01-HOOMDblue-Install-Guide.md#next-steps)
 <br>
 
+## Installing HOOMD-blue on Discovery
+
+**You should install your own version(s) of HOOMD-blue in your folder on `/work/props`.**
+
+Remember, you should **always** install software using a compute node and NOT the login node (either using an interactive srun session or an sbatch script). You will also need to load the modules for all the required software (i.e. Python, OpenMPI, etc.) before installing HOOMD-blue.
+
+To simplify things we created sbatch scripts that completes all the steps for installation. They are available in the [Scripts/hpc](/Scripts/hpc) folder of this repository.
+
+To access them on Discovery, clone this repository to your work folder
+```bash
+git clone git@github.com:procf/colloids-setup.git
+```
+and then copy the relevant scripts to the directory where you want to install HOOMD-blue. 
+
+When you are ready to install, run the script with
+```bash
+sbatch script-name
+```
+<br>
+
 ## HOOMD-blue Versions
 
 HOOMD-blue is constantly being improved and updated! (there were 3 major updates releasted in the first six months of 2022)

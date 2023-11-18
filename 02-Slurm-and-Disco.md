@@ -11,10 +11,10 @@ This guide was compiled by Rob Campbell.
 
 ## Contents
 1. [Running Jobs on Discovery](/02-Slurm-and-Disco.md#running-jobs-on-discovery)
-	* [srun]()
-	* [sbatch]()
+	* [srun](/02-Slurm-and-Disco.md#srun) (for interactive jobs)
+	* [sbatch](/02-Slurm-and-Disco.md#sbatch) (for running jobs in the background)
 2. [Monitoring a Job and Job Stats](/02-Slurm-and-Disco.md#monitoring-jobs-and-job-stats)
-3. [Installing HOOMD-blue on Discovery](/02-Slurm-and-Disco.md#installing-hoomd-blue-on-discovery)
+3. [Next Steps](/02-Slurm-and-Disco.md#next-steps)
 <br>
 
 ## Running Jobs on Discovery
@@ -23,9 +23,9 @@ When you sign into Discovery you are on the "login node" but you should **ALWAYS
 
 The "s" in srun and sbatch stands for the [Slurm Workload Manager](https://slurm.schedmd.com/documentation.html), which is what most HPC clusters use to manage all the different "jobs" users are running. More information about [Slurm is available in the [RC-docs Slurm section](https://rc-docs.northeastern.edu/en/latest/slurmguide/index.html) and in this repository's [Programming Resources](/Programming-Resources#slurm).
 
-Slurm controls your:
-* access to partitions
-* access to compute nodes on those partitions
+Slurm controls:
+* your access to partitions
+* your access to compute nodes on those partitions
 * the amount of time you can run scripts before getting kicked-off 
 
 ### srun
@@ -41,21 +41,45 @@ OR, if you have X11 enabled for graphical interfaces, be sure to carry that over
 srun --pty --x11 /bin/bash
 ```
 
+You will then be transfered to a compute node and can use other commands normally.
+<br>
+
 ### sbatch
 
-sbatch lets you run a job in the background and go do something else -- write a small bash script that chooses the type of compute node you want to access, runs your files, and saves a log of any errors and output. 
+sbatch lets you run a job in the background and go do something else. To do this, you need to write a small bash script that: chooses the type of compute node you want to access, runs your files, and saves a log of any errors and output. 
 
-You can submit an sbatch job from both the login node or an srun session. In both cases a brand-new, separate job is created with the sbatch settings.
+You can submit an sbatch job from both the login node or an srun session. In both cases a brand-new, separate job is created with the sbatch settings. This also means you can run many sbatch jobs at the same time (although some partitions do have limits).
 
-The sbatch script is a bash file. Bash files that are *executable* like an sbatch script (i.e. you use them to run other programs), typically are NOT given an extension as part of their name (i.e. they are called "script-name" NOT "script-name.bash").
+The sbatch script is a bash file. Bash files that are *executable* like an sbatch script (i.e. you use them to run other programs), typically are NOT given an extension as part of their name. They are called "script-name" NOT "script-name.bash"
 
-In a bash file `#` marks a bash command and `##` marks a comment.
+Here is a sample sbatch file for running an MPI simulation with HOOMD-blue:
+```bash
+#!/bin/bash
+#SBATCH -J sim
+#SBATCH -n 27 -N 1
+#SBATCH -t 24:00:00
+#SBATCH -p short
+#SBATCH --constraint=ib
+##SBATCH --mem=128Gb
+##SBATCH --gres
+#SBATCH -o %A.out
+#SBATCH -e %A.err
+
+# load required modules and virtual environments
+module load python/3.8.1
+source hoomdmod4.2.1-venv/bin/activate
+module load gcc/11.1.0
+module load openmpi/4.1.2-gcc11.1
+
+# run the simulation
+mpirun -n 27 python3 sim-gel-DPD.py
+```
 
 Our bash files typically have 3 sections:
 
 1. A bash script always starts with `#!/bin/bash`
 
-2. Every line that starts with `#SBATCH` or `#sbatch` specifies a setting for the job we are running with Slurm. Typically this includes:
+2. Every line that starts with `#SBATCH` or `#sbatch` specifies a setting for the job we are running with Slurm (**NOTE**: in this section you need to use`##` for a comment). Typically this section includes:
 	* `-J name` or `--job-name=name` your reference name for the job
 	* `-N #` or `--nodes=#` the number of nodes requested
 	* `-n #` (for use with MPI) the number of cores requested on those nodes
@@ -72,10 +96,7 @@ Our bash files typically have 3 sections:
 *As mentioned above, if you are running MPI simulations, it's also recommended that you only use the newest compute nodes, which use Infiniband for faster communication between nodes (turn this on with the "--constraint=ib" flag).*
 
 3. After all of the sbatch commands have been set, enter the commands you want the job to run on Discovery. Typically this will be
-	* purge software modules to remove any that are unneeded (a safety step)
-	* load Python
-	* source into your virtual environment
-	* load additional required modules
+	* load Python, source into your virtual environment, and load additional required modules
 	* run your simulation
 <br>
 <br>
@@ -88,42 +109,21 @@ You can use squeue to view a list of your current jobs: the job number, partitio
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
 ```
 
-Once a job is complete you can view how long it ran (as well as other stats) with the command
-```bash
-seff [jobID]
-```
-<br>
-<br>
-## Installing HOOMD-blue on Discovery
-
-**You should install your own version(s) of HOOMD-blue in your folder on `/work/props`.**
-
-As mentioned above, you should **always** install software using a compute node and NOT the login node (either using an interactive srun session or an sbatch script). You will also need to load the modules for all the required software (i.e. Python, OpenMPI, etc.) before installing HOOMD-blue.
-
-To simplify things we created sbatch scripts that complete all the steps for installation. They are available in the [Scripts/hpc](/Scripts/hpc) folder of this repository.
-
-To access them on Discovery, clone this repository to your work folder
-```bash
-git clone git@github.com:procf/colloids-setup.git
-```
-and then copy the relevant scripts to the directory where you want to install HOOMD-blue. 
-
-When you are ready to install, run the script with
-```bash
-sbatch script-name
-```
-<br>
-
-## Monitoring Jobs and Job Stats
-
-You can use squeue to view your current jobs, displaying the job number, partition it is running on, job name, the user running the job, the status (running/pending, etc.), the time the job has been running, the number of nodes being used, and a list of the specific node IDs
-```bash
-[your_username@login-00 ~ ]$ squeue -u your_username
-             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
-```
+This will show any active srun and sbatch jobs.
 
 Once a job is complete you can view how long it ran (as well as other stats) with the command
 ```bash
 seff [jobID]
 ```
+
+Because of how we wrote the sbatch script, for sbatch jobs the jobID is the name of the .err and .out files.
+<br>
+<br>
+## Next Steps 
+
+You now know all about how Discovery works! You'll get a lot of hands-on practice with Discovery over the rest of this guide.
+
+The next step is to [Install HOOMD-blue](03-HOOMDblue-Install-Guide.md) on Discovery and/or your local computer.
+
+
 
