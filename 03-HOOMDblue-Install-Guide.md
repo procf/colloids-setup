@@ -10,18 +10,17 @@ The standard implementation of HOOMD-blue was adapted for our colloids simulatio
 
 ## Contents
 1. [HOOMD-blue Versions](/03-HOOMDblue-Install-Guide.md#hoomd-blue-versions)
+2. [Setting Up File Management](/03-HOOMDblue-Install-Guide.md#setting-up-file-management)
 2. [Installing on Discovery](/03-HOOMDblue-Install-Guide.md#installing-on-discovery)
-	* [Setting Up File Management](/03-HOOMDblue-Install-Guide.md#disco-setting-up-file-management)
+	* [Creating the software directory](/03-HOOMDblue-Install-Guide.md#disco-creating-the-software-directory)
 	* [Prerequisites](/03-HOOMDblue-Install-Guide.md#disco-prerequisites)
-	* [Setting Up File Management](/03-HOOMDblue-Install-Guide.md#disco-setting-up-file-management)
 	* [Installing hoomd3.1-basic](/03-HOOMDblue-Install-Guide.md#disco-installing-hoomd31-basic)
 	* [Installing hoomd3.1-mod](/03-HOOMDblue-Install-Guide.md#disco-installing-hoomd31-mod)
 	* [Installing the latest version](/03-HOOMDblue-Install-Guide.md#disco-installing-the-latest-version)
 	* [Updating your installation](/03-HOOMD-blue-Install-Guide.md#disco-updating-your-installation)
-3. [Installing on your local computer](/03-HOOMDblue-Install-Guide.md#installing-on-your-local-computer)
-	* [Setting Up File Management](/03-HOOMDblue-Install-Guide.md#local-setting-up-file-management)
+3. [Installing on your local computer](/03-HOOMDblue-Install-Guide.md#installing-on-your-local-computer)	
+	* [Creating the software directory](/03-HOOMDblue-Install-Guide.md#local-creating-the-software-directory)
 	* [Prerequisites](/03-HOOMDblue-Install-Guide.md#local-prerequisites)
-	* [Setting Up File Management](/03-HOOMDblue-Install-Guide.md#local-setting-up-file-management)
 	* [Installing hoomd3.1-basic](/03-HOOMDblue-Install-Guide.md#local-installing-hoomd31-basic)
 	* [Installing hoomd3.1-mod](/03-HOOMDblue-Install-Guide.md#local-installing-hoomd31-mod)
 	* [Installing the latest version](/03-HOOMDblue-Install-Guide.md#local-installing-the-latest-version)
@@ -46,56 +45,9 @@ It is recommended that you install **at least 2 versions of HOOMD-blue**:
 All of the installation steps are outlined in the HOOMD-blue documentation, but we'll also walk through them here.
 <br>
 <br>
-## Installing on Discovery
+## Setting Up File Management
 
-**You should install your own version(s) of HOOMD-blue in your folder on `/work/props`.**
-
-Remember, you should **always** install software using a compute node and NOT the login node (either using an interactive srun session or an sbatch script). You will also need to load the modules for all the required software (i.e. Python, OpenMPI, etc.) before installing HOOMD-blue.
-
-To simplify things we created sbatch scripts that completes all the steps for installation. They are available in the [Scripts/hpc](/Scripts/hpc) folder of this repository.
-
-To access them on Discovery, clone this repository to your work folder
-```bash
-git clone git@github.com:procf/colloids-setup.git
-```
-and then copy the relevant scripts to the directory where you want to install HOOMD-blue. 
-
-When you are ready to install, run the script with
-```bash
-sbatch script-name
-```
-etc.
-<br>
-<br>
-
-## Installing on your local computer
-
-### Setting Up File Management
-
-This section gives recommendations for file organization. If you already have a file organization system you like to use you can skip this and jump to the[next section](/03-HOOMDblue-Install-Guide.md#local-prerequisites).
-
-Whenever you open a new Terminal window you start in your `home` directory (AKA `~` or `Users/your_username`). To check this, open Terminal and enter the command for "present working directory" `pwd` to view your current location on the command line. It should look like this:
-```bash
-% pwd
-/Users/your_username
-```
-You can view what is in the home directory with the command
-```bash
-ls
-```
-
-In the [Guide to Git and Github](https://github.com/procf/getting-started/blob/main/github-guide.md) we recommended keeping the `home` directory clean by creating a `src` or `repositories` directory to store your command line programming files. That is also where we recommend installing HOOMD-blue. 
-
-Move to the `repositories` directory with
-```bash
-cd repositories
-```
-and make a new directory to for each HOOMD-blue version
-```bash
-mkdir hoomd4.2.1-basic
-mkdir hoomd4.2.1-mod
-```
-We will install the two versions of HOOMD-blue in their respective directories. How you organize your simulation files from here is up to you. For backing up files to Github it is often best to keep software, simulation scripts, and data files all in separate repositories; however, some people prefer to keep things all those grouped into one directory. Here are two file management examples (`folders` and *files*):
+We will install the two versions of HOOMD-blue in their respective directories. How you organize your simulation files from here is up to you. For backing up files to Github it is often best to keep software, simulation scripts, and data files all in separate repositories; however, some people prefer to keep things all those grouped into one directory. Here are two file management examples (filenames are marked as `folders` or *files*):
 <br>
 
 ONE FOLDER
@@ -130,6 +82,59 @@ SEPARATED FOLDERS
 	- *old-projects*
 
 **You can organize your files ANY way you like, just make sure you have some way of keeping track of what you're doing so you can find results later -- your future self will thank you!**
+
+
+## Installing on Discovery
+
+
+
+**You should install your own version(s) of HOOMD-blue in your folder on `/work/props`.**
+
+Remember, you should **always** install software using a compute node and NOT the login node (either using an interactive srun session or an sbatch script). You will also need to load the modules for all the required software (i.e. Python, OpenMPI, etc.) before installing HOOMD-blue.
+
+To simplify things we created sbatch scripts that completes all the steps for installation. They are available in the [Scripts/hpc](/Scripts/hpc) folder of this repository.
+
+To access them on Discovery, clone this repository to your work folder
+```bash
+git clone git@github.com:procf/colloids-setup.git
+```
+and then copy the relevant scripts to the directory where you want to install HOOMD-blue. 
+
+When you are ready to install, run the script with
+```bash
+sbatch script-name
+```
+etc.
+<br>
+<br>
+
+## Installing on your local computer
+
+### [LOCAL] Creating the software directory
+
+This section gives recommendations for file organization. If you already have a file organization system you like to use you can skip this and jump to the[next section](/03-HOOMDblue-Install-Guide.md#local-prerequisites).
+
+Whenever you open a new Terminal window you start in your `home` directory (AKA `~` or `Users/your_username`). To check this, open Terminal and enter the command for "present working directory" `pwd` to view your current location on the command line. It should look like this:
+```bash
+% pwd
+/Users/your_username
+```
+You can view what is in the home directory with the command
+```bash
+ls
+```
+
+In the [Guide to Git and Github](https://github.com/procf/getting-started/blob/main/github-guide.md) we recommended keeping the `home` directory clean by creating a `src` or `repositories` directory to store your command line programming files. That is also where we recommend installing HOOMD-blue. 
+
+Move to the `repositories` directory with
+```bash
+cd repositories
+```
+and make a new directory to for each HOOMD-blue version
+```bash
+mkdir hoomd4.2.1-basic
+mkdir hoomd4.2.1-mod
+```
 <br>
 <br>
 ### Prerequisites
