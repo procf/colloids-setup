@@ -14,16 +14,14 @@ The standard implementation of HOOMD-blue was adapted for our colloids simulatio
 2. [Installing on Discovery](/03-HOOMDblue-Install-Guide.md#installing-on-discovery)
 	* [Creating the software directory](/03-HOOMDblue-Install-Guide.md#disco-creating-the-software-directory)
 	* [Prerequisites](/03-HOOMDblue-Install-Guide.md#disco-prerequisites)
-	* [Installing hoomd3.1-basic](/03-HOOMDblue-Install-Guide.md#disco-installing-hoomd31-basic)
-	* [Installing hoomd3.1-mod](/03-HOOMDblue-Install-Guide.md#disco-installing-hoomd31-mod)
-	* [Installing the latest version](/03-HOOMDblue-Install-Guide.md#disco-installing-the-latest-version)
+	* [Installing hoomd basic](/03-HOOMDblue-Install-Guide.md#disco-installing-hoomd-basic)
+	* [Installing hoomd mod](/03-HOOMDblue-Install-Guide.md#disco-installing-hoomd-mod)
 	* [Updating your installation](/03-HOOMD-blue-Install-Guide.md#disco-updating-your-installation)
 3. [Installing on your local computer](/03-HOOMDblue-Install-Guide.md#installing-on-your-local-computer)	
 	* [Creating the software directory](/03-HOOMDblue-Install-Guide.md#local-creating-the-software-directory)
 	* [Prerequisites](/03-HOOMDblue-Install-Guide.md#local-prerequisites)
-	* [Installing hoomd3.1-basic](/03-HOOMDblue-Install-Guide.md#local-installing-hoomd31-basic)
-	* [Installing hoomd3.1-mod](/03-HOOMDblue-Install-Guide.md#local-installing-hoomd31-mod)
-	* [Installing the latest version](/03-HOOMDblue-Install-Guide.md#local-installing-the-latest-version)
+	* [Installing hoomd basic](/03-HOOMDblue-Install-Guide.md#local-installing-hoomd-basic)
+	* [Installing hoomd mod](/03-HOOMDblue-Install-Guide.md#local-installing-hoomd-mod)
 	* [Updating your installation](/03-HOOMD-blue-Install-Guide.md#local-updating-your-installation)
 8. [Next Steps](/03-HOOMDblue-Install-Guide.md#next-steps)
 <br>
@@ -51,7 +49,7 @@ We will install the two versions of HOOMD-blue in their respective directories. 
 <br>
 
 ONE FOLDER
-- `hoomd3.1-mod`
+- `hoomd4.2.1-mod`
 	- *software-installation*
 	- `virtual-python-environment`
 	- `sims`
@@ -64,7 +62,7 @@ ONE FOLDER
 
 SEPARATED FOLDERS
 - `software`
-	- `hoomd3.1-mod`
+	- `hoomd4.2.1-mod`
 		- *software-installation*
 		- `virtual-python-environment`
 - `(simulation-project-name)`
@@ -86,7 +84,15 @@ SEPARATED FOLDERS
 
 ## Installing on Discovery
 
+### [DISCO] Creating the software directory
 
+### [DISCO] Prerequisites
+
+### [DISCO] Installing hoomd basic
+
+### [DISCO] Installing hoomd mod
+
+### [DISCO] Updating your installation
 
 **You should install your own version(s) of HOOMD-blue in your folder on `/work/props`.**
 
@@ -112,8 +118,6 @@ etc.
 
 ### [LOCAL] Creating the software directory
 
-This section gives recommendations for file organization. If you already have a file organization system you like to use you can skip this and jump to the[next section](/03-HOOMDblue-Install-Guide.md#local-prerequisites).
-
 Whenever you open a new Terminal window you start in your `home` directory (AKA `~` or `Users/your_username`). To check this, open Terminal and enter the command for "present working directory" `pwd` to view your current location on the command line. It should look like this:
 ```bash
 % pwd
@@ -137,7 +141,7 @@ mkdir hoomd4.2.1-mod
 ```
 <br>
 <br>
-### Prerequisites
+### [LOCAL] Prerequisites
 
 Our implementation of HOOMD-blue is currently **CPU only** (no GPU components), **with MPI enabled**.
 
@@ -155,7 +159,7 @@ Required for installation:
 * cereal >= 1.1
 
 
-On a Mac most of these prerequisites will be installed with Xcode. See the [macOS System Setup Recommendations and Tips](/System-Setup/02-macOS-Setup.md) for information about getting a package manager (e.g. Homebrew) to instal software from the command line, and how to instal Xcode, set up Python 3, and instal CMake.
+On a Mac most of these prerequisites will be installed with Xcode. Mac computers come with both Python 2 and Python 3. You should NEVER use Python 2, only Python 3, and you may need to install a new version of Python 3 to run HOOMD-blue. See the [macOS System Setup Recommendations and Tips](/System-Setup/02-macOS-Setup.md) for information about getting a package manager (e.g. Homebrew) to instal software from the command line, and for information on how to instal Xcode, set up Python 3, and install CMake.
 
 For more details on Git see the [Guide to Git and Github](https://github.com/procf/getting-started/blob/main/github-guide.md) in the "getting-started" repo.
 
@@ -163,29 +167,29 @@ You should install OpenMPI using [Homebrew](https://brew.sh/) or another package
 
 NumPy can be added to your Python 3 installation with pip (see note on [virtual environments](/03-HOOMDblue-Install-Guide.md#creating-a-python-virtual-environment) below).
 
-HOOMD-blue v3.1 comes with a script for installing pybind11, eigen, and cereal that we will use later on.
+HOOMD-blue v4.2.1 comes with a script for installing pybind11, eigen, and cereal that we will use later on.
 
-*Note: It is **not** recommended to install HOOMD-blue prerequisites with conda. See the HOOMD-blue docs page* [Installing from Binaries](https://hoomd-blue.readthedocs.io/en/v3.1.0/installation.html) *if you want to install with conda.*
+*Note: It is **not** recommended to install HOOMD-blue prerequisites with conda. See the HOOMD-blue docs page* [Installing from Binaries](https://hoomd-blue.readthedocs.io/en/v4.2.1/installation.html) *if you want to install with conda.*
 <br>
 <br>
-### Installing hoomd3.1-basic
+### [LOCAL] Installing hoomd basic
 
-#### Getting the basic HOOMD-blue v3.1.0
+#### Getting the basic HOOMD-blue v4.2.1
 The method of obtaining HOOMD-blue varies depending on which version you are trying to install.
 
-To install HOOMD-blue 3.1.0 (an older version of HOOMD-blue) you need to use the release tarball for that version.
+To install HOOMD-blue 4.2.1 (an older version of HOOMD-blue) you need to use the release tarball for that version.
 
-Move to your `hoomd3.1-basic` directory and download the HOOMD-blue v.3.1.0 tarball
+Move to your `hoomd4.2.1-basic` directory and download the HOOMD-blue v.4.2.1 tarball
 ```bash
-curl -Lo hoomd-v3.1.0.tar.gz https://github.com/glotzerlab/hoomd-blue/releases/download/v3.1.0/hoomd-v3.1.0.tar.gz
+curl -Lo hoomd-v4.2.1.tar.gz https://github.com/glotzerlab/hoomd-blue/releases/download/v4.2.1/hoomd-v4.2.1.tar.gz
 ```
 Extract the files from the tarball (the "v" flag displays all the files being extracted)
 ```bash
-tar -xvf hoomd-v3.1.0.tar.gz
+tar -xvf hoomd-v4.2.1.tar.gz
 ```
 You can then delete the tarball if you want
 ```bash
-rm hoomd-v3.1.0.tar.gz
+rm hoomd-v4.2.1.tar.gz
 ```
 
 #### Creating a Python Virtual Environment
@@ -193,23 +197,23 @@ Before we install HOOMD-blue we need to create a virtual Python environment to w
 
 Virtual environments give you more control over which version of Python you are using (e.g. Python 3 vs Python 2) and let you create multiple different "development environments" with different packages installed (e.g. NumPy, SciPy, etc.). There are many ways to set up virtual Python environments (pyenv, venv, virtualenvwrapper, etc.), but HOOMD-blue recommends using venv. 
 
-In your `hoomd3.1-basic` directory, create a new Python 3 virual environment called `hoomd-venv` with
+In your `hoomd4.2.1-basic` directory, create a new Python 3 virual environment called `hoomd-venv` with
 ```bash
-python3 -m venv hoomd-venv
+python3 -m venv hoomd4.2.1-venv
 ```
 To use your virtual environment, source into it with
 ```bash
-source hoomd-venv/bin/activate
+source hoomd4.2.1-venv/bin/activate
 ```
-The name of your virtual environment (hoomd-venv) will now appear in the command prompt
+The name of your virtual environment (hoomd4.2.1-venv) will now appear in the command prompt, like this
 ```bash
-% source hoomd-venv/bin/activate
+% source hoomd4.2.1-venv/bin/activate
 (hoomd-venv) % 
 ```
 You can double check that you are now accessing the correct Python environment with the `which python` command
 ```bash
 (hoomd-venv) % which python
-/Users/your_username/repositories/hoomd3.1-basic/hoomd-venv/bin/python
+/Users/your_username/repositories/hoomd4.2.1-basic/hoomd4.2.1-venv/bin/python
 ```
 
 #### Make sure you have Open-MPI installed
@@ -218,21 +222,21 @@ Make sure that you have installed Open-MPI
 brew install open-mpi
 ```
 
-#### Installing the basic HOOMD-blue v3.1.0
-**Make sure you are in the `hoomd3.1-basic` directory and the correct vitual environemnt is activated**
+#### Installing the basic HOOMD-blue v4.2.1
+**Make sure you are in the `hoomd4.2.1-basic` directory and the correct vitual environemnt is activated**
 ```bash
-(hoomd-venv) hoomd3.1-basic %
+(hoomd4.2.1-venv) hoomd4.2.1-basic %
 ```
 
 Install the remaining prerequisites (pybind11, eigen, cereal)
 ```bash 
-python3 hoomd-v3.1.0/install-prereq-headers.py
+python3 hoomd-v4.2.1/install-prereq-headers.py
 ```
 (enter "y" to proceed when prompted)
 
 Configure HOOMD-blue with cmake
 ```bash
-cmake -B build/hoomd -S hoomd-v3.1.0 -DENABLE_MPI=on -DBUILD_HPMC=off -DBUILD_METAL=off -DBUILD_TESTING=off
+cmake -B build/hoomd -S hoomd-v4.2.1 -DENABLE_MPI=on -DBUILD_HPMC=off -DBUILD_METAL=off -DBUILD_TESTING=off
 ```
 Compile
 ```bash
@@ -250,20 +254,21 @@ pip3 install numpy
 pip3 install gsd
 pip3 install matplotlib
 ```
+
+You can now run simulations using the standard version of HOOMD-blue v4.2.1
 <br>
 
-### Installing hoomd3.1-mod
+### [LOCAL] Installing hoomd mod
 
-#### Getting our modified HOOMD-blue v3.1
-The method of obtaining HOOMD-blue varies depending on which version you are trying to install.
+#### Getting our modified HOOMD-blue v4.2.1
 
-Our modifications for HOOMD-blue v.3.1.0 can be installed from the Github repository [hoomd3.1-mod](https://github.com/procf/hoomd3.1-mod) 
+Our modifications for HOOMD-blue v4.2.1 can be installed from the Github repository [hoomd4.2.1-mod](https://github.com/procf/hoomd4.2.1-mod) 
 
-Move to your `hoomd3.1-mod` directory and clone our modifications from the Github repository
+Move to your `hoomd4.2.1-mod` directory and clone our modifications from the Github repository
 ```bash
-git clone git@github.com:procf/hoomd3.1-mod.git
+git clone git@github.com:procf/hoomd4.2.1-mod.git
 ```
-**NOTE**: This filepath is a bit clunky (../hoomd3.1-mod/hoomd3.1-mod/), but it is the best way to keep your software installation and cloned git repo separate.
+**NOTE**: This filepath is a bit clunky (../hoomd4.2.1-mod/hoomd4.2.1-mod/), but it is the best way to keep your software installation and cloned git repo separate.
 <br>
 
 #### Creating a Python Virtual Environment
@@ -271,23 +276,23 @@ Before we install HOOMD-blue we need to create a virtual Python environment to w
 
 Virtual environments give you more control over which version of Python you are using (e.g. Python 3 vs Python 2) and let you create multiple different "development environments" with different packages installed (e.g. NumPy, SciPy, etc.). There are many ways to set up virtual Python environments (pyenv, venv, virtualenvwrapper, etc.), but HOOMD-blue recommends using venv. 
 
-In your `hoomd3.1-mod` directory, create a new Python 3 virual environment called `hoomdmod-venv` with
+In your `hoomd4.2.1-mod` directory, create a new Python 3 virual environment called `hoomdmod4.2.1-venv` with
 ```bash
-python3 -m venv hoomdmod-venv
+python3 -m venv hoomdmod4.2.1-venv
 ```
 To use your virtual environment, source into it with
 ```bash
-source hoomdmod-venv/bin/activate
+source hoomdmod4.2.1-venv/bin/activate
 ```
-The name of your virtual environment (hoomdmod-venv) will now appear in the command prompt
+The name of your virtual environment (hoomdmod-venv) will now appear in the command prompt like this:
 ```bash
-% source hoomdmod-venv/bin/activate
+% source hoomdmod4.2.1-venv/bin/activate
 (hoomdmod-venv) % 
 ```
 You can double check that you are now accessing the correct Python environment with the `which python` command
 ```bash
 (hoomdmod-venv) % which python
-/Users/your_username/repositories/hoomd3.1-mod/hoomdmod-venv/bin/python
+/Users/your_username/repositories/hoomd4.2.1-mod/hoomdmod4.2.1-venv/bin/python
 ```
 
 #### Make sure you have Open-MPI installed
@@ -296,21 +301,21 @@ Make sure that you have installed Open-MPI
 brew install open-mpi
 ```
 
-#### Installing our modified HOOMD-blue v3.1
-**Make sure you are in the `hoomd3.1-mod` directory and the correct vitual environemnt is activated**
+#### Installing our modified HOOMD-blue v4.2.1
+**Make sure you are in the `hoomd4.2.1-mod` directory and the correct vitual environemnt is activated**
 ```bash
-(hoomdmod-venv) hoomd3.1-mod %
+(hoomdmod-venv) hoomd4.2.1-mod %
 ```
 
 Install the remaining prerequisites (pybind11, eigen, cereal)
 ```bash 
-python3 hoomd3.1-mod/hoomd-v3.1.0/install-prereq-headers.py
+python3 hoomd4.2.1-mod/hoomd-v4.2.1-props/install-prereq-headers.py
 ```
 (enter "y" to proceed when prompted)
 
 Configure HOOMD-blue with cmake
 ```bash
-cmake -B build/hoomd -S hoomd3.1-mod/hoomd-v3.1.0 -DENABLE_MPI=on -DBUILD_HPMC=off -DBUILD_METAL=off -DBUILD_TESTING=off
+cmake -B build/hoomd -S hoomd4.2.1-mod/hoomd-v4.2.0-props -DENABLE_MPI=on -DBUILD_HPMC=off -DBUILD_METAL=off -DBUILD_TESTING=off
 ```
 Compile
 ```bash
@@ -328,16 +333,11 @@ pip3 install numpy
 pip3 install gsd
 pip3 install matplotlib
 ```
+
+You can now run simulations using HOOMD-blue v4.2.1 with the core modifications from our group
 <br>
 
-### Installing the latest version
-
-To install the latest version of HOOMD-blue you can clone it directly from their Github repository. The installation steps after that are essentially the same, but with slightly different file paths.
-
-Instructions for this are in the [HOOMD-blue docs](https://hoomd-blue.readthedocs.io/en/latest/building.html).
-<br>
-<br>
-### Updating your installation
+### [LOCAL] Updating your installation
 
 If you make any changes to HOOMD-blue's source code, you will need to recompile and reinstall the software.
 
