@@ -1,6 +1,6 @@
 # Running Simulations on Discovery
 
-This is a guide to the basics of running simulations on Discovery, Northeastern University's HPC cluster. 
+This is a guide to the basics of running simulation jobs on Discovery, Northeastern University's HPC cluster. 
 
 This guide is optimized for macOS. See the [Guide to Accessing Discovery](/01-Accessing-Discovery.md) first.
 
@@ -109,7 +109,14 @@ You can use squeue to view a list of your current jobs: the job number, partitio
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
 ```
 
-This will show any active srun and sbatch jobs.
+This will show any active srun and sbatch jobs (srun jobs will always be called "bash")
+```bash
+[user.name@c0249 props]$ squeue -u user.name
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          39604942     short      sim  user.na  R       0:22      1 d0052
+          39604922     short     bash  user.na  R       4:39      1 c0249
+```
+
 
 Once a job is complete you can view how long it ran (as well as other stats) with the command
 ```bash
