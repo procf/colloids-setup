@@ -13,14 +13,14 @@ This guide was compiled by Rob Campbell.
 ## Contents
 1. [Getting Access](/01-Accessing-Discovery.md#getting-access)
 2. [Connecting to Discovery](/01-Accessing-Discovery.md#connecting-to-discovery)
-3. [X11 and Visual Interfaces](/01-Accessing-Discovery.md#x11-and-visual-interdaces)
+3. [X11 and Visual Interfaces](/01-Accessing-Discovery.md#x11-and-visual-interfaces)
 4. [Learning How to Use Discovery](/01-Accessing-Discovery.md#learning-how-to-use-discovery)
 5. [Getting Access to the work Directory](/01-Accessing-Discovery.md#getting-access-to-the-work-directory)
 6. [Requesting Access to Additonal Partitions](/01-Accessing-Discovery.md#requesting-access-to-additonal-partitions)
 7. [Copying files to and from Discovery](/01-Accessing-Discovery.md#copying-files-to-and-from-discovery)
 8. [Loading Existing Software](/01-Accessing-Discovery.md#loading-existing-software)
 9. [Creating Virtual Environments](/01-Accessing-Discovery.md#creating-virtual-environments)
-10. [Github on Discovery](/01-Accessing-Discovery.md#github-on-discovery)
+10. [Git and Github on Discovery](/01-Accessing-Discovery.md#git-and-github-on-discovery) 
 11. [Next Steps](/01-Accessing-Discovery.md#next-steps)
 <br>
 
@@ -75,9 +75,9 @@ You can test if this worked with the command `xeyes` which will make a pair of e
 
 The Research Computing (RC) team at Northeastern is the best resource for learning about Discovery. You can read more on the [RC-docs](https://rc-docs.northeastern.edu/en/latest/welcome/welcome.html) or email them at rchelp@northeastern.edu
 
-The RC team has recorded several training sessions. You can access them on the [RC-docs](https://rc-docs.northeastern.edu/en/latest/tutorialsandtraining/index.html) or by going to the [Training page](https://rc.northeastern.edu/support/training/).
+The RC team has recorded several training sessions. You can access them on the [RC-docs](https://rc-docs.northeastern.edu/en/latest/tutorialsandtraining/index.html) or by going to the [Training](https://rc.northeastern.edu/support/training/) page.
 
-You can also schedule an "office hours" style meeting for 1-on-1 help from a Research Computing staff member at the RC [Consulting page](https://rc.northeastern.edu/support/consulting/).
+You can also schedule an "office hours" style meeting for 1-on-1 help from a Research Computing staff member at the RC [Consulting](https://rc.northeastern.edu/support/consulting/) page.
 <br>
 <br>
 ## Getting Access to the `work` Directory
@@ -104,7 +104,7 @@ mkdir yourname
 
 You automatically have access to the essential partitions for running small jobs on Discovery; however, you will likely need access to additional partitions, such as `long` or `large`, during the course of your research.
 
-Discuss with Safa and other current students about whether or not you need access to these partitions. You can read more about what is available and find the Partition Access Request From on the [Paritions page](https://rc-docs.northeastern.edu/en/latest/hardware/partitions.html) of the RC-docs.
+Discuss with Safa and other current students about whether or not you need access to these partitions. You can read more about what is available and find the Partition Access Request From on the [Paritions](https://rc-docs.northeastern.edu/en/latest/hardware/partitions.html) page of the RC-docs.
 <br>
 <br>
 ## Copying files to and from Discovery
@@ -185,11 +185,11 @@ git init
 ```
 Congifure git with your GitHub username
 ```bash
-% git config --global user.name "your_Github_username"
+git config --global user.name "your_Github_username"
 ```
 and set your email (use an email address that you have verified on Github)
 ```bash
-% git config --global user.email "the_email_you_use_with_Github"
+git config --global user.email "the_email_you_use_with_Github"
 ```
 *Note: Your username and email will be recorded as part of the commit history of any repository you contribute to. If you would like your email to be kept private, you can use the Github-generated `users.noreply.github.com` email instead. To access this* [manage your email settings on Github](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-user-account/managing-email-preferences/setting-your-commit-email-address)
 
