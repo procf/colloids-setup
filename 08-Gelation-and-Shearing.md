@@ -44,7 +44,7 @@ Once we've made these changes to HOOMD-blue's source code, accessing them in a s
 
 Our simulations now have several steps, and it is easiest to separate them into different files so that we can check our results along the way (and avoid computational errors) AND so we can speed up certain parts of the simulation by using MPI parallelization.
 
-Templates for each of these steps are avaialble in the [hoomd-4.2.1mod repository](https://github.com/procf/hoomd4.2.1-mod).
+Templates for each of these steps are avaialble in the [hoomd4.2.1-mod repository](https://github.com/procf/hoomd4.2.1-mod).
 
 **Step 1 - Initializing a Simulation**
 * Set the basic parameters (size, number of particles, etc.) and create a single frame of the simulation with particles randomly positioned throughout the space. Particles will overlap at this stage. 
@@ -91,7 +91,7 @@ If you need to make any changes to these analyses, you will probably need to mod
 f2py -c module_analysis.f90 -m module
 ```
 
-Copies of the standard Fortran and Python scripts are both available in the [hoomd-4.2.1mod repository](https://github.com/procf/hoomd4.2.1-mod)
+Copies of the standard Fortran and Python scripts are both available in the [hoomd4.2.1-mod repository](https://github.com/procf/hoomd4.2.1-mod)
 <br>
 <br>
 ## Next Steps
