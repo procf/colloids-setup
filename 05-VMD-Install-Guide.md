@@ -48,7 +48,7 @@ Select and download the version appropriate for your operating system. For macOS
 * for Intel: `vmd194a51-macx86_64.dmg`
 * for ARM: `vmd194a57-arm64-Rev12.dmg`
 <br>
-<br>
+
 ## Installing VMD
 
 Open the DMG file. This will mount the DMG file as a virtual disk and open a new window with a VMD application (called something like `VMD 1.9.4a51-x86_64-Rev9` for Intel Macs or `VMD 1.9.4a57-arm64-Rev12` for ARM Macs) and a PDF of the VMD User's Guide.
