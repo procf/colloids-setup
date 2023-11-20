@@ -13,8 +13,6 @@ Different parts of our analysis workflow were developed by Mohammad (Nabi) Nabiz
 2. [Basic Analyses of waterDPD](/07-Analysis-Guide.md#basic-analyses-of-waterdpd)
 3. [Modyfing waterDPD and Analyzing the Changes](/07-Analysis-Guide.md#modyfing-waterdpd-and-analyzing-the-changes)
 4. [Shearing waterDPD](/07-Analysis-Guide.md#shearing-waterdpd)
-	* [Shearing on Discovery](/07-Analysis-Guide.md#shearing-on-discovery)
-	* [Shearing on Locally](/07-Analysis-Guide.md#shearing-locally)
 5. [(OPTIONAL) Installing R Locally](/07-Analysis-Guide.md#optional-installing-r-locally)
 <br>
 
@@ -88,7 +86,7 @@ This method can also be used to change other particle parameters, such as giving
 
 Now that we've brought a simulation to equilibrium, we can apply a simple shear flow. 
 
-**If you haven't already**, [install our modified version of HOOMD-blue](/03-HOOMDblue-Install-Guide.md#installing-hoomd31-mod) and take a look at the [shearing guide](/Background-Reading/4-Shearing-4pg.pdf) in the Background Reading to understand how we apply shear to a simulation.
+**If you haven't already**, [install our modified version of HOOMD-blue](/03-HOOMDblue-Install-Guide.md) and take a look at the [shearing guide](/Background-Reading/4-Shearing-4pg.pdf) in the Background Reading to understand how we apply shear to a simulation.
 
 An example code for a shearing simulation is the sim-shear-waterDPD.py script in the 03-shear-waterDPD folder. This script follows the same basic structure as our previous sims, however there are two major changes:
 1. Even though this simulation does not include any colloid particles, we have to set additional parameters as if we are including colloidal particles. This is because our modifications for colloids and for shearing are integrated. We cannot use our shearing method without also providing dummy variables for colloidal interactions. These parameters are explained in the next [Gelation and Shearing guide](/08-Gelation-and-Shearing.md), but you do not need to worry about them right now.
