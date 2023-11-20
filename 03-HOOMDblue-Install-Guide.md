@@ -135,7 +135,7 @@ And then the sbatch script will use pip to install NumPy and other useful python
 <br>
 ### [DISCO] Installing hoomd basic
 
-The sbatch script for installing the standard HOOMD-blue v4.2.1 (what we call hoom4.2.1-basic) is available in this repository in the [Scripts/install-update-hoomd4.2.1basic folder](/Scripts/install-update-hoomd4.2.1basic).
+The sbatch script for installing the standard HOOMD-blue v4.2.1 (what we call hoom4.2.1-basic) is available in this repository in the [Scripts/install-update-hoomd4.2.1basic](/Scripts/install-update-hoomd4.2.1basic) folder.
 
 To use it, first make sure you are in your `work` or `scratch` directory:
 ```bash
@@ -462,5 +462,5 @@ cmake --install build/hoomd
 
 ### Next Steps
 
-You are now ready to use HOOMD-blue! See [Simulating waterDPD](/02-Simulating-waterDPD.md) for more information on running simulations and next steps.
+You are now ready to use HOOMD-blue! See [Simulating waterDPD](/04-Simulating-waterDPD.md) for more information on running simulations and next steps.
 
