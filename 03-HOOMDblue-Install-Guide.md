@@ -80,38 +80,145 @@ SEPARATED FOLDERS
 	- *old-projects*
 
 **You can organize your files ANY way you like, just make sure you have some way of keeping track of what you're doing so you can find results later -- your future self will thank you!**
-
-
+<br>
+<br>
 ## Installing on Discovery
-
-### [DISCO] Creating the software directory
-
-### [DISCO] Prerequisites
-
-### [DISCO] Installing hoomd basic
-
-### [DISCO] Installing hoomd mod
-
-### [DISCO] Updating your installation
 
 **You should install your own version(s) of HOOMD-blue in your folder on `/work/props`.**
 
-Remember, you should **always** install software using a compute node and NOT the login node (either using an interactive srun session or an sbatch script). You will also need to load the modules for all the required software (i.e. Python, OpenMPI, etc.) before installing HOOMD-blue.
+The easiest way to do that is by cloning a copy of the existing hoom4.2.1-mod repository. You can then easily download changes made by others and add your changes to the main copy.
 
-To simplify things we created sbatch scripts that completes all the steps for installation. They are available in the [Scripts/hpc](/Scripts/hpc) folder of this repository.
+**NOTE:** If you plan on making your own changes to the source code you should either (a) move to a new branch of the hoomd4.2.1-mod repo, or (b) fork an independent copy of the hoomd4.2.1-mod repo that you can edit separate from the core mods. **Please discuss with the other members of the group if you have any questions about these options**
 
-To access them on Discovery, clone this repository to your work folder
+To simplify things we created sbatch scripts that complete all the steps for installation. You can also install HOOMD-blue using srun (if you copy and paste the commands from the sbatch scripts and run them individually). The rest of the Discovery installation guide will show you how to use the sbatch scripts, and the local guide will go through the commands step-by-step.
+
+Remember, you should **always** install software using a compute node and NOT the login node (either using an interactive srun session or an sbatch script). You will also need to load the modules for all the required software (i.e. Python, OpenMPI, etc.) before installing HOOMD-blue.<
+<br>
+<br>
+### [DISCO] Creating the software directory
+
+When you login to Discovery you will start in your `home` directory. This is NOT a good place to install software. Instead you should move to your folder on either `scratch` or `work` (it is better to use `work` if you have access to it, because files on `scratch` will be deleted at the end of each month).
+```bash
+cd /work/props/your_username
+mkdir software
+mkdir software/hoomd4.2.1-basic
+mkdir software/hoomd4.2.1-mod
+```
+You can also view what is in the current directory with the command
+```bash
+ls
+```
+<br>
+
+### [DISCO] Prerequisites
+
+Our implementation of HOOMD-blue is currently **CPU only** (no GPU components), **with MPI enabled**.
+
+Required for installation:
+* macOS or Linux (Discovery uses Linux)
+* A C++ compiler (HOOMD-blue is tested with gcc 7, 8, 9, 10, 11 / clang 6, 7, 8, 9, 10, 11, 12, 13)
+* Python >= 3.6
+* CMake >= 3.9
+* Git
+* OpenMPI
+* NumPy >= 1.7
+* pybind11 >= 2.2
+* Eigen >= 3.2
+* cereal >= 1.1
+
+On Discovery most of these prerequisites are available as modules. The sbatch scripts will load Python 3.8.1, CMake 3.18.1, gcc 11.1.0, and OpenMPI 4.1.2
+
+HOOMD-blue v4.2.1 comes with a script for installing pybind11, eigen, and cereal that the sbatch scripts will use to fulfill those prerequisites.
+
+And then the sbatch script will use pip to install NumPy and other useful python packages.
+<br>
+<br>
+### [DISCO] Installing hoomd basic
+
+The sbatch script for installing the standard HOOMD-blue v4.2.1 (what we call hoom4.2.1-basic) is available in this repository in the [Scripts/install-update-hoomd4.2.1basic folder](/Scripts/install-update-hoomd4.2.1basic).
+
+To use it, first make sure you are in your `work` or `scratch` directory:
+```bash
+cd /work/props/your_username
+pwd
+```
+Then, clone this repository to create a new copy of the colloids-setup folder:
 ```bash
 git clone git@github.com:procf/colloids-setup.git
 ```
-and then copy the relevant scripts to the directory where you want to install HOOMD-blue. 
+NOTE: you need to link Git on Discovery with your Github account before doing this, because the colloids-setup repo is not public. See the [guide to accessing Discovery](/01-Accessing-Discovery.md#git-and-github-on-discovery) for more details.
 
-When you are ready to install, run the script with
+Now move to the hoomd4.2.1-basic directory and copy the sbatch installation script from the colloids-setup folder.
 ```bash
-sbatch script-name
+cd software/hoomd4.2.1-basic
+cp /work/props/your_username/colloids-setup/Scripts/install-hoomd-basic .
 ```
-etc.
+
+And run the installation script:
+```bash
+sbatch install-hoomd-basic
+```
+
+This job should take between 20-40min.
 <br>
+<br>
+### [DISCO] Installing hoomd mod
+
+The sbatch script for installing the modified version of HOOMD-blue v4.2.1 (what we call hoomd4.2.1-mod) is included as part of the hoomd4.2.1-mod repo.
+
+To use it, make sure you are in your hoomd4.2.1-mod directory:
+```bash
+cd /work/props/your_username/software/hoomd4.2.1-mod
+pwd
+```
+Then, clone the hoomd4.2.1-mod repository into that folder:
+```bash
+git clone git@github.com:procf/hoomd4.2.1-mod.git
+```
+NOTE: you need to link Git on Discovery with your Github account before doing this, because the hoomd4.2.1-mod repo is not public. See the [guide to accessing Discovery](/01-Accessing-Discovery.md#git-and-github-on-discovery) for more details.
+
+Now, move to the `scripts` subfolder where the install script is located
+```bash
+cd /hoomd4.2.1-mod/scripts/install-update/
+```
+
+And run the installation script:
+```bash
+sbatch install-hoomd-mod
+```
+
+This job should take between 20-40min.
+
+**NOTE:** After you are finished and confirm there were no errors, you should delete the log files that are created in this folder ([jobid].err and [jobid].out)
+```bash
+rm *.err
+rm *.out
+```
+
+You should also run all your simulation scripts OUTSIDE the github folder (i.e. put them inside /work/props/your_username/software/hoomd4.2.1/ and do NOT put them in /work/props/your_username/software/hoomd4.2.1/hoomd4.2.1/ ) 
+<br>
+<br>
+### [DISCO] Updating your installation
+
+To update either of your installations (i.e. after making any additional changes) you only need to "build" and "install" the software. You can use the provided update scripts for this:
+
+For hoomd4.2.1-basic:
+```bash
+cd /work/props/your_username/software/hoomd4.2.1-basic
+cp /work/props/your_username/colloids-setup/Scripts/update-hoomd-basic .
+sbatch update-hoomd-basic
+```
+
+For hoomd4.2.1-mod:
+```bash
+cd /work/props/your_username/software/hoomd4.2.1-mod/hoomd4.2.1-mod/scripts/install-update
+sbatch update-hoomd-mod
+```
+And then remove the log files after the update is completed successfully:
+```bash
+rm *.err
+rm *.out
+```
 <br>
 
 ## Installing on your local computer

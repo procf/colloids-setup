@@ -3,26 +3,26 @@
 This is an overview of the PRO-CF Colloids Team approach to colloid gelation and shearing simulations with HOOMD-blue.
 
 Before running gelation or shearing simulations you should have already familiarized yourself with how to run and analyze basic simulations:
-* [ran a basic DPD simulation of water](/02-Simulating-waterDPD.md)
-* [installed VMD](/03-VMD-Install-Guide.md) 
-* [visualized a simulation in VMD](/04-Using-VMD.md)
-* [ran basic analysis checks](/05-Analysis-Guide.md) on the simulation to verify it ran correctly
-* [installed our modified version of HOOMD-blue](/01-HOOMDblue-Install-Guide.md#installing-hoomd31-mod) 
+* [ran a basic DPD simulation of water](/04-Simulating-waterDPD.md)
+* [installed VMD](/05-VMD-Install-Guide.md) 
+* [visualized a simulation in VMD](/06-Using-VMD.md)
+* [ran basic analysis checks](/07-Analysis-Guide.md) on the simulation to verify it ran correctly
+* [installed our modified version of HOOMD-blue](/03-HOOMDblue-Install-Guide.md#installing-hoomd31-mod) 
 * [learned the basics of how we apply shear flow](/Background-Reading/4-Shearing-4pg.pdf)
-* and [run and analyzed a simple shearing simulation of water](/05-Analysis-Guide.md#shearing-waterdpd)
+* and [run and analyzed a simple shearing simulation of water](/07-Analysis-Guide.md#shearing-waterdpd)
 
 Once you have completed all those steps you should be familiar with the basics of DPD simulations and how to run them. This gives you the necessary background to understand our colloid simulations and run them yourself!
 
-[Last Update: August 2022]
+[Last Update: November 2023]
 
 These workflows were first developed by Mohammad (Nabi) Nabizadehi as part of his PhD thesis. They were further optimized and adapted for MPI by Dr. Deepak Mangal and streamlined by Rob Campbell. This guide was compiled by Rob Campbell.
 <br>
 
 ## Contents
-1. [Necessary Modifications for Colloid Simulations](/06-Gelation-and-Shearing.md#necessary-modifications-for-colloid-simulations) 
-2. [Simulation Steps](/06-Gelation-and-Shearing.md#simulation-steps)
-3. [Analysis](/06-Gelation-and-Shearing.md#analysis)
-4. [Next Steps](/06-Gelation-and-Shearing.md#next-steps)
+1. [Necessary Modifications for Colloid Simulations](/08-Gelation-and-Shearing.md#necessary-modifications-for-colloid-simulations) 
+2. [Simulation Steps](/08-Gelation-and-Shearing.md#simulation-steps)
+3. [Analysis](/08-Gelation-and-Shearing.md#analysis)
+4. [Next Steps](/08-Gelation-and-Shearing.md#next-steps)
 <br>
 
 ## Necessary Modifications for Colloid Simulations 
@@ -35,7 +35,7 @@ Making this happen is relatively straightforward, but it requires many changes t
 
 Once we've made a colloidal gel, we also need to make some changes to be able to shear the gel correctly and retain information about it's structure. You should be familiar with these from running a basic shearing simulation of water, and they are explained in the Background Reading on [Shear](/Background-Reading/4-Shearing-4pg.pdf) (4 pages).
 
-Implementing these changes in HOOMD-blue requires modifying the source code: we have to add additional files for the new force calculation (to prevent particle overlaps and add new interparticle interaction forces) and we need to make sure those changes are accessible and consistent throughout the software. We also need to update how particles behave when they cross a boundary, so that shear flow occurs correctly. This is why we developed (and continue to develop) our [hoomd3.1-mod](https://github.com/procf/hoomd3.1-mod) software. 
+Implementing these changes in HOOMD-blue requires modifying the source code: we have to add additional files for the new force calculation (to prevent particle overlaps and add new interparticle interaction forces) and we need to make sure those changes are accessible and consistent throughout the software. We also need to update how particles behave when they cross a boundary, so that shear flow occurs correctly. This is why we developed (and continue to develop) our [hoomd4.2.1-mod](https://github.com/procf/hoomd4.2.1-mod) software. 
 
 Once we've made these changes to HOOMD-blue's source code, accessing them in a simulation requires additional parameters in our simulation scripts.
 <br>
@@ -44,7 +44,7 @@ Once we've made these changes to HOOMD-blue's source code, accessing them in a s
 
 Our simulations now have several steps, and it is easiest to separate them into different files so that we can check our results along the way (and avoid computational errors) AND so we can speed up certain parts of the simulation by using MPI parallelization.
 
-Templates for each of these steps are avaialble in the [hoomd-3.1mod repository](https://github.com/procf/hoomd3.1-mod).
+Templates for each of these steps are avaialble in the [hoomd-4.2.1mod repository](https://github.com/procf/hoomd4.2.1-mod).
 
 **Step 1 - Initializing a Simulation**
 * Set the basic parameters (size, number of particles, etc.) and create a single frame of the simulation with particles randomly positioned throughout the space. Particles will overlap at this stage. 
@@ -69,7 +69,7 @@ Congratulations, you now have data!
 <br>
 ## Analysis
 
-As we discussed in the [Analysis Guide](/05-Analysis-Guide.md), we have to extract data from the GSD file before we can analyze and plot it.
+As we discussed in the [Analysis Guide](/07-Analysis-Guide.md), we have to extract data from the GSD file before we can analyze and plot it.
 
 In addition to the basic extraction and plotting of data that we ran for water, there are a number of more advance analyses that we frequently use: 
 * mean squared displacement
@@ -91,16 +91,12 @@ If you need to make any changes to these analyses, you will probably need to mod
 f2py -c module_analysis.f90 -m module
 ```
 
-Copies of the standard Fortran and Python scripts are both available in the [hoomd-3.1mod repository](https://github.com/procf/hoomd3.1-mod)
+Copies of the standard Fortran and Python scripts are both available in the [hoomd-4.2.1mod repository](https://github.com/procf/hoomd4.2.1-mod)
 <br>
 <br>
 ## Next Steps
 
 This covers the basic outline of colloidal gel simulations! The rest is up to you and your research.
-
-*HPC Computing:*
-* See the remaining guides for information about [accessing](/07-Accessing-Discovery.md) Northeastern's HPC cluster, "Discovery," and [working with](/08-Slurm-and-Disco.md) HPC simulations.
-<br>
 
 *Background Reading:*
 

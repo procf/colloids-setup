@@ -1,46 +1,50 @@
 ## VMD Installation Guide
 
-This is a guide for installing the Visual Molecular Dynamics ([VMD]) software, and associated plugins, for use with HOOMD-blue simulation data in the PRO-CF Research Group.
+This is a guide for installing the Visual Molecular Dynamics ([VMD]) software, and associated plugins, on your local computer for use with HOOMD-blue simulation data in the PRO-CF Research Group.
 
-This guide is for optimized for MacOS. 
+This guide is for optimized for macOS. 
 
 [Last Update: August 2022]
 
 [VMD]: https://www.ks.uiuc.edu/Research/vmd/
 
 ## Contents
-1. [Prerequisites](/03-VMD-Install-Guide.md#prerequisites)
-2. [Acquiring VMD](/03-VMD-Install-Guide.md#acquiring-vmd)
-3. [Installing VMD](/03-VMD-Install-Guide.md#installing-vmd)
-4. [The VMD Interface](/03-VMD-Install-Guide.md#the-vmd-interface)
-5. [Prepare VMD for Manually Installing Plugins](/03-VMD-Install-Guide.md#prepare-vmd-for-manually-installing-plugins)
-6. [Acquiring the GSD Plugin](/03-VMD-Install-Guide.md#acquiring-the-gsd-plugin)
-7. [Installing the GSD Plugin](/03-VMD-Install-Guide.md#installing-the-gsd-plugin)
-8. [Adding the GSD Plugin to the Original VMD Application](/03-VMD-Install-Guide.md#adding-the-gsd-plugin-to-the-original-vmd-application)
-9. [Opening GSD Files with VMD](/03-VMD-Install-Guide.md#opening-gsd-files-with-vmd)
-11. [Opening VMD from the Command Line](03-VMD-Install-Guide.md#opening-vmd-from-the-command-line)
-10. [Installing the VMD Movie Plugin Requirements](03-VMD-Install-Guide.md#installing-the-vmd-movie-plugin-requirements)
-12. [Next Steps](/03-VMD-Install-Guide.md#next-steps)
+1. [Prerequisites](/05-VMD-Install-Guide.md#prerequisites)
+2. [Acquiring VMD](/05-VMD-Install-Guide.md#acquiring-vmd)
+3. [Installing VMD](/05-VMD-Install-Guide.md#installing-vmd)
+4. [The VMD Interface](/05-VMD-Install-Guide.md#the-vmd-interface)
+5. [Prepare VMD for Manually Installing Plugins](/05-VMD-Install-Guide.md#prepare-vmd-for-manually-installing-plugins)
+6. [Acquiring the GSD Plugin](/05-VMD-Install-Guide.md#acquiring-the-gsd-plugin)
+7. [Installing the GSD Plugin](/05-VMD-Install-Guide.md#installing-the-gsd-plugin)
+8. [Adding the GSD Plugin to the Original VMD Application](/05-VMD-Install-Guide.md#adding-the-gsd-plugin-to-the-original-vmd-application)
+9. [Opening GSD Files with VMD](/05-VMD-Install-Guide.md#opening-gsd-files-with-vmd)
+11. [Opening VMD from the Command Line](05-VMD-Install-Guide.md#opening-vmd-from-the-command-line)
+10. [Installing the VMD Movie Plugin Requirements](05-VMD-Install-Guide.md#installing-the-vmd-movie-plugin-requirements)
+12. [Next Steps](/05-VMD-Install-Guide.md#next-steps)
 <br>
 
 ## Prerequisites
 
+You should install VMD on your **local computer**, not on Discovery.
+
 Required for installation:
-* MacOS or Linux (this guide is optimized for MacOS)
-* HOOMD-blue (see the [HOOMD-blue Installation and Setup Guide](/01-HOOMDblue-Install-Guide.md))
-* A completed simulation (see [Simulating waterDPD](/02-Simulating-waterDPD.md))
+* macOS or Linux (this guide is optimized for macOS)
+* HOOMD-blue (see the [HOOMD-blue Installation and Setup Guide](/03-HOOMDblue-Install-Guide.md))
+* A completed simulation (see [Simulating waterDPD](/04-Simulating-waterDPD.md))
 <br>
 
 ## Acquiring VMD
 
+You should install VMD on your **local computer**, not on Discovery.
+
 VMD is freely available for download with a registered account.
 
 Go to the [VMD website](https://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD) and select the latest version appropriate for your operating system.<br>
-*Note: There are two different MacOS versions, "ARM64" for computers with Apple silicon (i.e. the M1 chip) and "x86_84" for computers with Intel processors.*
+*Note: There are two different macOS versions, "ARM64" for computers with Apple silicon (i.e. the M1 chip) and "x86_84" for computers with Intel processors.*
 
 You will be prompted to create a username and password to register with VMD. Register for 1 user.
 
-Select and download the version appropriate for your operating system. For MacOS versions this will download a DMG file to your Downloads folder e.g. 
+Select and download the version appropriate for your operating system. For macOS versions this will download a DMG file to your Downloads folder e.g. 
 * for Intel: `vmd194a51-macx86_64.dmg`
 * for ARM: `vmd194a57-arm64-Rev12.dmg`
 <br>
@@ -74,14 +78,14 @@ Keep the Terminal window open but ignore it, you should not need to interact wit
 
 For now, quit VMD by going to the VMD Main window, selecting File, and then Quit. When prompted whether or not to Really Quit, click Yes. The OpenGL Display and VMD Main windows will both close and the `startup.command` Terminal window will display `[Process completed]` but remain open. You can now close this Terminal window.
 
-*Note: You will probably get an error message from your compuer the first time you quit VMD (and occasionally other times after that) saying that VMD quit unexpectedly. This has to do with how VMD is opened and closed by the `startup.command` and is not a problem with VMD, but a slight incompatibility with how MacOS expects programs to work. You don't need to worry about it. Hit Ignore.*
+*Note: You will probably get an error message from your compuer the first time you quit VMD (and occasionally other times after that) saying that VMD quit unexpectedly. This has to do with how VMD is opened and closed by the `startup.command` and is not a problem with VMD, but a slight incompatibility with how macOS expects programs to work. You don't need to worry about it. Hit Ignore.*
 <br>
 <br>
 ## Prepare VMD for Manually Installing Plugins
 
 We will be using VMD to open GSD files; however, GSD is a not one of the filetypes that VMD natively supports. We will need to manually install a plugin to allow VMD to open GSD files, and in order to do that we need to access the Contents inside the VMD application.
 
-*Note: This step is unique to MacOS. Unfortunately, the plugin configuration process for manual installation is optimized for Linux, and cannot read the filepath to the VMD application's Contents on MacOS without the following modifications. If you are using Linux you should not need to do this.*
+*Note: This step is unique to macOS. Unfortunately, the plugin configuration process for manual installation is optimized for Linux, and cannot read the filepath to the VMD application's Contents on macOS without the following modifications. If you are using Linux you should not need to do this.*
 
 In a Finder window, go to Applications/VMD
 
@@ -171,7 +175,7 @@ Before you delete the duplicate Contents folder, the gsd-vmd-main folder in your
 <br>
 ## Opening GSD Files with VMD
 
-If you have not already done so, run the waterDPD.py example simulation (see [Simulating waterDPD](/02-Simulating-waterDPD.md) for details).
+If you have not already done so, run the waterDPD.py example simulation (see [Simulating waterDPD](/04-Simulating-waterDPD.md) for details).
 
 Open VMD by selecting the icon in Launchpad or the VMD application in the Applications/VMD folder.
 
@@ -196,7 +200,7 @@ So, everything now works great, but there are 2 problems:
 
 The best way to solve these problems is to open VMD from the Command Line (i.e. the Terminal) instead.
 
-The easiest way to do this is to add an "alias" to the configuration file for your Terminal shell (on MacOS this is the `.zshrc` file, as opposed to the `.bashrc` file).
+The easiest way to do this is to add an "alias" to the configuration file for your Terminal shell (on macOS this is the `.zshrc` file, as opposed to the `.bashrc` file).
 
 Check to see if you have a .zhsrc file (this will also create a new one if you do not already have it)
 ```
@@ -244,5 +248,5 @@ The VMD website also suggests that you may need to update the POV-Ray 3.6 config
 <br>
 ## Next Steps
 
-See the guide to [Using VMD](/04-Using-VMD.md) for an overview of visualization options. 
+See the guide to [Using VMD](/06-Using-VMD.md) for an overview of visualization options. 
 

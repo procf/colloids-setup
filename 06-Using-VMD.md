@@ -1,31 +1,31 @@
 # Using VMD
 
-This is an introduction to using [VMD] to visulaize the results of HOOMD-blue simulation data for research in the PRO-CF Colloids Team.
+This is an introduction to using [VMD] on your local computer to visulaize the results of HOOMD-blue simulation data for research in the PRO-CF Colloids Team.
 
-This guide is optimized for MacOS. See [Simulating waterDPD](/02-Simulating-waterDPD.md) for more details on running a simulation with HOOMD-blue and the [VMD Installation Guide](/03-VMD-Install-Guide.md) for help installing VMD.
+This guide is optimized for MacOS. See [Simulating waterDPD](/04-Simulating-waterDPD.md) for more details on running a simulation with HOOMD-blue and the [VMD Installation Guide](/05-VMD-Install-Guide.md) for help installing VMD.
 
-[Last Updated: August 2022].
+[Last Updated: November 2023].
 
 Our VMD workflow was developed by Mohammad (Nabi) Nabizadeh. This guide was compiled by Rob Campbell.
 
 [VMD]: https://www.ks.uiuc.edu/Research/vmd/
 
 ## Contents
-1. [The VMD Interface](/04-Using-VMD.md#the-vmd-interface)
-2. [Opening a GSD file with VMD](/04-Using-VMD.md#opening-a-gsd-file-with-vmd)
-3. [Understanding the Default Visualization](/04-Using-VMD.md#understanding-the-default-visualization)
-4. [Changing Lines to Spheres](/04-Using-VMD.md#changing-lines-to-spheres)
-5. [Simulation Playback in **VMD Main**](/04-Using-VMD.md#simulation-playback-in-vmd-main)
-6. [Rotation and Zoom](/04-Using-VMD.md#rotation-and-zoom)
-7. [Modifying Visualization Graphics](/04-Using-VMD.md#modifying-visualization-graphics)
-8. [Changing the Background Color](/04-Using-VMD.md#changing-the-background-color)
-9. [Rendering an Image](/04-Using-VMD.md#rendering-and-image)
-10. [More Visualization Display Settings](/04-Using-VMD.md#more-visualization-display-settings)
-11. [Other Tools](/04-Using-VMD.md#other-tools)
-12. [Recommendations for High Quality Visualizations](/04-Using-VMD.md#recommendations-for-high-quality-visualizations)
-12. [Some Recommended Visualization Styles](/04-Using-VMD.md#some-recommended-visualization-styles)
-13. [Changing the Default Settings in VMD](/04-Using-VMD.md#changing-the-default-settings-in-vmd)
-13. [Next Steps](/04-Using-VMD.md#next-steps)
+1. [The VMD Interface](/06-Using-VMD.md#the-vmd-interface)
+2. [Opening a GSD file with VMD](/06-Using-VMD.md#opening-a-gsd-file-with-vmd)
+3. [Understanding the Default Visualization](/06-Using-VMD.md#understanding-the-default-visualization)
+4. [Changing Lines to Spheres](/06-Using-VMD.md#changing-lines-to-spheres)
+5. [Simulation Playback in **VMD Main**](/06-Using-VMD.md#simulation-playback-in-vmd-main)
+6. [Rotation and Zoom](/06-Using-VMD.md#rotation-and-zoom)
+7. [Modifying Visualization Graphics](/06-Using-VMD.md#modifying-visualization-graphics)
+8. [Changing the Background Color](/06-Using-VMD.md#changing-the-background-color)
+9. [Rendering an Image](/06-Using-VMD.md#rendering-and-image)
+10. [More Visualization Display Settings](/06-Using-VMD.md#more-visualization-display-settings)
+11. [Other Tools](/06-Using-VMD.md#other-tools)
+12. [Recommendations for High Quality Visualizations](/06-Using-VMD.md#recommendations-for-high-quality-visualizations)
+12. [Some Recommended Visualization Styles](/06-Using-VMD.md#some-recommended-visualization-styles)
+13. [Changing the Default Settings in VMD](/06-Using-VMD.md#changing-the-default-settings-in-vmd)
+13. [Next Steps](/06-Using-VMD.md#next-steps)
 <br>
 
 ## The VMD Interface
@@ -39,7 +39,7 @@ You should keep the Terminal window open, but you do not need to interact with i
 <br>
 ## Opening a GSD file with VMD
 
-As described at the end of the [VMD Installation Guide](/03-VMD-Install-Guide.md), after installing the GSD Plugin you can open the GSD output of a HOOMD-blue simulation (such as the Equilibrium.gsd file produced by waterDPD.py) with VMD.
+As described at the end of the [VMD Installation Guide](/05-VMD-Install-Guide.md), after installing the GSD Plugin you can open the GSD output of a HOOMD-blue simulation (such as the Equilibrium.gsd file produced by waterDPD.py) with VMD.
 
 Open VMD by selecting the icon in Launchpad or the VMD application in the Applications/VMD folder.
 
@@ -168,7 +168,7 @@ Try adding depth to your image with "Cue Mode":
 * Set "Cue Start" to 0.75
 * Set "Cue End" to  a value between 1.00 and 2.00
 
-See more suggestions for optimizing visualizations in the [Recommendations for High Quality Visualizations](/04-Using-VMD.md#recommendations-for-high-quality-visualizations) section below.
+See more suggestions for optimizing visualizations in the [Recommendations for High Quality Visualizations](/06-Using-VMD.md#recommendations-for-high-quality-visualizations) section below.
 <br>
 
 ## Other Tools
@@ -214,4 +214,4 @@ Rob's modified versions of both of these files are available in the [Scripts/VMD
 <br>
 ## Next Steps
 
-See the [Analysis Guide](/05-Analysis-Guide.md) for an introduction to other ways to analyze a completed simulation.
+See the [Analysis Guide](/07-Analysis-Guide.md) for an introduction to other ways to analyze a completed simulation.
