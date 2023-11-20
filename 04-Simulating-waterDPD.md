@@ -2,7 +2,7 @@
 
 This is a guide for running a simple DPD simulation of water with HOOMD-blue in preparation for colloids research in the PRO-CF Colloids Team.
 
-This guide is optimized for MacOS and useses the **basic installation of HOOMD-blue** (See the [HOOMD-blue Installation Guide](/01-HOOMDblue-Install-Guide.md) for prerequisites).
+This guide is optimized for MacOS and useses the **basic installation of HOOMD-blue** (See the [HOOMD-blue Installation Guide](/03-HOOMDblue-Install-Guide.md) for prerequisites).
 
 [Last Update: November 2023]
 
@@ -23,7 +23,7 @@ Our group primarily uses two different types of simulations: Dissipative Particl
 
 Since our DPD colloid simulations require at least two different types of particles and a number of modifications to the standard DPD methods included in HOOMD-blue, the first step is to start with an even simpler system with only one type of particle (more similar to a Brownian Dynamics system, but using standard DPD math) -- this is a simulation of water.
 
-To understand the basics of how DPD simulations work, read the [into to DPD](/Background-Reading/1-DPD-8pg.pdf) (8 pages) PDF in the Background Reading folder.
+To understand the basics of how DPD simulations work, read the [intro to DPD](/Background-Reading/1-DPD-8pg.pdf) (8 pages) PDF in the Background Reading folder.
 
 This tutorial guides you through using HOOMD-blue to run a DPD simulation of a random distribution of water molecules. You will need the `sim-waterDPD.py` file provided in this repository to run this simulation.
 <br>
