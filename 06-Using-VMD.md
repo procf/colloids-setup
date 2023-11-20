@@ -19,13 +19,12 @@ Our VMD workflow was developed by Mohammad (Nabi) Nabizadeh. This guide was comp
 6. [Rotation and Zoom](/06-Using-VMD.md#rotation-and-zoom)
 7. [Modifying Visualization Graphics](/06-Using-VMD.md#modifying-visualization-graphics)
 8. [Changing the Background Color](/06-Using-VMD.md#changing-the-background-color)
-9. [Rendering an Image](/06-Using-VMD.md#rendering-and-image)
+9. [Rendering an Image](/06-Using-VMD.md#rendering-an-image)
 10. [More Visualization Display Settings](/06-Using-VMD.md#more-visualization-display-settings)
 11. [Other Tools](/06-Using-VMD.md#other-tools)
 12. [Recommendations for High Quality Visualizations](/06-Using-VMD.md#recommendations-for-high-quality-visualizations)
-12. [Some Recommended Visualization Styles](/06-Using-VMD.md#some-recommended-visualization-styles)
 13. [Changing the Default Settings in VMD](/06-Using-VMD.md#changing-the-default-settings-in-vmd)
-13. [Next Steps](/06-Using-VMD.md#next-steps)
+14. [Next Steps](/06-Using-VMD.md#next-steps)
 <br>
 
 ## The VMD Interface
