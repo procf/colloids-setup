@@ -416,13 +416,13 @@ brew install open-mpi
 
 Install the remaining prerequisites (pybind11, eigen, cereal)
 ```bash 
-python3 hoomd4.2.1-mod/hoomd-v4.2.1-props/install-prereq-headers.py
+python3 hoomd4.2.1-mod/hoomd-v4.2.1-procf/install-prereq-headers.py
 ```
 (enter "y" to proceed when prompted)
 
 Configure HOOMD-blue with cmake
 ```bash
-cmake -B build/hoomd -S hoomd4.2.1-mod/hoomd-v4.2.0-props -DENABLE_MPI=on -DBUILD_HPMC=off -DBUILD_METAL=off -DBUILD_TESTING=off
+cmake -B build/hoomd -S hoomd4.2.1-mod/hoomd-v4.2.0-procf -DENABLE_MPI=on -DBUILD_HPMC=off -DBUILD_METAL=off -DBUILD_TESTING=off
 ```
 Compile
 ```bash
