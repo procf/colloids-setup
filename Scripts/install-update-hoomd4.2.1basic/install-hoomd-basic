@@ -26,7 +26,7 @@ module load openmpi/4.1.2-gcc11.1
 
 # install prereqs (pybind11, cereal, Eigen)
 # pipe "yes" to to input "y" by default when prompted
-yes | python3 hoomd-v4.2.1/install-prereq-headers.py
+yes | python3 hoomd-4.2.1/install-prereq-headers.py
 
 # compile and install hoomd-blue (make sure MPI is on, turn off extras for speed-up)
 cmake -B build/hoomd -S hoomd-v4.2.1 -DENABLE_MPI=on -DBUILD_HPMC=off -DBUILD_METAL=off -DBUILD_TESTING=off
