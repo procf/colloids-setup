@@ -16,8 +16,8 @@ rm hoomd-v4.2.1.tar.gz
 
 # create new virtual environment to store hoomd-blue
 module load python/3.8.1
-python3 -m venv hoomd-venv
-source hoomd-venv/bin/activate
+python3 -m venv hoomd4.2.1-venv
+source hoomd4.2.1-venv/bin/activate
 
 # load additional required modules 
 module load cmake/3.18.1
@@ -26,7 +26,7 @@ module load openmpi/4.1.2-gcc11.1
 
 # install prereqs (pybind11, cereal, Eigen)
 # pipe "yes" to to input "y" by default when prompted
-yes | python3 hoomd-4.2.1/install-prereq-headers.py
+yes | python hoomd-4.2.1/install-prereq-headers.py
 
 # compile and install hoomd-blue (make sure MPI is on, turn off extras for speed-up)
 cmake -B build/hoomd -S hoomd-4.2.1 -DENABLE_MPI=on -DBUILD_HPMC=off -DBUILD_METAL=off -DBUILD_TESTING=off

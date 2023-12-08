@@ -7,7 +7,7 @@
 
 # source into the virtual environment
 module load python/3.8.1
-source hoomd-venv/bin/activate
+source hoomd4.2.1-venv/bin/activate
 
 # load additional required modules
 module load cmake/3.18.1
