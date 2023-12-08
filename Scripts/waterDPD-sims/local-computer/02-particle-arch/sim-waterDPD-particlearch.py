@@ -137,6 +137,7 @@ logger.add(thermodynamic_properties, quantities=['kinetic_temperature',
 # save outputs
 gsd_writer = hoomd.write.GSD(trigger=period, filename="H-Equilibrium.gsd",
 	filter=all_, mode='wb', dynamic=['property','momentum','attribute'])
+gsd_writer.write_diameter = True
 sim.operations.writers.append(gsd_writer)
 gsd_writer.log = logger
 
