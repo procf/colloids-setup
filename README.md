@@ -26,19 +26,17 @@ Follow these guides to get set up with the Discovery Research Cluster, HOOMD-blu
 
 1. [Accessing "Discovery"](/01-Accessing-Discovery.md) (Northeastern's HPC cluster)
 
-2. An [introduction to running HPC simulations](/08-Slurm-and-Disco.md)
+2. An [introduction to running HPC simulations](/02-Slurm-and-Disco.md)
 
-3. The [HOOMD-blue Installation and Setup Guide](/01-HOOMDblue-Install-Guide.md)
+3. The [HOOMD-blue Installation and Setup Guide](/03-HOOMDblue-Install-Guide.md)
 
-Dissipative Particle Dynamics (DPD) or Brownian Dynamics (BD)
+4. An introduction to running a basic DPD simulation with HOOMD-blue: [Simulating waterDPD](/04-Simulating-waterDPD.md)
 
-4. An introduction to running a basic DPD simulation with HOOMD-blue: [Simulating waterDPD](/02-Simulating-waterDPD.md) (*to be updated for v3.0+*)
+5. [The VMD Installation Guide](/05-VMD-Install-Guide.md)
 
-5. [The VMD Installation Guide](/03-VMD-Install-Guide.md)
+6. An introduction to [Using VMD](/06-Using-VMD.md) to qualitiatively check your simulation results.
 
-6. An introduction to [Using VMD](/04-Using-VMD.md) to qualitiatively check your simulation results.
+7. The [Analysis Guide](/07-Analysis-Guide.md) for quantitatively checking your results. 
 
-7. The [Analysis Guide](/05-Analysis-Guide.md) for quantitatively checking your results. 
-
-8. An overview of simulating colloids: [Gelation and Shearing](/06-Gelation-and-Shearing.md)
+8. An overview of simulating colloids with our modifications: [Gelation and Shearing](/08-Gelation-and-Shearing.md)
 
