@@ -71,13 +71,13 @@ Congratulations, you now have data!
 
 As we discussed in the [Analysis Guide](/07-Analysis-Guide.md), we have to extract data from the GSD file before we can analyze and plot it.
 
-In addition to the basic extraction and plotting of data that we ran for water, there are a number of more advance analyses that we frequently use: 
-* mean squared displacement
+In addition to the basic extraction and plotting of data that we ran for water, there are a several more advance analyses that we frequently use. For example: 
 * average coordination number
 * radial distribution function g(r)
+* pair correlation function
+* mean squared displacement
 * number density fluctuations (AKA Index of Dispersion)
 * Voronoi volume distribution
-* pair correlation function
 * (for shearing only) corrected kinetic temperature and pressure (colloid contributions only)
 * (for shearing only) averaged solvent velocity profile
 
@@ -91,7 +91,7 @@ If you need to make any changes to these analyses, you will probably need to mod
 f2py -c module_analysis.f90 -m module
 ```
 
-Copies of the standard Fortran and Python scripts are both available in the [hoomd4.2.1-mod repository](https://github.com/procf/hoomd4.2.1-mod)
+Copies of the standard Fortran and Python scripts for our most common analyses are available in the [hoomd4.2.1-mod repository](https://github.com/procf/hoomd4.2.1-mod/)
 <br>
 <br>
 ## Next Steps

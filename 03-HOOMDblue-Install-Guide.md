@@ -45,7 +45,7 @@ All of the installation steps are outlined in the HOOMD-blue documentation, but 
 <br>
 ## Setting Up File Management
 
-We will install the two versions of HOOMD-blue in their respective directories. How you organize your simulation files from here is up to you. For backing up files to Github it is often best to keep software, simulation scripts, and data files all in separate repositories; however, some people prefer to keep things all those grouped into one directory. Here are two file management examples (filenames are marked as `folders` or *files*):
+We will install the two versions of HOOMD-blue in their respective directories. How you organize your simulation files from here is up to you. For backing up files to Github it is often best to keep software, simulation scripts, and data files all in separate directories; however, some people prefer to keep things all those grouped into one directory. Here are two file management examples (filenames are marked as `folders` or *files*):
 <br>
 
 ONE FOLDER
