@@ -82,7 +82,7 @@ Our bash files typically have 3 sections:
 2. Every line that starts with `#SBATCH` or `#sbatch` specifies a setting for the job we are running with Slurm (**NOTE**: in this section you need to use`##` for a comment). Typically this section includes:
 	* `-J name` or `--job-name=name` your reference name for the job
 	* `-N #` or `--nodes=#` the number of nodes requested
-	* `-n #` (for use with MPI) the number of cores requested on those nodes
+	* `-n #` (for use with MPI) the total number of cores requested across all requested nodes
 	* `-t days-hours:min:sec` or `--time=days-hours:min:sec` the length of time requested for the job (all parameters are a number, for example "24:00:00" for 1 day or "4-12:00:00" for 4 and a half days)
 	* `-p` or `--partition` the partition you want to work on (i.e. short, long, etc.) 
 	* `--constraint=name` which lets you select specific types of CPU (for example, when running MPI scripts you should only use the newer cores with faster "Infiniband" communication, and you can select this with "--constraint=ib")
