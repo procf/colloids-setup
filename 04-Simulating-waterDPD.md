@@ -34,7 +34,7 @@ The Scripts folder contains files for running three different DPD simulations of
 
 Before we run these simulations, you can start by looking at the [first sim-waterDPD.py script here](/Scripts/waterDPD-sims/local-computer/01-waterDPD/sim-waterDPD.py)
 
-You can view sim-waterDPD.py on Github using the link above, or download and open the file with an integrated development environment (IDE) such as [Spyder](https://www.spyder-ide.org/), [Eclipse](https://www.eclipse.org/downloads/), or [Pycharm](https://www.jetbrains.com/pycharm/), or with a built-in text editor such as [Vim](https://www.vim.org/)
+You can view sim-waterDPD.py on Github using the link above, or download and open the file with an integrated development environment (IDE) such as [VSCode](https://code.visualstudio.com/) or [Eclipse](https://www.eclipse.org/downloads/), or with a built-in text editor such as [Vim](https://www.vim.org/)
 To examine the file with Vim, in the Terminal use the command
 ```bash
 cd [path-to-colloids-setup]

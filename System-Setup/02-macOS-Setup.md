@@ -156,7 +156,7 @@ While you can write and edit scripts with a text editor, you will likely want to
 
 It is recommended that you download [Eclipse](https://www.eclipse.org/downloads/) for C++ programming.
 
-You can also use Eclipse for developing Python code, but you may be better off with a dedicated Python IDE. For working on MacOS, people frequently recommend [PyCharm](https://www.jetbrains.com/pycharm/), although members of our lab mostly use [Spyder](https://www.spyder-ide.org/). (For help setting up Spyder, chat to Soohee or Milad)
+You can also use Eclipse for developing Python code, but you may be better off with a dedicated Python IDE. For working on MacOS, our group mostly uses [VSCode](https://code.visualstudio.com/) 
 <br>
 <br>
 ## Git and Github
