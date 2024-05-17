@@ -1,6 +1,6 @@
 ## System Setup Tips
 
-This folder contains advice for members of the PRO-CF Colloids Team on: 
+This folder contains advice for members of the Rheoinformatic Colloids Team on: 
 1. [Hardware] selection
 2. [Managing Northeastern-purchased computers] /(dealing with JAMF)
 3. [MacOS system setup] proir to starting colloids simulations
