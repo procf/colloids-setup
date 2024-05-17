@@ -1,6 +1,6 @@
 # Using VMD
 
-This is an introduction to using [VMD] on your local computer to visulaize the results of HOOMD-blue simulation data for research in the PRO-CF Colloids Team.
+This is an introduction to using [VMD] on your local computer to visulaize the results of HOOMD-blue simulation data for research in the Rheoinformatic Colloids Team.
 
 This guide is optimized for MacOS. See [Simulating waterDPD](/04-Simulating-waterDPD.md) for more details on running a simulation with HOOMD-blue and the [VMD Installation Guide](/05-VMD-Install-Guide.md) for help installing VMD.
 
