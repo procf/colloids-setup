@@ -1,6 +1,6 @@
 # MacOS System Setup Recommendations and Tips
 
-This is a guide to setting up a new MacOS computer for command line programming, specifically what to do before installing and using HOOMD-blue for colloids simulations in the PRO-CF Research Group. If you are new to MacOS, or new to programming on MacOS, then this guide can help you get started.
+This is a guide to setting up a new MacOS computer for command line programming, specifically what to do before installing and using HOOMD-blue for colloids simulations in the Rheoinformatic Research Group. If you are new to MacOS, or new to programming on MacOS, then this guide can help you get started.
 
 [Last Update: June 2022]
 
@@ -161,7 +161,7 @@ You can also use Eclipse for developing Python code, but you may be better off w
 <br>
 ## Git and Github
 
-Git is a version management tool, especially useful for collaborating with others on shared code. If you're interested in using Github and need help setting up command-line Git, you can check out the separate [Github Guide](https://github.com/procf/getting-started/blob/main/github-guide.md) in the PRO-CF getting-started repository.
+Git is a version management tool, especially useful for collaborating with others on shared code. If you're interested in using Github and need help setting up command-line Git, you can check out the separate [Github Guide](https://github.com/procf/getting-started/blob/main/github-guide.md) in the getting-started repository.
 <br>
 <br>
 ## Jupyter Lab
@@ -170,6 +170,6 @@ Another useful tool for sharing code is [Project Jupyter](https://jupyter.org/) 
 
 You can learn more about Jupyter and try it online at their [website](https://jupyter.org/). You can then follow their instructions for installing Jupter Lab on your computer using the command line, as well as setting up the Kernels for the languages you are interested in.
 
-Jupyter Notebooks are used extensively by the PRO-CF Machine Learning Team for developing and sharing their code, so if you're interested in learning more about what they do at some point you should definitely start getting familiar with Jupyter Notebooks!
+Jupyter Notebooks are used extensively by the Machine Learning Team for developing and sharing their code, so if you're interested in learning more about what they do at some point you should definitely start getting familiar with Jupyter Notebooks!
 
 
