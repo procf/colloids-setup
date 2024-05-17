@@ -1,6 +1,6 @@
 # Simulating waterDPD
 
-This is a guide for running a simple DPD simulation of water with HOOMD-blue in preparation for colloids research in the PRO-CF Colloids Team.
+This is a guide for running a simple DPD simulation of water with HOOMD-blue in preparation for colloids research in the Rheoinformatic Colloids Team.
 
 This guide is optimized for MacOS and useses the **basic installation of HOOMD-blue** (See the [HOOMD-blue Installation Guide](/03-HOOMDblue-Install-Guide.md) for prerequisites).
 
