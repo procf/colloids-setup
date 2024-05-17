@@ -1,6 +1,6 @@
 # HOOMD-blue Installation and Setup Guide
 
-This is a guide to installing [HOOMD-blue] for use in the PRO-CF Colloids Team. This guide is optizimed for macOS and includes instructions for [installation on Discovery](/03-HOOMDblue-Install-Guide.md#installing-on-discovery) and [installation on your own computer](/03-HOOMDblue-Install-Guide.md#installing-on-your-local-computer).
+This is a guide to installing [HOOMD-blue] for use in the Rheoinformatic Colloids Team. This guide is optizimed for macOS and includes instructions for [installation on Discovery](/03-HOOMDblue-Install-Guide.md#installing-on-discovery) and [installation on your own computer](/03-HOOMDblue-Install-Guide.md#installing-on-your-local-computer).
 
 [Last Update: November 2023]
 
@@ -28,7 +28,7 @@ The standard implementation of HOOMD-blue was adapted for our colloids simulatio
 
 ## HOOMD-blue Versions
 
-In order to run most colloid simulations in the PRO-CF group, you will need e use a version of HOOMD-blue that has been modified. Each member of the group is developing their own modifications, but we try to collect the most important and commonly used changes into one core version of the software that is available to all group members on Github.
+In order to run most colloid simulations in the Rheoinformatic group, you will need e use a version of HOOMD-blue that has been modified. Each member of the group is developing their own modifications, but we try to collect the most important and commonly used changes into one core version of the software that is available to all group members on Github.
 
 Until someone has the time to develop a plugin or work with the HOOMD-blue team to integrate these changes into the official software package, we will need to manually add these modifications to any new version of the HOOMD-blue software we decide to use. 
 Our latest set of modifications were made to [HOOMD-blue version 4.2.1](https://hoomd-blue.readthedocs.io/en/v4.2.1/)
