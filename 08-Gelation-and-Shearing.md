@@ -1,6 +1,6 @@
 # Gelation and Shearing of Colloidal Particles
 
-This is an overview of the PRO-CF Colloids Team approach to colloid gelation and shearing simulations with HOOMD-blue.
+This is an overview of the Rheoinformatic Colloids Team approach to colloid gelation and shearing simulations with HOOMD-blue.
 
 Before running gelation or shearing simulations you should have already familiarized yourself with how to run and analyze basic simulations:
 * [ran a basic DPD simulation of water](/04-Simulating-waterDPD.md)
