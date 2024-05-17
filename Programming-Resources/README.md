@@ -38,7 +38,7 @@ Recorded lectures from MIT CSAIL's course on using the shell, VIM, Command Line,
 
 ### Git
 
-* The [Github Guide](https://github.com/procf/getting-started/blob/main/github-guide.md) in the PRO-CF getting-started reposirory
+* The [Github Guide](https://github.com/procf/getting-started/blob/main/github-guide.md) in the getting-started reposirory
 
 * [Git Cheat Sheet](/Programming-Resources/git-cheat-sheet_USletter.pdf) (PDF)
 
