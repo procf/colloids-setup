@@ -1,8 +1,8 @@
 # Rheoinformatic Colloids Simulation Setup Guide
 
-Welcome to the Rheoinformatic Colloids simulation team! :tada:
+Welcome to the Rheoinformatic colloids simulation team! :tada:
 
-These files will guide you through everything you need to know to start running colloid simulations with [HOOMD-blue] for research on the <u>p</u>hysics and <u>r</u>heology <u>o</u>f <u>c</u>omplex <u>f</u>luids (PROCF) in our group.
+These files will guide you through everything you need to know to start running colloid simulations with [HOOMD-blue] for research in our group.
 
 [HOOMD-blue]: http://glotzerlab.engin.umich.edu/hoomd-blue/
 
