@@ -2,7 +2,7 @@
 
 Discovery is a High-Performance Computing (HPC) cluster managed by the Research Computing section at Northeastern. The most up-to-date information about Discovery is available on the [Research Computing Docs](https://rc-docs.northeastern.edu/en/latest/welcome/welcome.html), and you can always email them with any questions at rchelp@northeastern.edu
 
-This is a guide to getting setup to use the Discovery Cluster at Northeastern University for research in the PRO-CF Group.
+This is a guide to getting setup to use the Discovery Cluster at Northeastern University for research in the Rheoinformatic Group.
 
 This guide is optimized for macOS.
 
@@ -82,9 +82,9 @@ You can also schedule an "office hours" style meeting for 1-on-1 help from a Res
 <br>
 ## Getting Access to the `work` Directory
 
-The `home` and `scratch` directories are available to all students; however, `home` has very limited storage space and is NOT a good place to run your simulations, and files on `scratch` are deleted every month to free-up space.You can get started in your `scratch` folder, but for long-term research in the PRO-CF group you will want access to our `work` directory.
+The `home` and `scratch` directories are available to all students; however, `home` has very limited storage space and is NOT a good place to run your simulations, and files on `scratch` are deleted every month to free-up space.You can get started in your `scratch` folder, but for long-term research in the Rheoinformatic group you will want access to our `work` directory.
 
-As a member of the PRO-CF Group you should automatically be given access to the `props` directory on `work` ("PROPS" is our old acronym). This is where you will store most of your data.
+As a member of the Rheoinformatic Group you should automatically be given access to the `props` directory on `work` ("PROPS" is our old acronym). This is where you will store most of your data.
 
 After connecting to Discovery, you can check this with
 ```bash
@@ -166,7 +166,7 @@ More details on this process will be covered later. For now all you need to know
 
 You already have created a Github account to access this guide. Git is a version management tool, especially useful for tracking changes you make to the HOOMD-blue sourcecode and for collaborating with others.
 
-If you need help using Github setting up command-line Git, you can check out the separate [Github Guide](https://github.com/procf/getting-started/blob/main/github-guide.md) in the PRO-CF getting-started repository.
+If you need help using Github setting up command-line Git, you can check out the separate [Github Guide](https://github.com/procf/getting-started/blob/main/github-guide.md) in the getting-started repository.
 
 The steps for using Git on Discovery are the same as setting up git on your computer, but **since Discovery runs Linux, you will need to use the Linux commands to link to GitHub.**
 
