@@ -116,7 +116,7 @@ cp -r ~/Downloads/gsd-vmd-main .
 ```
 Move to the new folder
 ```bash
-cd gsd-vdm-main
+cd gsd-vmd-main
 ```
 Make a build directory and move to it
 ```bash
