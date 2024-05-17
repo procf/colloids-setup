@@ -1,6 +1,6 @@
 ## VMD Installation Guide
 
-This is a guide for installing the Visual Molecular Dynamics ([VMD]) software, and associated plugins, on your local computer for use with HOOMD-blue simulation data in the PRO-CF Research Group.
+This is a guide for installing the Visual Molecular Dynamics ([VMD]) software, and associated plugins, on your local computer for use with HOOMD-blue simulation data in the Rheoinformatic Research Group.
 
 This guide is for optimized for macOS. 
 
