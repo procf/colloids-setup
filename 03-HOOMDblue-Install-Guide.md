@@ -354,11 +354,12 @@ And install
 cmake --install build/hoomd
 ```
 
-Upgrade pip and install required/useful Python packages
+Upgrade pip and install required/useful Python packages<br>
+*NOTE:* the latest version of gsd requires Numpy 2.0, which was released in June 2024 and (as of June 2024) is not yet available on Discovery; therefore, you must install an older gsd version for now
 ```bash
 pip install --upgrade pip
 pip3 install numpy
-pip3 install gsd
+pip3 install gsd==3.2.1
 pip3 install matplotlib
 ```
 
@@ -433,11 +434,12 @@ And install
 cmake --install build/hoomd
 ```
 
-Upgrade pip and install required/useful Python packages
+Upgrade pip and install required/useful Python packages <br>
+*NOTE:* the latest version of gsd requires Numpy 2.0, which was released in June 2024 and (as of June 2024) is not yet available on Discovery; therefore, you must install an older gsd version for now
 ```bash
 pip install --upgrade pip
 pip3 install numpy
-pip3 install gsd
+pip3 install gsd==3.2.1
 pip3 install matplotlib
 ```
 
