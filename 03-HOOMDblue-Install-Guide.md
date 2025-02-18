@@ -151,6 +151,7 @@ NOTE: you need to link Git on Discovery with your Github account before doing th
 Now move to the hoomd4.2.1-basic directory and copy the sbatch installation script from the colloids-setup folder.
 ```bash
 cd software/hoomd4.2.1-basic
+cp /work/props/your_username/colloids-setup/Scripts/hoomd-blue-4.2.1.tar.gz .
 cp /work/props/your_username/colloids-setup/Scripts/install-hoomd-basic .
 ```
 
