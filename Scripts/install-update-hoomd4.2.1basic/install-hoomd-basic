@@ -6,7 +6,7 @@
 #SBATCH -e %A-instl.err
 
 # download HOOMDblue 4.2.1 if you don't already have it
-curl -Lo hoomd-v4.2.1.tar.gz https://github.com/glotzerlab/hoomd-blue/releases/download/v4.2.1/hoomd-4.2.1.tar.gz
+#curl -Lo hoomd-v4.2.1.tar.gz https://github.com/glotzerlab/hoomd-blue/releases/download/v4.2.1/hoomd-4.2.1.tar.gz
 
 # extract the tarball
 tar -xvf hoomd-v4.2.1.tar.gz   
